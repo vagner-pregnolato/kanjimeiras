@@ -321,30 +321,60 @@
     }
 
     .next-btn {
-      position: absolute;
-      top: 14px;
-      right: 14px;
+      width: 100%;
       background: var(--red);
       color: #fff;
       border: none;
-      padding: 6px 12px;
-      border-radius: 3px;
+      padding: 18px;
+      margin-top: 10px;
+      border-radius: 4px;
       font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.06em;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
       cursor: pointer;
       display: none;
       z-index: 10;
       transition: background 0.15s, transform 0.1s;
+      box-shadow: 0 4px 15px rgba(181, 51, 42, 0.25);
     }
 
     .next-btn:hover {
       background: #8f2620;
+      transform: translateY(-1px);
     }
 
     .next-btn:active {
-      transform: scale(0.97);
+      transform: scale(0.98);
+    }
+
+    /* ── EASTER EGG ── */
+    .easter-egg {
+      position: fixed;
+      inset: 0;
+      background: #006437; /* Palmeiras Green */
+      color: #fff;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 12vw;
+      font-weight: 900;
+      z-index: 2000;
+      text-shadow: 0 15px 40px rgba(0,0,0,0.6);
+      pointer-events: none;
+      letter-spacing: -0.02em;
+    }
+
+    .easter-egg.show {
+      display: flex;
+      animation: palmeirasUp 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    @keyframes palmeirasUp {
+      0% { transform: translateY(100%) scale(0.5); opacity: 0; }
+      100% { transform: translateY(0) scale(1); opacity: 1; }
     }
 
     .kanji-wrap {

@@ -275,3 +275,23 @@
     document.getElementById('answer').addEventListener('keydown', e => {
       if (e.key === 'Enter') check();
     });
+
+    // ── EASTER EGG: KONAMI CODE ──
+    let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    let konamiIdx = 0;
+    window.addEventListener('keydown', e => {
+      if (e.key === konamiCode[konamiIdx]) {
+        konamiIdx++;
+        if (konamiIdx === konamiCode.length) {
+          const egg = document.getElementById('easter-egg');
+          egg.classList.add('show');
+          setTimeout(() => {
+            egg.classList.remove('show');
+          }, 3000);
+          konamiIdx = 0;
+        }
+      } else {
+        // Allow restarting from first ArrowUp even if wrong key
+        konamiIdx = (e.key === konamiCode[0]) ? 1 : 0;
+      }
+    });
