@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>漢字 N5→N3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="kanji-data.js"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+  <!-- ══ MENU ══ -->
+  <div id="menu">
+    <div class="menu-eyebrow">漢字フラッシュカード · N5 → N3</div>
+
+    <div class="card menu-card">
+      <div class="menu-stripe"></div>
+      <div class="menu-kana-label">やし</div>
+      <div class="menu-kanji">椰</div>
+    </div>
+
+    <div class="menu-buttons">
+      <button class="mode-btn btn-easy" onclick="startApp('easy')">
+        <span class="btn-ja">易</span>
+        <span class="btn-pt">Fácil</span>
+        <span class="btn-sub">romaji · 3 vidas</span>
+      </button>
+      <button class="mode-btn btn-medium" onclick="startApp('medium')">
+        <span class="btn-ja">中</span>
+        <span class="btn-pt">Médio</span>
+        <span class="btn-sub">romaji · 1 vida</span>
+      </button>
+      <button class="mode-btn btn-hard" onclick="startApp('hard')">
+        <span class="btn-ja">難</span>
+        <span class="btn-pt">Difícil</span>
+        <span class="btn-sub">ひらがな</span>
+      </button>
+    </div>
+
+    <div class="menu-footer" id="menu-footer">N5 → N4 → N3</div>
+  </div>
+
+  <!-- ══ APP ══ -->
+  <div id="app">
+    <div class="topbar">
+      <div class="level-badge" id="lv-badge">N5</div>
+      <div class="mode-tag easy" id="mode-tag">fácil · romaji</div>
+      <div class="progress-track">
+        <div class="progress-fill" id="prog-fill"></div>
+      </div>
+      <div class="score-label" id="score-label">0 / 0</div>
+    </div>
+
+    <div class="card flash-card" id="flash-card">
+      <div class="card-stripe" id="card-stripe"></div>
+      <button class="next-btn" id="next-btn" onclick="next()">Próximo →</button>
+      <div class="kanji-wrap">
+        <div class="kanji-display" id="kanji">一</div>
+      </div>
+    </div>
+
+    <div class="reveal-box" id="reveal-box">
+      <div class="rev-reading" id="rev-reading"></div>
+      <div class="rev-pt" id="rev-pt"></div>
+      <div class="rev-sep"></div>
+      <div class="rev-label">Exemplos</div>
+      <div class="rev-ex" id="rev-ex"></div>
+      <div class="rev-sep"></div>
+      <div class="rev-label">Radicais / Componentes</div>
+      <div class="rev-radicals" id="rev-radicals"></div>
+    </div>
+
+    <div class="dots" id="dots">
+      <div class="dot alive" id="d0"></div>
+      <div class="dot lost" id="d1"></div>
+      <div class="dot lost" id="d2"></div>
+    </div>
+
+    <input type="text" id="answer" placeholder="leitura em romaji..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+
+    <div class="feedback" id="feedback"></div>
+    <div class="hint" id="hint"><i class="ph-bold ph-arrow-enter"></i> Enter para confirmar</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
