@@ -190,16 +190,39 @@
 
       if (rad) {
         let html = '';
-        rad.parts.forEach(p => {
-          html += `<div class="rad-row">
-            <span class="rad-char">${p.char}</span>
-            <span class="rad-name">${p.name}</span>
-            <span class="rad-meaning">— ${p.meaning}</span>
-          </div>`;
-        });
-        if (rad.mnemonic) {
-          html += `<div class="rad-mnemonic"><i class="ph-fill ph-lightbulb"></i> ${rad.mnemonic}</div>`;
+        
+        if (rad.parts && rad.parts.length > 0) {
+          rad.parts.forEach(p => {
+            html += `<div class="rad-row">
+              <span class="rad-char">${p.char}</span>
+              <span class="rad-name">${p.name}</span>
+              <span class="rad-meaning">— ${p.meaning}</span>
+            </div>`;
+          });
+          if (rad.mnemonic) {
+            html += `<div class="rad-mnemonic"><i class="ph-fill ph-lightbulb"></i> ${rad.mnemonic}</div>`;
+          }
         }
+        
+        if (rad.meanings_en && rad.meanings_en.length > 0) {
+          const cleanMeanings = rad.meanings_en.map(m => m.replace('^', '')).join(', ');
+          html += `<div class="rad-row" style="margin-top: 8px;">
+             <span class="rad-meaning" style="color: var(--n4); font-weight: 500;">EN Meanings:</span> 
+             <span class="rad-meaning">${cleanMeanings}</span>
+          </div>`;
+          if (rad.parts_en && rad.parts_en.length > 0) {
+             html += `<div class="rad-row">
+               <span class="rad-meaning" style="color: var(--text-dim); opacity: 0.6; font-weight: 500;">EN Radicals:</span> 
+               <span class="rad-meaning">${rad.parts_en.join(', ')}</span>
+             </div>`;
+          }
+          if (rad.mnemonic_en) {
+            html += `<div class="rad-mnemonic" style="border-left-color: var(--n4); color: rgba(234, 228, 218, 0.45);">
+              <i class="ph-fill ph-lightbulb" style="color: var(--n4)"></i> ${rad.mnemonic_en}
+            </div>`;
+          }
+        }
+        
         radEl.innerHTML = html;
         radEl.style.display = 'block';
       } else {

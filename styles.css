@@ -750,5 +750,6 @@
       background: rgba(255, 255, 255, 0.03);
       border-left: 2px solid var(--red);
       border-radius: 0 3px 3px 0;
+      white-space: pre-wrap;
       line-height: 1.7;
     }

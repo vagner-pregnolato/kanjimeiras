@@ -758,1516 +758,5170 @@ const LEVELS = {
 };
 
 const RADICALS = {
-  // ─── N5 KANJIS (1-30) ───
-  '一': {
-    parts: [{ char: '一', name: 'ichi', meaning: 'um' }],
-    mnemonic: 'Uma única linha horizontal representa o número um.'
-  },
-  '二': {
-    parts: [{ char: '二', name: 'ni', meaning: 'dois' }],
-    mnemonic: 'Duas linhas horizontais representam o número dois.'
-  },
-  '三': {
-    parts: [{ char: '三', name: 'san', meaning: 'três' }],
-    mnemonic: 'Três linhas horizontais representam o número três.'
-  },
-  '四': {
-    parts: [
-      { char: '囗', name: 'kuni-gamae', meaning: 'caixa, contorno' },
-      { char: '八', name: 'hachi', meaning: 'oito / dividir' }
-    ],
-    mnemonic: 'Um quadrado com coisas sendo divididas dentro. Quatro lados formando uma caixa.'
-  },
-  '五': {
-    parts: [
-      { char: '二', name: 'ni', meaning: 'dois' },
-      { char: '丨', name: 'tate-bou', meaning: 'linha vertical' },
-      { char: '一', name: 'ichi', meaning: 'um (base)' }
-    ],
-    mnemonic: 'Linhas que se cruzam conectando o céu e a terra, representando o número 5 usando a mão inteira.'
-  },
-  '六': {
-    parts: [
-      { char: '亠', name: 'nabebuta', meaning: 'tampa' },
-      { char: '八', name: 'hachi', meaning: 'oito / pernas' }
-    ],
-    mnemonic: 'Uma tampa sobre duas pernas. Um animalzinho de 6 pernas coberto.'
-  },
-  '七': {
-    parts: [
-      { char: '一', name: 'ichi', meaning: 'um (horizontal)' },
-      { char: '乚', name: 'magari', meaning: 'anzol' }
-    ],
-    mnemonic: 'Uma linha sendo cortada torta, como o número 7 virado de cabeça para baixo.'
-  },
-  '八': {
-    parts: [{ char: '八', name: 'hachi', meaning: 'oito, dividir' }],
-    mnemonic: 'Duas linhas se separando (dividindo), indicando os oito pontos cardeais.'
-  },
-  '九': {
-    parts: [
-      { char: '丿', name: 'no', meaning: 'linha curva (esquerda)' },
-      { char: '乙', name: 'otsu', meaning: 'gancho em formato de Z' }
-    ],
-    mnemonic: 'Alguém fazendo flexões e suando em bica para conseguir chegar no 9.'
-  },
-  '十': {
-    parts: [{ char: '十', name: 'juu', meaning: 'dez, cruz' }],
-    mnemonic: 'Uma cruz completa contendo as 4 direções e o centro: junta-se formando dez.'
-  },
-  '百': {
-    parts: [
-      { char: '一', name: 'ichi', meaning: 'um' },
-      { char: '白', name: 'shiro', meaning: 'branco' }
-    ],
-    mnemonic: 'O número um cem vezes torna um papel completamente branco.'
-  },
-  '千': {
-    parts: [
-      { char: '丿', name: 'no', meaning: 'curva' },
-      { char: '十', name: 'juu', meaning: 'dez' }
-    ],
-    mnemonic: 'Um traço extra no dez para o transformar no mil.'
-  },
-  '万': {
-    parts: [
-      { char: '一', name: 'ichi', meaning: 'um' },
-      { char: '勹', name: 'tsutsumi-gamae', meaning: 'embrulho, pacote' },
-      { char: '丿', name: 'no', meaning: 'traço curto' }
-    ],
-    mnemonic: 'No Japão rural antigo, você usava uma foice parecida para colher dez mil plantas.'
-  },
-  '円': {
-    parts: [
-      { char: '冂', name: 'keigamae', meaning: 'caixa de cabeça pra baixo / contorno' },
-      { char: '土', name: 'tsuchi/dois', meaning: 'na forma antiga formavam círculos' }
-    ],
-    mnemonic: 'Visualmente parece uma vitrine de loja com produtos à venda... em Ienes!'
-  },
-  '年': {
-    parts: [
-      { char: '丿', name: 'no', meaning: 'traço curto' },
-      { char: '二', name: 'ni', meaning: 'dois' },
-      { char: '丨', name: 'tate-bou', meaning: 'tronco / pilar' }
-    ],
-    mnemonic: 'Uma pessoa carregando a colheita nas costas após um ano inteiro de espera.'
-  },
-  '月': {
-    parts: [{ char: '月', name: 'tsuki', meaning: 'lua, carne' }],
-    mnemonic: 'O desenho de uma lua crescente e com algumas nuvens na frente dela.'
-  },
-  '日': {
-    parts: [{ char: '日', name: 'hi', meaning: 'sol, dia' }],
-    mnemonic: 'O formato quadrado de um sol (antigamente redondo) com uma mancha solar no meio.'
-  },
-  '時': {
-    parts: [
-      { char: '日', name: 'hi', meaning: 'sol, dia' },
-      { char: '寺', name: 'tera', meaning: 'templo budista' }
-    ],
-    mnemonic: 'Antigamente as pessoas mediam o tempo e a hora através do sol no templo.'
-  },
-  '分': {
-    parts: [
-      { char: '八', name: 'hachi', meaning: 'dividir' },
-      { char: '刀', name: 'katana', meaning: 'espada, faca' }
-    ],
-    mnemonic: 'Usar uma faca para dividir algo ao meio, cortando a hora em minutos.'
-  },
-  '上': {
-    parts: [
-      { char: '一', name: 'ichi', meaning: 'chão, linha de base' },
-      { char: '卜', name: 'boku', meaning: 'marcador em cima' }
-    ],
-    mnemonic: 'A linha longa é o chão, e o tracinho está indicando tudo que fica para cima.'
-  },
-  '下': {
-    parts: [
-      { char: '一', name: 'ichi', meaning: 'teto, chão elevado' },
-      { char: '卜', name: 'boku (virado)', meaning: 'marcador embaixo' }
-    ],
-    mnemonic: 'Base e algo pendurado para baixo, simbolizando "abaixo" ou "embaixo".'
-  },
-  '中': {
-    parts: [
-      { char: '口', name: 'kuchi', meaning: 'boca, buraco' },
-      { char: '丨', name: 'tate-bou', meaning: 'flecha / vara' }
-    ],
-    mnemonic: 'Uma flecha atingindo perfeitamente o meio do alvo.'
-  },
-  '大': {
-    parts: [{ char: '大', name: 'dai', meaning: 'grande, pessoa' }],
-    mnemonic: 'Uma pessoa abrindo os braços e as pernas para parecer o mais grande possível.'
-  },
-  '小': {
-    parts: [
-      { char: '亅', name: 'hane-bou', meaning: 'anzol, graveto principal' },
-      { char: '八', name: 'hachi', meaning: 'dividir / fragmentos' }
-    ],
-    mnemonic: 'Três pequenos pedaços ou farelos de algo que se estilhaçou.'
-  },
-  '山': {
-    parts: [{ char: '山', name: 'yama', meaning: 'montanha' }],
-    mnemonic: 'Desenho de três picos de montanhas colados um ao outro (o do meio é maior).'
-  },
-  '川': {
-    parts: [{ char: '川', name: 'kawa', meaning: 'rio' }],
-    mnemonic: 'A água de um rio descendo pela correnteza, contornando a terra dos dois lados.'
-  },
-  '海': {
-    parts: [
-      { char: '氵', name: 'sanzui', meaning: 'água' },
-      { char: '毎', name: 'mai', meaning: 'todo, cada' }
-    ],
-    mnemonic: 'Toda água abundante e vasta do mundo forma o grande mar.'
-  },
-  '空': {
-    parts: [
-      { char: '穴', name: 'ana', meaning: 'buraco, caverna' },
-      { char: '工', name: 'kou', meaning: 'trabalho, régua' }
-    ],
-    mnemonic: 'Olhar de dentro do buraco da caverna, sendo possível ver somente o céu (vazio).'
-  },
-  '火': {
-    parts: [{ char: '火', name: 'hi', meaning: 'fogo' }],
-    mnemonic: 'As chamas subindo por um amontoado de gravetos pegando fogo de uma fogueira.'
-  },
-  '水': {
-    parts: [{ char: '水', name: 'mizu', meaning: 'água' }],
-    mnemonic: 'Gotas de água se espatifando e respingando ao bater em uma superfície da água central.'
-  },
-  '木': {
-    parts: [{ char: '木', name: 'moku', meaning: 'árvore, madeira' }],
-    mnemonic: 'O tronco de uma árvore com seus galhos se estendendo para baixo.'
-  },
-  '金': {
-    parts: [
-      { char: '𠆢', name: 'yane', meaning: 'teto, telhado' },
-      { char: '王', name: 'ou', meaning: 'rei' },
-      { char: '八', name: 'hachi', meaning: 'oito (como pedaços de ouro)' }
-    ],
-    mnemonic: 'O rei guardando seus pedaços preciosos de ouro debaixo do teto do palácio.'
-  },
-  '土': {
-    parts: [
-      { char: '十', name: 'juu', meaning: 'cruz, prego' },
-      { char: '一', name: 'ichi', meaning: 'chão' }
-    ],
-    mnemonic: 'Uma cruz fincada no chão marcando a terra.'
-  },
-  '人': {
-    parts: [{ char: '人', name: 'hito', meaning: 'pessoa' }],
-    mnemonic: 'O perfil de uma pessoa em pé com as duas pernas abertas caminhando.'
-  },
-  '口': {
-    parts: [{ char: '口', name: 'kuchi', meaning: 'boca, buraco' }],
-    mnemonic: 'O formato escancarado de uma boca quadrada aberta.'
-  },
-  '手': {
-    parts: [{ char: '手', name: 'te', meaning: 'mão' }],
-    mnemonic: 'As linhas da palma de uma mão e o formato dos pulsos.'
-  },
-  '目': {
-    parts: [{ char: '目', name: 'me', meaning: 'olho' }],
-    mnemonic: 'O contorno de um olho virado de lado, com a íris quadrada no centro.'
-  },
-  '耳': {
-    parts: [{ char: '耳', name: 'mimi', meaning: 'orelha' }],
-    mnemonic: 'As várias dobras cartilaginosas que formam o pavilhão auricular de uma orelha.'
-  },
-  '心': {
-    parts: [{ char: '心', name: 'kokoro', meaning: 'coração' }],
-    mnemonic: 'Os quatro traços representam as veias e vasos pulsando do formato de um coração.'
-  },
-  '気': {
-    parts: [
-      { char: '气', name: 'kigamae', meaning: 'vapor, ar' },
-      { char: 'メ', name: 'me', meaning: 'espada, energia' }
-    ],
-    mnemonic: 'A energia invisível que flui no ar e alimenta as ações de força interior.'
-  },
-  '男': {
-    parts: [
-      { char: '田', name: 'ta', meaning: 'campo de arroz' },
-      { char: '力', name: 'chikara', meaning: 'força' }
-    ],
-    mnemonic: 'Trabalhar usando a força física nos campos de arroz era papel do homem na antiguidade.'
-  },
-  '女': {
-    parts: [{ char: '女', name: 'onna', meaning: 'mulher' }],
-    mnemonic: 'O formato curvo e gracioso das vestes de uma mulher ajoelhada tradicionalmente.'
-  },
-  '子': {
-    parts: [{ char: '子', name: 'ko', meaning: 'criança' }],
-    mnemonic: 'Uma criança embrulhadinha e com os braços abertos querendo colo.'
-  },
-  '本': {
-    parts: [
-      { char: '木', name: 'moku', meaning: 'árvore' },
-      { char: '一', name: 'ichi', meaning: 'um (linha horizontal na base)' }
-    ],
-    mnemonic: 'Marcando a base de uma árvore, temos a raiz. Livros (hon) são a raiz ou origem do conhecimento.'
-  },
-  '語': {
-    parts: [
-      { char: '言', name: 'gonben', meaning: 'dizer, palavras' },
-      { char: '五', name: 'go', meaning: 'cinco' },
-      { char: '口', name: 'kuchi', meaning: 'boca' }
-    ],
-    mnemonic: 'Palavras ditas da boca, com cinco sentidos. Falar muitas palavras se torna um idioma.'
-  },
-  '国': {
-    parts: [
-      { char: '囗', name: 'kuni-gamae', meaning: 'fronteira, caixa' },
-      { char: '玉', name: 'tama', meaning: 'joia, gema' }
-    ],
-    mnemonic: 'Uma terra valiosa como joia, protegida por grandes muralhas e fronteiras: um país.'
-  },
-  '学': {
-    parts: [
-      { char: '⺍', name: 'tsuu', meaning: 'pequeno, estudar (topo)' },
-      { char: '冖', name: 'wakanmuri', meaning: 'coroa, cobertura' },
-      { char: '子', name: 'ko', meaning: 'criança' }
-    ],
-    mnemonic: 'Crianças debaixo de um grande teto com ferramentas na cabeça absorvendo conhecimento: a escola.'
-  },
-  '生': {
-    parts: [{ char: '生', name: 'sei', meaning: 'nascer, dar vida' }],
-    mnemonic: 'Um pequeno broto crescendo forte do chão, o início de uma nova vida.'
-  },
-  '花': {
-    parts: [
-      { char: '艹', name: 'kusa-kanmuri', meaning: 'planta, grama (topo)' },
-      { char: '化', name: 'ka', meaning: 'mudança, transformar' }
-    ],
-    mnemonic: 'O momento mágico em que uma simples planta muda (transforma) em uma linda flor.'
-  },
-  '車': {
-    parts: [{ char: '車', name: 'kuruma', meaning: 'carro, veículo' }],
-    mnemonic: 'Se você olhar de cima, vê as duas rodas laterais e o chassi no centro de uma carroça.'
-  },
-  '友': {
-    parts: [
-      { char: 'ナ', name: 'hidari', meaning: 'mão esquerda' },
-      { char: '又', name: 'mata', meaning: 'mão direita / novamente' }
-    ],
-    mnemonic: 'Duas mãos se entrelaçando em apoio mútuo, o símbolo de um bom amigo.'
-  },
-  '先': {
-    parts: [
-      { char: '土', name: 'tsuchi', meaning: 'terra (variante)' },
-      { char: '儿', name: 'ninnyo', meaning: 'pernas humanas (andando)' }
-    ],
-    mnemonic: 'Alguém que usou suas pernas para andar e chegar à terra *antes* de você.'
-  },
-  '休': {
-    parts: [
-      { char: '亻', name: 'ninben', meaning: 'pessoa' },
-      { char: '木', name: 'moku', meaning: 'árvore' }
-    ],
-    mnemonic: 'Uma pessoa encostada ao lado de uma árvore tirando um merecido descanso.'
-  },
-  '外': {
-    parts: [
-      { char: '夕', name: 'yuu', meaning: 'tarde, entardecer' },
-      { char: '卜', name: 'boku', meaning: 'varinha mágica / previsão' }
-    ],
-    mnemonic: 'Na antiguidade, usar a varinha de adivinhação fora de casa só de tarde para não espantar a magia.'
-  },
-  '午': {
-    parts: [{ char: '午', name: 'go', meaning: 'meio-dia, cavalo do zodíaco' }],
-    mnemonic: 'Parece o número 10 (十) com algo deitado no topo bloqueando o caminho: o ponteiro batendo no topo, meio-dia.'
-  },
-  '校': {
-    parts: [
-      { char: '木', name: 'kihen', meaning: 'árvore, madeira' },
-      { char: '交', name: 'majiru', meaning: 'misturar, cruzar' }
-    ],
-    mnemonic: 'No Japão rural, edifícios feitos de madeira onde caminhos de crianças se cruzam: a escola.'
-  },
-  '名': {
-    parts: [
-      { char: '夕', name: 'yuu', meaning: 'anoitecer, tarde' },
-      { char: '口', name: 'kuchi', meaning: 'boca' }
-    ],
-    mnemonic: 'Quando anoitece e você não consegue enxergar o rosto, usa a boca para chamar o nome.'
-  },
-  '間': {
-    parts: [
-      { char: '門', name: 'mon', meaning: 'portões duplos' },
-      { char: '日', name: 'hi', meaning: 'sol' }
-    ],
-    mnemonic: 'Os raios do sol passando exatamente entre o espaço vazio no meio dos dois portões.'
-  },
-  '長': {
-    parts: [{ char: '長', name: 'chou', meaning: 'longo, chefe' }],
-    mnemonic: 'O perfil de um chefe idoso de cabelos longos varrendo o chão com uma bengala.'
-  },
-  '母': {
-    parts: [{ char: '母', name: 'haha', meaning: 'mãe' }],
-    mnemonic: 'A imagem de uma mulher com dois pontinhos seios largos amamentando, o maior símbolo de nutrição materna.'
-  },
-  '父': {
-    parts: [{ char: '父', name: 'chichi', meaning: 'pai' }],
-    mnemonic: 'Duas mãos firmes segurando dois eixos ou varas cruzadas, um símbolo arcaico de autoridade e disciplina paterna.'
-  },
-  '白': {
-    parts: [
-      { char: '日', name: 'hi', meaning: 'sol' },
-      { char: '丿', name: 'no', meaning: 'raio' }
-    ],
-    mnemonic: 'Um pequeno raio de sol escapando pelo topo, simbolizando a luz branca e brilhante do sol.'
-  },
-  '雨': {
-    parts: [{ char: '雨', name: 'ame', meaning: 'chuva' }],
-    mnemonic: 'Gotas caindo do céu, representadas pelos quatro pontos e presas dentro da janela que é a nuvem.'
-  },
-  '高': {
-    parts: [
-      { char: '亠', name: 'nabebuta', meaning: 'tampa (teto)' },
-      { char: '口', name: 'kuchi', meaning: 'boca, janela' },
-      { char: '冂', name: 'keigamae', meaning: 'portão, estrutura externa' }
-    ],
-    mnemonic: 'Um prédio muito alto com um telhado em cima e portões e janelas no meio da estrutura.'
-  },
-  '天': {
-    parts: [
-      { char: '大', name: 'dai', meaning: 'grande' },
-      { char: '一', name: 'ichi', meaning: 'um (o mais alto)' }
-    ],
-    mnemonic: 'Acima de um homem grande existe apenas uma única coisa mais majestosa: o próprio céu.'
-  },
-  '食': {
-    parts: [
-      { char: '𠆢', name: 'yane', meaning: 'teto, telhado' },
-      { char: '良', name: 'yoi', meaning: 'bom' }
-    ],
-    mnemonic: 'Reunir pessoas sob o mesmo teto para compartilhar algo bom para a saúde do corpo: a comida.'
-  },
-  '足': {
-    parts: [
-      { char: '口', name: 'kuchi', meaning: 'boca, perna aberta (antigo)' },
-      { char: '止', name: 'tomeru', meaning: 'parar, pisar' }
-    ],
-    mnemonic: 'A metade superior do corpo e a parte inferior focada no pé que pisa no chão.'
-  },
-  '体': {
-    parts: [
-      { char: '亻', name: 'ninben', meaning: 'pessoa' },
-      { char: '本', name: 'hon', meaning: 'origem, principal' }
-    ],
-    mnemonic: 'A parte principal (origem) e fundamental de uma pessoa é o seu próprio corpo físico.'
-  },
-  '入': {
-    parts: [{ char: '入', name: 'iru', meaning: 'entrar' }],
-    mnemonic: 'Parece o kanji de pessoa 人, mas a perna direita está entrando e empurrando a esquerda da frente.'
-  },
-  '出': {
-    parts: [
-      { char: '山', name: 'yama', meaning: 'montanha' },
-      { char: '山', name: 'yama', meaning: 'montanha' }
-    ],
-    mnemonic: 'Uma montanha em cima de outra montanha representa um broto rompendo a terra e saindo para fora.'
-  },
-  '来': {
-    parts: [
-      { char: '木', name: 'moku', meaning: 'árvore, madeira' },
-      { char: '丷', name: 'hachi', meaning: 'trigo (no topo antigo), direção externa' }
-    ],
-    mnemonic: 'A forma antiga parecia uma espiga de trigo, que "veio" de longe para alimentar as pessoas.'
-  },
-  '見': {
-    parts: [
-      { char: '目', name: 'me', meaning: 'olho' },
-      { char: '儿', name: 'ninnyo', meaning: 'pernas' }
-    ],
-    mnemonic: 'Um olho enorme em cima de pernas humanas andando por aí para tentar ver tudo ao redor.'
-  },
-  '行': {
-    parts: [
-      { char: '彳', name: 'gyouninben', meaning: 'passos' },
-      { char: '亍', name: 'teku', meaning: 'passos adiante' }
-    ],
-    mnemonic: 'O desenho de um grande cruzamento por onde milhares de pessoas andam para "ir" a todos os lugares.'
-  },
-  '聞': {
-    parts: [
-      { char: '門', name: 'mon', meaning: 'portões' },
-      { char: '耳', name: 'mimi', meaning: 'orelha' }
-    ],
-    mnemonic: 'Você encostando a sua orelha perfeitamente no vão do portão principal para ouvir a conversa dos seus vizinhos.'
-  },
-  '読': {
-    parts: [
-      { char: '言', name: 'gonben', meaning: 'palavras, dizer' },
-      { char: '売', name: 'uru', meaning: 'vender' }
-    ],
-    mnemonic: 'Um vendedor falando e lendo as palavras do seu folheto em voz alta para atrair clientes.'
-  },
-  '書': {
-    parts: [
-      { char: '聿', name: 'fude', meaning: 'pincel' },
-      { char: '曰', name: 'etsu', meaning: 'dizer' }
-    ],
-    mnemonic: 'Usar um pincel para registrar no papel aquilo que alguém disse em voz alta.'
-  },
-  '話': {
-    parts: [
-      { char: '言', name: 'gonben', meaning: 'palavras' },
-      { char: '舌', name: 'shita', meaning: 'língua' }
-    ],
-    mnemonic: 'Basta apenas usar as palavras junto com o movimento da língua que surge a conversa.'
-  },
-
-  // ─── N4 KANJIS (1-30) ───
-  '会': {
-    parts: [
-      { char: '人', name: 'yane (pessoa)', meaning: 'pessoas juntas, telhado' },
-      { char: '云', name: 'iu', meaning: 'nuvem / dizer' }
-    ],
-    mnemonic: 'Várias pessoas sob o mesmo teto conversando e discutindo ideias em uma reunião.'
-  },
-  '社': {
-    parts: [
-      { char: '礻', name: 'shimesuhen', meaning: 'altar, espíritos, indicar' },
-      { char: '土', name: 'tsuchi', meaning: 'terra, chão' }
-    ],
-    mnemonic: 'Um altar colocado na terra abençoada, representando primeiro um templo e depois a "companhia" ou empresa que se reúne.'
-  },
-  '電': {
-    parts: [
-      { char: '雨', name: 'amekanmuri', meaning: 'chuva' },
-      { char: '申', name: 'maosu', meaning: 'dizer / estender (antigamente relâmpago)' }
-    ],
-    mnemonic: 'O relâmpago (energia) brilhando rapidamente durante uma forte tempestade com chuva.'
-  },
-  '話す': {
-    parts: [
-      { char: '言', name: 'gonben', meaning: 'palavras' },
-      { char: '舌', name: 'shita', meaning: 'língua' }
-    ],
-    mnemonic: 'Usar as palavras junto com o movimento da língua para falar ou conversar.'
-  },
-  '食べる': {
-    parts: [
-      { char: '𠆢', name: 'yane', meaning: 'teto, pessoa' },
-      { char: '良', name: 'yoi', meaning: 'bom' }
-    ],
-    mnemonic: 'Reunir as pessoas debaixo de um teto para consumir algo bom (comida).'
-  },
-  '飲む': {
-    parts: [
-      { char: '食', name: 'shokuhen', meaning: 'comida, comer' },
-      { char: '欠', name: 'akubi', meaning: 'abrir a boca, falta' }
-    ],
-    mnemonic: 'Abrir amplamente a boca para ingerir um alimento líquido, bebendo.'
-  },
-  '見る': {
-    parts: [
-      { char: '目', name: 'me', meaning: 'olho' },
-      { char: '儿', name: 'ninnyo', meaning: 'pernas' }
-    ],
-    mnemonic: 'Um olho com pernas indo ativamente a diversos lugares com o propósito de observar e ver tudo.'
-  },
-  '来る': {
-    parts: [
-      { char: '木', name: 'moku', meaning: 'árvore, madeira' },
-      { char: '丷', name: 'hachi', meaning: 'trigo (no topo antigo), direção externa' }
-    ],
-    mnemonic: 'Uma planta que se assemelha a uma espiga de trigo que veio de longe.'
-  },
-  '行く': {
-    parts: [
-      { char: '彳', name: 'gyouninben', meaning: 'passos' },
-      { char: '亍', name: 'teku', meaning: 'passos adiante' }
-    ],
-    mnemonic: 'Passos esquerdo e direito caminhando firmes por uma encruzilhada para ir a algum lugar.'
-  },
-  '帰る': {
-    parts: [
-      { char: '刂', name: 'ritto', meaning: 'faca, facção' },
-      { char: 'ヨ', name: 'yo', meaning: 'vassoura / voltar' },
-      { char: '冖', name: 'wakanmuri', meaning: 'cobertura' }
-    ],
-    mnemonic: 'Afastar ativamente os obstáculos para arrumar as malas e retornar em segurança para casa sob seu próprio teto.'
-  },
-  '入る': {
-    parts: [{ char: '入', name: 'iru', meaning: 'entrar' }],
-    mnemonic: 'A imagem de uma ponta de lança ou pessoa forçando a entrada, empurrando algo.'
-  },
-  '出る': {
-    parts: [
-      { char: '山', name: 'yama', meaning: 'montanha' },
-      { char: '山', name: 'yama', meaning: 'montanha' }
-    ],
-    mnemonic: 'O formato de uma montanha encavalada sobre a outra simulando plantas saindo do chão para cima.'
-  },
-  '読む': {
-    parts: [
-      { char: '言', name: 'gonben', meaning: 'palavras, dizer' },
-      { char: '売', name: 'uru', meaning: 'vender' }
-    ],
-    mnemonic: 'Palavras sendo faladas como se um vendedor as anunciasse, simulando a leitura em voz alta.'
-  },
-  '書く': {
-    parts: [
-      { char: '聿', name: 'fude', meaning: 'pincel' },
-      { char: '曰', name: 'etsu', meaning: 'dizer' }
-    ],
-    mnemonic: 'Alguém firmemente segurando um pincel e registrando o que foi dito.'
-  },
-  '聞く': {
-    parts: [
-      { char: '門', name: 'mon', meaning: 'portões' },
-      { char: '耳', name: 'mimi', meaning: 'orelha' }
-    ],
-    mnemonic: 'Uma orelha perfeitamente pressionada no buraco do portão prestando atenção com vontade de ouvir algo ou até perguntar.'
-  },
-  '言う': {
-    parts: [
-      { char: '口', name: 'kuchi', meaning: 'boca' },
-      { char: '一', name: 'ichi', meaning: 'uma (linha de som)' }
-    ],
-    mnemonic: 'O desenho de uma boca com ondas sonoras ou palavras escapando por cima ao dizer algo.'
-  },
-  '買う': {
-    parts: [
-      { char: '罒', name: 'amigashira', meaning: 'rede' },
-      { char: '貝', name: 'kai', meaning: 'concha, dinheiro' }
-    ],
-    mnemonic: 'Lançar uma grande rede para reunir e obter objetos usando conchas (dinheiro da antiguidade) como forma de comprar.'
-  },
-  '休む': {
-    parts: [
-      { char: '亻', name: 'ninben', meaning: 'pessoa' },
-      { char: '木', name: 'moku', meaning: 'árvore' }
-    ],
-    mnemonic: 'A imagem pacífica de uma pessoa que decidiu encostar no tronco de uma árvore para descansar.'
-  },
-  '立つ': {
-    parts: [{ char: '立', name: 'tatsu', meaning: 'pôr-se de pé' }],
-    mnemonic: 'O retrato de uma pessoa em pé com os dois braços caídos ao longo do corpo no chão.'
-  },
-  '新しい': {
-    parts: [
-      { char: '立', name: 'tatsu', meaning: 'em pé / pimenta' },
-      { char: '木', name: 'ki', meaning: 'árvore' },
-      { char: '斤', name: 'ono', meaning: 'machado' }
-    ],
-    mnemonic: 'Usar um machado afiado em uma grande árvore em pé para produzir madeira limpa e totalmente nova.'
-  },
-  '古い': {
-    parts: [
-      { char: '十', name: 'juu', meaning: 'dez' },
-      { char: '口', name: 'kuchi', meaning: 'boca, gerações' }
-    ],
-    mnemonic: 'Aquilo que foi repassado através da boca ao longo de mais de dez gerações é naturalmente velho e antigo.'
-  },
-  '多い': {
-    parts: [
-      { char: '夕', name: 'yuu', meaning: 'tarde, entardecer' },
-      { char: '夕', name: 'yuu', meaning: 'tarde, entardecer' }
-    ],
-    mnemonic: 'Empilhar incontáveis crepúsculos um em cima do outro, indicando que o tempo e a quantidade são muitos.'
-  },
-  '少ない': {
-    parts: [
-      { char: '小', name: 'shou', meaning: 'pequeno' },
-      { char: '丿', name: 'no', meaning: 'marcação, divisão' }
-    ],
-    mnemonic: 'Tentar dividir ou cortar o que já é bem pequeno o torna extremamente pouco.'
-  },
-  '早い': {
-    parts: [
-      { char: '日', name: 'hi', meaning: 'sol' },
-      { char: '十', name: 'juu', meaning: 'cem, agulha, talo' }
-    ],
-    mnemonic: 'O grande sol da manhã subindo acima dos talos do campo muito cedo.'
-  },
-  '遅い': {
-    parts: [
-      { char: '辶', name: 'shinnyou', meaning: 'caminho, movimento' },
-      { char: '犀', name: 'sai', meaning: 'rinoceronte / gado lento' }
-    ],
-    mnemonic: 'Fazer uma viagem caminhando sobre algo muito rústico e devagar, como se fosse atrás de gado, o que faz tudo ficar tarde e atrasado.'
-  },
-  '近い': {
-    parts: [
-      { char: '辶', name: 'shinnyou', meaning: 'caminho' },
-      { char: '斤', name: 'ono', meaning: 'machado' }
-    ],
-    mnemonic: 'Pelo caminho, você precisou cortar uma distância tão curta que precisou de apenas uma machadada para ficar perto.'
-  },
-  '遠い': {
-    parts: [
-      { char: '辶', name: 'shinnyou', meaning: 'caminho' },
-      { char: '袁', name: 'en', meaning: 'longa vestimenta fluida' }
-    ],
-    mnemonic: 'Alguém com longas roupas fluidas que vão arrastando e se alongando cada vez mais no caminho rumo a um lugar distante.'
-  },
-  '右': {
-    parts: [
-      { char: '𠂇', name: 'te', meaning: 'mão direita' },
-      { char: '口', name: 'kuchi', meaning: 'boca' }
-    ],
-    mnemonic: 'A mão dominante direita conduzindo o alimento até a boca.'
-  },
-  '左': {
-    parts: [
-      { char: '𠂇', name: 'te', meaning: 'mão esquerda' },
-      { char: '工', name: 'kou', meaning: 'ferramenta, ofício' }
-    ],
-    mnemonic: 'A mão esquerda apoiando e conduzindo a ferramenta durante o trabalho.'
-  },
-  '北': {
-    parts: [
-      { char: '匕', name: 'hi', meaning: 'pessoa (virada)' },
-      { char: '匕', name: 'hi', meaning: 'pessoa' }
-    ],
-    mnemonic: 'Duas pessoas sentadas uma de costas para a outra no norte frio, evitando o vento que congela.'
-  },
-  '南': {
-    parts: [
-      { char: '十', name: 'juu', meaning: 'dez, agulha' },
-      { char: '冂', name: 'keigamae', meaning: 'fronteira' },
-      { char: '¥', name: 'en', meaning: 'moeda (interior variante de ovelha)' }
-    ],
-    mnemonic: 'A agulha da bússola apontando dentro da cerca para o sul quente e ensolarado.'
-  },
-  '東': {
-    parts: [
-      { char: '木', name: 'ki', meaning: 'árvore' },
-      { char: '日', name: 'hi', meaning: 'sol' }
-    ],
-    mnemonic: 'O sol nascendo por trás de uma árvore indica o amanhecer no leste.'
-  },
-  '西': {
-    parts: [
-      { char: '襾', name: 'nishi', meaning: 'ninho, cobrir' },
-      { char: '八', name: 'hachi', meaning: 'dividir / pernas' }
-    ],
-    mnemonic: 'Os pássaros voltando aos seus ninhos empoleirados quando o sol se põe no oeste.'
-  },
-  '前': {
-    parts: [
-      { char: '丷', name: 'hachi', meaning: 'chifres' },
-      { char: '一', name: 'ichi', meaning: 'linha' },
-      { char: '月', name: 'tsuki', meaning: 'lua / corpo' },
-      { char: '刂', name: 'ritto', meaning: 'faca' }
-    ],
-    mnemonic: 'Preparar a faca (espada) em *frente* ao corpo antes de avançar para a batalha.'
-  },
-  '後ろ': {
-    parts: [
-      { char: '彳', name: 'gyouninben', meaning: 'passos' },
-      { char: '幺', name: 'itogashira', meaning: 'fio, pequeno' },
-      { char: '夂', name: 'nomofuyu', meaning: 'andar devagar' }
-    ],
-    mnemonic: 'Andar com passos pequenos e devagar faz você ficar muito atrás dos outros.'
-  },
-  '今': {
-    parts: [
-      { char: '𠆢', name: 'yane', meaning: 'reunir, teto' },
-      { char: '一', name: 'ichi', meaning: 'um' },
-      { char: 'フ', name: 'fu', meaning: 'agora (curva)' }
-    ],
-    mnemonic: 'Reunir todas as coisas aqui e neste exato momento presente: o "agora".'
-  },
-  '毎': {
-    parts: [
-      { char: '𠂉', name: 'kanmuri', meaning: 'pessoa (mãe deitada)' },
-      { char: '母', name: 'haha', meaning: 'mãe' }
-    ],
-    mnemonic: 'A mãe cuidadosa sempre fazendo a mesma coisa de forma dedicada todo, *cada* dia.'
-  },
-  '週': {
-    parts: [
-      { char: '辶', name: 'shinnyou', meaning: 'caminho' },
-      { char: '周', name: 'shuu', meaning: 'dar a volta, ciclo' }
-    ],
-    mnemonic: 'O sol caminhando e dando a volta completa de 7 dias descreve uma semana.'
-  },
-  '朝': {
-    parts: [
-      { char: '十', name: 'juu', meaning: 'grama (antigamente)' },
-      { char: '日', name: 'hi', meaning: 'sol' },
-      { char: '月', name: 'tsuki', meaning: 'lua' }
-    ],
-    mnemonic: 'Aquele momento raro de manhã em que o sol já se levantou na grama, mas a lua ainda está no céu.'
-  },
-  '夜': {
-    parts: [
-      { char: '亠', name: 'nabebuta', meaning: 'cabeça, noite' },
-      { char: '亻', name: 'ninben', meaning: 'pessoa' },
-      { char: '夕', name: 'yuu', meaning: 'entardecer' },
-      { char: '乀', name: 'migi', meaning: 'perna longa' }
-    ],
-    mnemonic: 'Uma pessoa estendendo totalmente sua perna para relaxar logo após o anoitecer.'
-  },
-  '半': {
-    parts: [
-      { char: '丷', name: 'hachi', meaning: 'dividir' },
-      { char: '二', name: 'ni', meaning: 'dois' },
-      { char: '丨', name: 'tate-bou', meaning: 'linha de corte' }
-    ],
-    mnemonic: 'Uma grande faca cortando as duas linhas perfeitamente pelo meio (metade).'
-  },
-  '何': {
-    parts: [
-      { char: '亻', name: 'ninben', meaning: 'pessoa' },
-      { char: '可', name: 'ka', meaning: 'possível, o quê, aprovar' }
-    ],
-    mnemonic: 'Uma pessoa carregando uma caixa e você pergunta "O que é possível ser isso nas mãos dele?".'
-  },
-  '名前': {
-    parts: [
-      { char: '名', name: 'na', meaning: 'nome' },
-      { char: '前', name: 'mae', meaning: 'antes, frente' }
-    ],
-    mnemonic: 'No Japão, o "nome" que você escreve e chama é falado sempre *antes* (a frente) de qualquer título.'
-  },
-  '友達': {
-    parts: [
-      { char: '友', name: 'tomo', meaning: 'amigo' },
-      { char: '達', name: 'tachi', meaning: 'plural, alcançar' }
-    ],
-    mnemonic: 'Diversos amigos caminhando juntos lado a lado para alcançar seus sonhos (plural de amigos).'
-  },
-  '安全': {
-    parts: [
-      { char: '安', name: 'an', meaning: 'paz, calmo' },
-      { char: '全', name: 'zen', meaning: 'completo, todo' }
-    ],
-    mnemonic: 'Uma mulher debaixo do teto protegida traz "paz" e o rei debaixo do teto é "total", a união é "segurança".'
-  },
-  '高校': {
-    parts: [
-      { char: '高', name: 'kou', meaning: 'alto' },
-      { char: '校', name: 'kou', meaning: 'escola' }
-    ],
-    mnemonic: 'A escola de nível mais alto onde os adolescentes estudam para a faculdade.'
-  },
-  '図書館': {
-    parts: [
-      { char: '図', name: 'to', meaning: 'diagrama, mapa' },
-      { char: '書', name: 'sho', meaning: 'escrever' },
-      { char: '館', name: 'kan', meaning: 'salão, prédio' }
-    ],
-    mnemonic: 'O grande edifício (salão) feito especialmente para armazenar diagramas e escritos.'
-  },
-  '勉強': {
-    parts: [
-      { char: '勉', name: 'ben', meaning: 'esforço, trabalho duro' },
-      { char: '強', name: 'kyou', meaning: 'forte' }
-    ],
-    mnemonic: 'Somente se esforçando muito e usando força de vontade você consegue "estudar" com consistência.'
-  },
-  '仕事': {
-    parts: [
-      { char: '仕', name: 'shi', meaning: 'servir, fazer' },
-      { char: '事', name: 'goto', meaning: 'coisa, assunto, tarefa' }
-    ],
-    mnemonic: 'Servir a sociedade fazendo tarefas e prestando serviços configura um "trabalho".'
-  },
-  '電車': {
-    parts: [
-      { char: '電', name: 'den', meaning: 'eletricidade' },
-      { char: '車', name: 'sha', meaning: 'veículo' }
-    ],
-    mnemonic: 'O veículo comprido e com muitos vagões movido a eletricidade (trem).'
-  },
-  '病院': {
-    parts: [
-      { char: '病', name: 'byou', meaning: 'doente' },
-      { char: '院', name: 'in', meaning: 'instituição, pátio' }
-    ],
-    mnemonic: 'A grande instituição oficial de saúde desenhada para acolher as pessoas doentes.'
-  },
-  '思う': {
-    parts: [
-      { char: '田', name: 'ta', meaning: 'campo móvel / cérebro' },
-      { char: '心', name: 'kokoro', meaning: 'coração' }
-    ],
-    mnemonic: 'Os antigos japoneses acreditavam que processar algo no cérebro e no coração representava "pensar".'
-  },
-  '知る': {
-    parts: [
-      { char: '矢', name: 'ya', meaning: 'flecha' },
-      { char: '口', name: 'kuchi', meaning: 'boca' }
-    ],
-    mnemonic: 'O conhecimento dispara de forma rápida e certeira como uma flecha saindo da boca de quem ensina.'
-  },
-  '作る': {
-    parts: [
-      { char: '亻', name: 'ninben', meaning: 'pessoa' },
-      { char: '乍', name: 'nagara', meaning: 'fazer enquanto, serrote' }
-    ],
-    mnemonic: 'Uma pessoa serrando e batendo coisas simultaneamente para construir ou "fazer" um objeto.'
-  },
-  '教える': {
-    parts: [
-      { char: '孝', name: 'kou', meaning: 'piedade filial, aprender' },
-      { char: '攵', name: 'bokuzukuri', meaning: 'bater levemente, instruir' }
-    ],
-    mnemonic: 'Um instrutor dando tapinhas encorajadores nas costas de um pequeno aluno aprendendo.'
-  },
-  '開ける': {
-    parts: [
-      { char: '門', name: 'mon', meaning: 'portão' },
-      { char: '干', name: 'kan', meaning: 'puxar, secar, escudo' }
-    ],
-    mnemonic: 'Pegar o ferrolho ou as duas abas espessas do portão puxando para deixá-lo "aberto".'
-  },
-  '閉める': {
-    parts: [
-      { char: '門', name: 'mon', meaning: 'portão' },
-      { char: '才', name: 'sai', meaning: 'tranca de madeira' }
-    ],
-    mnemonic: 'Pegar uma grande peça de madeira em formato de pino e atravessar no portão para deixá-lo "fechado".'
-  },
-  '待つ': {
-    parts: [
-      { char: '彳', name: 'gyouninben', meaning: 'passos, caminho' },
-      { char: '寺', name: 'tera', meaning: 'templo' }
-    ],
-    mnemonic: 'Parar os passos na entrada de um templo sagrado para "esperar" pacientemente o monge.'
-  },
-  '持つ': {
-    parts: [
-      { char: '扌', name: 'tehen', meaning: 'mão' },
-      { char: '寺', name: 'tera', meaning: 'templo' }
-    ],
-    mnemonic: 'Os monges tinham a mão sobre todos os relógios (marcadores de tempo), "tendo" ou segurando coisas preciosas.'
-  },
-  '使う': {
-    parts: [
-      { char: '亻', name: 'ninben', meaning: 'pessoa' },
-      { char: '吏', name: 'ri', meaning: 'oficial, mensageiro' }
-    ],
-    mnemonic: 'O ato de uma pessoa despachar um oficial para "usar" os serviços da prefeitura.'
-  },
-  '送る': {
-    parts: [
-      { char: '辶', name: 'shinnyou', meaning: 'caminho' },
-      { char: '关', name: 'sou', meaning: 'rir, tocha (variante)' }
-    ],
-    mnemonic: 'Para "enviar" a mensagem ou o mensageiro pelo caminho, eles seguram uma grande tocha.'
-  },
-  '着く': {
-    parts: [
-      { char: '羊', name: 'hitsuji', meaning: 'ovelha' },
-      { char: '目', name: 'me', meaning: 'olho' }
-    ],
-    mnemonic: 'O pastor vestindo lã de ovelha (roupas) e usando os olhos para ver se a ovelha "chega" ao pasto.'
-  },
-  '走る': {
-    parts: [
-      { char: '土', name: 'tsuchi', meaning: 'terra, chão' },
-      { char: '疋', name: 'hiki', meaning: 'pé em ação' }
-    ],
-    mnemonic: 'A imagem de uma pessoa avançando com o pé no chão aterrorizada (como se estivesse pisando), correndo.'
-  },
-  '売る': {
-    parts: [
-      { char: '士', name: 'shi', meaning: 'guerreiro, intelectual' },
-      { char: '冖', name: 'wakanmuri', meaning: 'teto' },
-      { char: '儿', name: 'ninnyo', meaning: 'pernas' }
-    ],
-    mnemonic: 'Aquele guerreiro sob o teto da tenda mostrando suas coisas aos passantes (pernas) para "vender".'
-  },
-  '借りる': {
-    parts: [
-      { char: '亻', name: 'ninben', meaning: 'pessoa' },
-      { char: '昔', name: 'mukashi', meaning: 'antiguidade, tempo longo' }
-    ],
-    mnemonic: 'Uma pessoa que pediu algo emprestado por um bom e longo tempo desde as eras antigas.'
-  },
-  '切る': {
-    parts: [
-      { char: '七', name: 'shichi', meaning: 'sete (modificado p/ corte)' },
-      { char: '刀', name: 'katana', meaning: 'espada, faca' }
-    ],
-    mnemonic: 'Sete poderosos e rápidos golpes seguidos feitos usando uma faca afiada para "cortar" algo.'
-  },
-  '広い': {
-    parts: [
-      { char: '广', name: 'madare', meaning: 'salão espaçoso, caverna' },
-      { char: 'ム', name: 'mu', meaning: 'privado / cotovelo' }
-    ],
-    mnemonic: 'Um salão gigante onde você pode esticar os dois cotovelos completamente porque é mito *espaçoso*.'
-  },
-  '強い': {
-    parts: [
-      { char: '弓', name: 'yumi', meaning: 'arco' },
-      { char: 'ム', name: 'mu', meaning: 'cotovelo, dobrar' },
-      { char: '虫', name: 'mushi', meaning: 'inseto (antigo cavalo)' }
-    ],
-    mnemonic: 'Um arco flexível puxado pelo cotovelo do guerreiro com uma destreza de inseto é extremamente "forte".'
-  },
-  '弱い': {
-    parts: [
-      { char: '弓', name: 'yumi', meaning: 'arco' },
-      { char: '彡', name: 'san-zukuri', meaning: 'pelos / asas pequenas' }
-    ],
-    mnemonic: 'Dois (repetidos) arcos extremamente minúsculos e flexíveis igual penas que atiram sem impacto, muito fracos.'
-  },
-  '正しい': {
-    parts: [
-      { char: '一', name: 'ichi', meaning: 'um (linha de chegada)' },
-      { char: '止', name: 'tomeru', meaning: 'parar, pisada' }
-    ],
-    mnemonic: 'Pisar perfeitamente na linha reta da moral, da verdade, a conduta correta na sociedade.'
-  },
-  '家': {
-    parts: [
-      { char: '宀', name: 'ukanmuri', meaning: 'teto' },
-      { char: '豕', name: 'inoko', meaning: 'porco' }
-    ],
-    mnemonic: 'Antigamente, você tinha que morar sob um teto tendo um porco criado na cozinha para manter a "casa" e o lar.'
-  },
-  '地': {
-    parts: [
-      { char: '土', name: 'tsuchi', meaning: 'terra' },
-      { char: '也', name: 'ya', meaning: 'escorpião / espalhar' }
-    ],
-    mnemonic: 'A imagem da terra se espalhando horizontalmente e verticalmente como uma cordilheira até onde a vista alcança (solo/lugar).'
-  },
-  '工': {
-    parts: [{ char: '工', name: 'kou', meaning: 'pilar de sustentação, trabalho' }],
-    mnemonic: 'Um pilar erguido no chão para sustentar o teto. Símbolo do construtor e engenheiro de obras.'
-  },
-  '自': {
-    parts: [{ char: '自', name: 'ji', meaning: 'nariz, o próprio' }],
-    mnemonic: 'Um close do nariz em uma face. No Japão como no oriente, apontar pro nariz significa "Eu próprio".'
-  },
-  '世': {
-    parts: [{ char: '世', name: 'se', meaning: 'mundo, geração' }],
-    mnemonic: 'A junção e ramificação de 3 cruzes (trinta) indicando um período normal de trinta anos para repassar as coisas ao globo: uma geração.'
-  },
-  '運': {
-    parts: [
-      { char: '辶', name: 'shinnyou', meaning: 'caminho' },
-      { char: '軍', name: 'gun', meaning: 'exército / carruagem com teto (車+冖)' }
-    ],
-    mnemonic: 'Movimentar imensos exércitos caminhando do oriente para cá "transportando" coisas. Requer muita sorte militar.'
-  },
-  '転': {
-    parts: [
-      { char: '車', name: 'kuruma', meaning: 'carro, veículo' },
-      { char: '云', name: 'iu', meaning: 'nuvem (rodopiando)' }
-    ],
-    mnemonic: 'Um carro no qual a roda está rodopiando tão ferozmente que parece rodar, rolar e girar igual uma nuvem solta e transferir o veículo.'
-  },
-  '色': {
-    parts: [
-      { char: 'ク', name: 'ku', meaning: 'vínculo, segurar (topo)' },
-      { char: '巴', name: 'tomoe', meaning: 'cauda chata / corpo humano' }
-    ],
-    mnemonic: 'Historicamente o blush e a maquiagem para colorir o corpo era aplicado pelas pessoas. A fisionomia de rosto colorido, a cor.'
-  },
-  '同': {
-    parts: [
-      { char: '冂', name: 'keigamae', meaning: 'contorno externo / tampa' },
-      { char: '一', name: 'ichi', meaning: 'um' },
-      { char: '口', name: 'kuchi', meaning: 'boca' }
-    ],
-    mnemonic: 'Toda a caixa tendo "uma mesma boca", uma mesma regra e um mesmo compasso para estar harmonioso (igual).'
-  },
-  '場': {
-    parts: [
-      { char: '土', name: 'tsuchi', meaning: 'terra' },
-      { char: '昜', name: 'you', meaning: 'sol brilhante, local amplo' }
-    ],
-    mnemonic: 'A imagem de uma grande terra ou praça onde os fortes raios de sol brilham (como um estádio): um local.'
-  },
-  '所': {
-    parts: [
-      { char: '戸', name: 'ko', meaning: 'porta, aba' },
-      { char: '斤', name: 'ono', meaning: 'machado' }
-    ],
-    mnemonic: 'O "local" específico na casa (perto da porta) onde fica protegido ou erguido o pesado machado.'
-  },
-  '死': {
-    parts: [
-      { char: '歹', name: 'gatsuhen', meaning: 'ossos pélvicos, morte' },
-      { char: '匕', name: 'hi', meaning: 'pessoa ajoelhada, cauda' }
-    ],
-    mnemonic: 'O lamentável instante onde restam apenas restos mortais (ossos) ao lado de uma pessoa prostrada no chão, indicando a morte.'
-  },
-  '通': {
-    parts: [
-      { char: '辶', name: 'shinnyou', meaning: 'caminho' },
-      { char: '甬', name: 'you', meaning: 'tubo, caminho cilíndrico' }
-    ],
-    mnemonic: 'Passar por caminhos e vias expressas (como que fluindo por um grande túnel e tubo sem bloqueios), ir pelo trajeto.'
-  },
-  '考える': {
-    parts: [
-      { char: '老', name: 'oi', meaning: 'velho (topo modificado)' },
-      { char: '丂', name: 'kou', meaning: 'bengala, ar superior' }
-    ],
-    mnemonic: 'Um mestre ancião velho inclinado e amparado em sua bengala focando toda a sua experiência do ambiente em uma profunda reflexão e reflexão em pensamento.'
-  },
-  '届ける': {
-    parts: [
-      { char: '尸', name: 'shikabane', meaning: 'telhado envergado' },
-      { char: '由', name: 'yuu', meaning: 'brotar, chegar na ponta' }
-    ],
-    mnemonic: 'Chegar na varanda, sob uma abóbada com os documentos. Deixar despontar a sua chegada, uma encomenda ou pedido (notificando).'
-  },
-
-  // ─── N3 KANJIS (1-30) ───
-  '明るい': {
-    parts: [
-      { char: '日', name: 'hi', meaning: 'sol' },
-      { char: '月', name: 'tsuki', meaning: 'lua' }
-    ],
-    mnemonic: 'Quando o sol e a lua aparecem juntos no céu, a claridade é total, o lugar fica muito "claro" e iluminado.'
-  },
-  '悪い': {
-    parts: [
-      { char: '亜', name: 'a', meaning: 'subordinado, deformado' },
-      { char: '心', name: 'kokoro', meaning: 'coração' }
-    ],
-    mnemonic: 'Um coração deformado ou desvirtuado que só consegue emitir energias "ruins".'
-  },
-  '意味': {
-    parts: [
-      { char: '意', name: 'i', meaning: 'intenção, ideia' },
-      { char: '味', name: 'mi', meaning: 'sabor, gosto' }
-    ],
-    mnemonic: 'Aquele "sabor e sentido" escondido por trás das palavras traz o significado real da ação.'
-  },
-  '運動': {
-    parts: [
-      { char: '運', name: 'un', meaning: 'transportar, sorte' },
-      { char: '動', name: 'dou', meaning: 'movimento, agir' }
-    ],
-    mnemonic: 'A junção entre mover as suas pernas e transportar ativamente o seu corpo que constitui o exercício físico.'
-  },
-  '映画': {
-    parts: [
-      { char: '映', name: 'ei', meaning: 'refletir' },
-      { char: '画', name: 'ga', meaning: 'figura, pintura' }
-    ],
-    mnemonic: 'As figuras (pinturas) sendo ativamente "refletidas" e projetadas na grande tela formam um filme no cinema.'
-  },
-  '音楽': {
-    parts: [
-      { char: '音', name: 'on', meaning: 'som' },
-      { char: '楽', name: 'gaku', meaning: 'divertido, conforto' }
-    ],
-    mnemonic: 'Sons muito bonitos que produzem diversão e alegria genuína aos nossos ouvidos: a "música".'
-  },
-  '感じ': {
-    parts: [
-      { char: '感', name: 'kan', meaning: 'emoção, sentir' }
-    ],
-    mnemonic: 'A parte de baixo (心) é o coração, que reage aos sentimentos fortes transmitindo a "sensação".'
-  },
-  '急ぐ': {
-    parts: [
-      { char: 'ク', name: 'ku', meaning: 'dobrar-se' },
-      { char: 'ヨ', name: 'keigamae', meaning: 'cabeça do porco (variante)' },
-      { char: '心', name: 'kokoro', meaning: 'coração' }
-    ],
-    mnemonic: 'Seu coração desabalado e suado como uma fera querendo apressar as coisas rapidamente.'
-  },
-  '好き': {
-    parts: [
-      { char: '女', name: 'onna', meaning: 'mulher' },
-      { char: '子', name: 'ko', meaning: 'criança' }
-    ],
-    mnemonic: 'A cena calorosa de uma mulher abraçando forte sua criança representa a afeição de "gostar" de alguém.'
-  },
-  '心配': {
-    parts: [
-      { char: '心', name: 'shin', meaning: 'coração' },
-      { char: '配', name: 'hai', meaning: 'distribuir, entregar' }
-    ],
-    mnemonic: 'Gastar e ceder um pouco da energia do nosso próprio coração em consideração e preocupação por outra pessoa.'
-  },
-  '始める': {
-    parts: [
-      { char: '女', name: 'onna', meaning: 'mulher' },
-      { char: '台', name: 'dai', meaning: 'plataforma, pedestal' }
-    ],
-    mnemonic: 'Na antiguidade, a filha primogênita subindo ao pedestal do altar para "começar" o festival sagrado da casa.'
-  },
-  '勝つ': {
-    parts: [
-      { char: '月', name: 'tsuki', meaning: 'carne, corpo' },
-      { char: '券', name: 'tsutsumi', meaning: 'enrolar, bilhete / força' }
-    ],
-    mnemonic: 'Usar intensamente o seu corpo com a força das duas mãos no topo para prevalecer aos outros e vencer a luta.'
-  },
-  '色々': {
-    parts: [
-      { char: '色', name: 'iro', meaning: 'cor' }
-    ],
-    mnemonic: 'Um espectro muito longo com todas as cores do arco-íris, significando algo diverso e múltiplo.'
-  },
-  '集める': {
-    parts: [
-      { char: '隹', name: 'furutori', meaning: 'pássaro antigo' },
-      { char: '木', name: 'moku', meaning: 'árvore' }
-    ],
-    mnemonic: 'Muitos passarinhos piando felizes escolhendo se "reunir" e sentar nos mesmos galhos de uma grande árvore.'
-  },
-  '重い': {
-    parts: [
-      { char: '千', name: 'sen', meaning: 'mil' },
-      { char: '里', name: 'sato', meaning: 'vila, campo, peso' }
-    ],
-    mnemonic: 'Alguém que precisa carregar algo valendo mais de mil moedas de bronze por muitas léguas pela vila: vai ficar muito "pesado".'
-  },
-  '春': {
-    parts: [
-      { char: '三', name: 'san', meaning: 'três, raios de sol abundantes' },
-      { char: '人', name: 'hito', meaning: 'pessoa (espalhado)' },
-      { char: '日', name: 'hi', meaning: 'sol' }
-    ],
-    mnemonic: 'O tempo onde após o inverno congelante, o esplendoroso sol acorda para brilhar sob a relva, florescendo a "primavera".'
-  },
-  '転ぶ': {
-    parts: [
-      { char: '車', name: 'kuruma', meaning: 'carro' },
-      { char: '云', name: 'iu', meaning: 'nuvem, rodopiar' }
-    ],
-    mnemonic: 'O carro que derrapa fora de controle rodopiando feito nuvem e tomba capotando no meio da estrada.'
-  },
-  '通る': {
-    parts: [
-      { char: '辶', name: 'shinnyou', meaning: 'caminho' },
-      { char: '甬', name: 'you', meaning: 'túnel, tubo' }
-    ],
-    mnemonic: 'Atravessar caminhando pelo tubo aberto (um grande túnel limpo), tendo licença para "passar".'
-  },
-  '特別': {
-    parts: [
-      { char: '特', name: 'toku', meaning: 'especial, touro' },
-      { char: '別', name: 'betsu', meaning: 'separar' }
-    ],
-    mnemonic: 'Naquela vila separaram um grande e majestoso boi (vaca/touro) no templo porque aquilo era algo super "especial".'
-  },
-  '難しい': {
-    parts: [
-      { char: '堇', name: 'kin', meaning: 'homem secando algo no fogo (sofrimento)' },
-      { char: '隹', name: 'furutori', meaning: 'pássaro pequeno' }
-    ],
-    mnemonic: 'Um pássaro assustado diante do longo sofrimento da seca tenta decolar no fogo, descobrindo que seria incrivelmente "difícil".'
-  },
-  '熱い': {
-    parts: [
-      { char: '埶', name: 'gei', meaning: 'esforço, agilidade' },
-      { char: '灬', name: 'rekka', meaning: 'fogo' }
-    ],
-    mnemonic: 'Um exército empunhando tochas muito perigosas e fogos por baixo se esforçando ao máximo; está muito "quente".'
-  },
-  '病気': {
-    parts: [
-      { char: '疒', name: 'yamaidare', meaning: 'doença, cama de doente' },
-      { char: '気', name: 'ki', meaning: 'energia' }
-    ],
-    mnemonic: 'A energia interna (気) está enfraquecida deixando o corpo forçosamente na cama sofrendo o cansaço da "doença".'
-  },
-  '服': {
-    parts: [
-      { char: '月', name: 'tsuki', meaning: 'corpo, carne' },
-      { char: '卩', name: 'fushizukuri', meaning: 'selo' },
-      { char: '又', name: 'mata', meaning: 'fazer dinamicamente' }
-    ],
-    mnemonic: 'O ofício de medir e costurar selando perfeitamente os tecidos rentes ao corpo humano. O resultado são as "roupas".'
-  },
-  '物語': {
-    parts: [
-      { char: '物', name: 'mono', meaning: 'coisa' },
-      { char: '語', name: 'go', meaning: 'fala, conto' }
-    ],
-    mnemonic: 'Toda narrativa fantástica e história épica contada pelas pessoas desde os primórdios (uma história e conto).'
-  },
-  '有名': {
-    parts: [
-      { char: '有', name: 'yuu', meaning: 'possuir, ter' },
-      { char: '名', name: 'mei', meaning: 'nome' }
-    ],
-    mnemonic: 'Quando a figura de alguém tem grande alcance possuindo um grandioso "nome", ela se consagra como celebridade (famoso).'
-  },
-  '理由': {
-    parts: [
-      { char: '理', name: 'ri', meaning: 'lógica, arranjo das joias' },
-      { char: '由', name: 'yuu', meaning: 'brotar dali, causa original' }
-    ],
-    mnemonic: 'Encontrar com exatidão onde e por onde brotou logicamente toda aquela situação é descobrir o "motivo e razão".'
-  },
-  '力': {
-    parts: [{ char: '力', name: 'chikara', meaning: 'força' }],
-    mnemonic: 'O desenho de um braço musculoso de um homem fletindo os músculos até inchar as veias (esbanjando muita força).'
-  },
-  '全部': {
-    parts: [
-      { char: '全', name: 'zen', meaning: 'todo, completo' },
-      { char: '部', name: 'bu', meaning: 'parte, seção' }
-    ],
-    mnemonic: 'Reunir *todas as partes* formando uma coisa única constitui o "todo" ou a totalidade.'
-  },
-  '努力': {
-    parts: [
-      { char: '努', name: 'do', meaning: 'esforçar-se' },
-      { char: '力', name: 'ryoku', meaning: 'força' }
-    ],
-    mnemonic: 'A mulher que usa grande força e flexiona os músculos incessantemente se "esforça" de verdade.'
-  },
-  '親切': {
-    parts: [
-      { char: '親', name: 'shin', meaning: 'íntimo, pais' },
-      { char: '切', name: 'setsu', meaning: 'cortar / urgente' }
-    ],
-    mnemonic: 'No Japão rural, cortar a comida para dar e cuidar de perto dos seus pais representava a maior gentileza e bondade.'
-  },
-  '安心': {
-    parts: [
-      { char: '安', name: 'an', meaning: 'paz, sossego' },
-      { char: '心', name: 'shin', meaning: 'coração' }
-    ],
-    mnemonic: 'A mulher a salvo debaixo do telhado sente que seu coração bate com muita tranquilidade e "alívio".'
-  },
-  '記念': {
-    parts: [
-      { char: '記', name: 'ki', meaning: 'anotar, narrar' },
-      { char: '念', name: 'nen', meaning: 'pensamento, desejo' }
-    ],
-    mnemonic: 'Anotar os pensamentos em palavras ao longo das eras para registrar algo monumental na "memória" de todos.'
-  },
-  '合う': {
-    parts: [
-      { char: '人', name: 'yane', meaning: 'reunir, tampo' },
-      { char: '一', name: 'ichi', meaning: 'um' },
-      { char: '口', name: 'kuchi', meaning: 'boca' }
-    ],
-    mnemonic: 'Reunir todas as pessoas para falarem com a mesma (uma) boca, tudo se encaixa e as vozes "combinam".'
-  },
-  '都合': {
-    parts: [
-      { char: '都', name: 'tsu', meaning: 'capital, metrópole' },
-      { char: '合', name: 'gou', meaning: 'combinar, servir' }
-    ],
-    mnemonic: 'Na antiguidade as coisas combinavam ou convergiam perfeitamente bem ao ir em direção à metrópole (conveniência).'
-  },
-  '足りる': {
-    parts: [
-      { char: '口', name: 'kuchi', meaning: 'boca / canela' },
-      { char: '止', name: 'tomeru', meaning: 'parar, pisar' }
-    ],
-    mnemonic: 'O "pé" inteiro que pisa no chão. Terminar caminhadas e acrescentar sempre passos para tornar tudo "suficiente".'
-  },
-  '消える': {
-    parts: [
-      { char: '氵', name: 'sanzui', meaning: 'água' },
-      { char: '肖', name: 'shou', meaning: 'semelhança, pequeno / faísca' }
-    ],
-    mnemonic: 'A água derramada sobre uma pequena e semelhante faísca causando o vapor extinguir e "desaparecer" com suas chamas.'
-  },
-  '経験': {
-    parts: [
-      { char: '経', name: 'kei', meaning: 'fios, percorrer, sutras' },
-      { char: '験', name: 'ken', meaning: 'teste, cavalo' }
-    ],
-    mnemonic: 'Percorrer milhares de fios e testar seu cavalo incansáveis vezes para obter algo muito valioso: sua "experiência".'
-  },
-  '決める': {
-    parts: [
-      { char: '氵', name: 'sanzui', meaning: 'água' },
-      { char: '夬', name: 'kai', meaning: 'quebrar, decidir' }
-    ],
-    mnemonic: 'Uma grande encharcada de água rompendo um dique subitamente sem volta; o conceito imutável de "decidir".'
-  },
-  '変わる': {
-    parts: [
-      { char: '亦', name: 'eki', meaning: 'axilas (variação colorida), rastros' },
-      { char: '攵', name: 'bokuzukuri', meaning: 'ação, golpear, agir' }
-    ],
-    mnemonic: 'Agir com as mãos incessantemente moldando a argila ou pintando com cores até finalmente a transmutar e "mudar".'
-  },
-  '調べる': {
-    parts: [
-      { char: '言', name: 'gonben', meaning: 'palavras' },
-      { char: '周', name: 'shuu', meaning: 'dar a volta, completo' }
-    ],
-    mnemonic: 'Dar a volta completa lançando palavras e perguntas a todas as testemunhas a sua volta enquanto estuda e "investiga".'
-  },
-  '選ぶ': {
-    parts: [
-      { char: '辶', name: 'shinnyou', meaning: 'caminho' },
-      { char: '巽', name: 'son', meaning: 'dois suportes/selos' }
-    ],
-    mnemonic: 'Viajando pelo caminho você se depara com dois caminhos e tem que selar a escolha de um deles: "escolher".'
-  },
-  '受ける': {
-    parts: [
-      { char: '爫', name: 'tsumekanmuri', meaning: 'garras, mão de cima' },
-      { char: '冖', name: 'wakanmuri', meaning: 'cobertura' },
-      { char: '又', name: 'mata', meaning: 'mão direita, de baixo' }
-    ],
-    mnemonic: 'Duas mãos, sendo uma por cima entregando algo na cobertura enquanto a de baixo se estica para "receber".'
-  },
-  '残る': {
-    parts: [
-      { char: '歹', name: 'gatsuhen', meaning: 'ossos pélvicos, morte' },
-      { char: '戔', name: 'san', meaning: 'lanças afiadas empilhadas' }
-    ],
-    mnemonic: 'Tudo o que restou e "sobrou" da violenta batalha foram ossos despedaçados e cruéis pilhas de lanças (o saldo e os restos).'
-  },
-  '払う': {
-    parts: [
-      { char: '扌', name: 'tehen', meaning: 'mão' },
-      { char: 'ム', name: 'mu', meaning: 'cotovelo, particular, torção' }
-    ],
-    mnemonic: 'A mão empunhando, balançando em formato torcido para espanar a poeira, ou largando o dinheiro de sua mão ("pagar").'
-  },
-  '必要': {
-    parts: [
-      { char: '必', name: 'hitsu', meaning: 'completamente, fatal' },
-      { char: '要', name: 'you', meaning: 'pivotar, amarrar a cintura' }
-    ],
-    mnemonic: 'Seu coração perigosamente perfurado significa algo tão fatal que você aperta o pivô na barriga afirmando ser de necessidade "essencial".'
-  },
-  '深い': {
-    parts: [
-      { char: '氵', name: 'sanzui', meaning: 'água' },
-      { char: '穴', name: 'ana', meaning: 'caverna, buraco' },
-      { char: '木', name: 'ki', meaning: 'árvore (lenha sendo explorada)' }
-    ],
-    mnemonic: 'Uma grande expedição no meio do buraco de uma caverna em busca de água onde as árvores já sumiram e lá no fundo escuro é "profundo".'
-  },
-  '若い': {
-    parts: [
-      { char: '艹', name: 'kusakanmuri', meaning: 'flor, grama' },
-      { char: '右', name: 'migi', meaning: 'direita' }
-    ],
-    mnemonic: 'Uma direita que está flexível e esguia alcançando e brotando como ramos de grama, simbolizando algo vívido e "jovem".'
-  },
-  '危ない': {
-    parts: [
-      { char: '厄', name: 'yaku', meaning: 'infortúnio, penhasco' },
-      { char: '卩', name: 'fushizukuri', meaning: 'pessoa ajoelhada' }
-    ],
-    mnemonic: 'Ajoelhar-se trêmulo na beira de um grande penhasco sentindo que está correndo um enorme "perigo".'
-  },
-  '込む': {
-    parts: [
-      { char: '辶', name: 'shinnyou', meaning: 'caminho' },
-      { char: '入', name: 'iru', meaning: 'entrar' }
-    ],
-    mnemonic: 'Entrar pelo caminho forçadamente até o ponto do lugar ficar totalmente cheio e "abarrotado".'
-  },
-  '比べる': {
-    parts: [{ char: '比', name: 'hi', meaning: 'comparar, enfileirar' }],
-    mnemonic: 'Duas pessoas sentadas uma ao lado da outra perfeitamente alinhadas para os avaliadores poderem julgar e "comparar".'
-  },
-  '続ける': {
-    parts: [
-      { char: '糸', name: 'itohen', meaning: 'fio, linha' },
-      { char: '売', name: 'uru', meaning: 'vender' }
-    ],
-    mnemonic: 'O vendedor habilidoso puxando o longo fio da conversa ininterruptamente para conseguir efetuar uma venda ("continuar").'
-  },
-  '交通': {
-    parts: [
-      { char: '交', name: 'kou', meaning: 'cruzar, misturar' },
-      { char: '通', name: 'tsuu', meaning: 'passar, ir' }
-    ],
-    mnemonic: 'Pessoas e veículos que passam indo e cruzando as avenidas todos os dias formam o "tráfego".'
-  },
-  '経済': {
-    parts: [
-      { char: '経', name: 'kei', meaning: 'gerir, fios, passar' },
-      { char: '済', name: 'zai', meaning: 'assentar, terminar com água' }
-    ],
-    mnemonic: 'Gerir com sabedoria as coisas (fios e tecidos) para assentar os devedores e a água suja e limpar as dívidas de uma "economia".'
-  },
-  '技術': {
-    parts: [
-      { char: '技', name: 'gi', meaning: 'habilidade, dedilhar' },
-      { char: '術', name: 'jutsu', meaning: 'método, arte' }
-    ],
-    mnemonic: 'A mão (扌) e a destreza dominando a arte pelo caminho (彳) se desenvolve no mestre de ofícios como sua "tecnologia e técnica".'
-  },
-  '関係': {
-    parts: [
-      { char: '関', name: 'kan', meaning: 'conexão, portão' },
-      { char: '係', name: 'kei', meaning: 'atar, conexão pessoal' }
-    ],
-    mnemonic: 'O porteiro na guarita e os fios atados entre o líder da tropa formam uma intrínseca teia de "relações".'
-  },
-  '相談': {
-    parts: [
-      { char: '相', name: 'sou', meaning: 'mútuo, árvore e olho' },
-      { char: '談', name: 'dan', meaning: 'conversar, fala fervorosa' }
-    ],
-    mnemonic: 'Ficar debaixo da árvore olhando mutuamente nos olhos um do outro com fala e chamas na discussão resulta em um sério "conselho" ou consulta.'
-  },
-  '準備': {
-    parts: [
-      { char: '準', name: 'jun', meaning: 'nível de água, padrão' },
-      { char: '備', name: 'bi', meaning: 'equipar, preparar material' }
-    ],
-    mnemonic: 'Padronizar pelo nível da água dez ervas para estofar a sela da pessoa montada no penhasco é uma grande "preparação".'
-  },
-  '約束': {
-    parts: [
-      { char: '約', name: 'yaku', meaning: 'promessa, nó em fio' },
-      { char: '束', name: 'soku', meaning: 'amarrar um feixe, atar em volta' }
-    ],
-    mnemonic: 'Usar fios de tecido trançado enlaçados e um cinto na cintura atado em forma redonda de corda apertada amarra uma importante "promessa".'
-  },
-  '確認': {
-    parts: [
-      { char: '確', name: 'kaku', meaning: 'certeza, pássaro na pedra' },
-      { char: '認', name: 'nin', meaning: 'reconhecer, aturar a fala' }
-    ],
-    mnemonic: 'O peso da pedra é certeza. Assumir que as palavras do pássaro na pedra e uma lâmina afiada sob o coração são indícios para se "provar ou confirmar".'
-  },
-  '政治': {
-    parts: [
-      { char: '政', name: 'sei', meaning: 'política, bater reto' },
-      { char: '治', name: 'ji', meaning: 'governar, curar água' }
-    ],
-    mnemonic: 'Golpear e forçar os subordinados a andarem no caminho reto enquanto cura a inundação nas bases (com leis e governo formam "política").'
-  },
-  '文化': {
-    parts: [
-      { char: '文', name: 'bun', meaning: 'literatura, escrita' },
-      { char: '化', name: 'ka', meaning: 'transformação, pessoa morta' }
-    ],
-    mnemonic: 'As antigas escrituras mudaram e transformaram a história em tradição da sabedoria humana em prol de sua própria "cultura".'
-  },
-  '自然': {
-    parts: [
-      { char: '自', name: 'shi', meaning: 'si próprio, origem (ex. um nariz)' },
-      { char: '然', name: 'zen', meaning: 'assim também é (cão no fogo)' }
-    ],
-    mnemonic: 'Criar-se de si próprio sendo como é. Carne ou cão sobre o fogo indicava aceitação (assim é). Assim como a "natureza".'
-  },
-  '環境': {
-    parts: [
-      { char: '環', name: 'kan', meaning: 'rei e anel circular' },
-      { char: '境', name: 'kyou', meaning: 'fronteira na terra, espelho' }
-    ],
-    mnemonic: 'O anel dos reis que orbita de maneira completa delineando as fronteiras geográficas entre som e luz ditando nosso "ambiente".'
-  },
-  '将来': {
-    parts: [
-      { char: '将', name: 'shou', meaning: 'general, logo a frente' },
-      { char: '来', name: 'rai', meaning: 'vir' }
-    ],
-    mnemonic: 'Como o poderoso general avista adiante sob o sol se os reforços virão e chegarão, as previsões sobre tudo o que "virá" em um breve "futuro".'
-  },
-  '説明': {
-    parts: [
-      { char: '説', name: 'setsu', meaning: 'explicar, opinar' },
-      { char: '明', name: 'mei', meaning: 'brilhante, claro' }
-    ],
-    mnemonic: 'Na antiguidade as palavras trocadas com alegria com seu amigo e sol junto à lua nos levão ao lado "brilhante e claro" ou uma brilhante clarificação e "explicação".'
+  "一": {
+    "parts": [
+      {
+        "char": "一",
+        "name": "ichi",
+        "meaning": "um"
+      }
+    ],
+    "mnemonic": "Uma única linha horizontal representa o número um.",
+    "parts_en": [
+      "Ground"
+    ],
+    "meanings_en": [
+      "One"
+    ],
+    "mnemonic_en": "A pictograph of a one line."
+  },
+  "二": {
+    "parts": [
+      {
+        "char": "二",
+        "name": "ni",
+        "meaning": "dois"
+      }
+    ],
+    "mnemonic": "Duas linhas horizontais representam o número dois.",
+    "parts_en": [
+      "Two"
+    ],
+    "meanings_en": [
+      "Two"
+    ],
+    "mnemonic_en": "A pictograph of two lines."
+  },
+  "三": {
+    "parts": [
+      {
+        "char": "三",
+        "name": "san",
+        "meaning": "três"
+      }
+    ],
+    "mnemonic": "Três linhas horizontais representam o número três.",
+    "parts_en": [
+      "Ground",
+      "Two"
+    ],
+    "meanings_en": [
+      "Three"
+    ],
+    "mnemonic_en": "A pictograph of three lines."
+  },
+  "四": {
+    "parts": [
+      {
+        "char": "囗",
+        "name": "kuni-gamae",
+        "meaning": "caixa, contorno"
+      },
+      {
+        "char": "八",
+        "name": "hachi",
+        "meaning": "oito / dividir"
+      }
+    ],
+    "mnemonic": "Um quadrado com coisas sendo divididas dentro. Quatro lados formando uma caixa.",
+    "parts_en": [
+      "Mouth",
+      "Legs"
+    ],
+    "meanings_en": [
+      "Four"
+    ],
+    "mnemonic_en": ""
+  },
+  "五": {
+    "parts": [
+      {
+        "char": "二",
+        "name": "ni",
+        "meaning": "dois"
+      },
+      {
+        "char": "丨",
+        "name": "tate-bou",
+        "meaning": "linha vertical"
+      },
+      {
+        "char": "一",
+        "name": "ichi",
+        "meaning": "um (base)"
+      }
+    ],
+    "mnemonic": "Linhas que se cruzam conectando o céu e a terra, representando o número 5 usando a mão inteira.",
+    "parts_en": [
+      "Five"
+    ],
+    "meanings_en": [
+      "Five"
+    ],
+    "mnemonic_en": "It has five lines. It looks like a 5. It's a five."
+  },
+  "六": {
+    "parts": [
+      {
+        "char": "亠",
+        "name": "nabebuta",
+        "meaning": "tampa"
+      },
+      {
+        "char": "八",
+        "name": "hachi",
+        "meaning": "oito / pernas"
+      }
+    ],
+    "mnemonic": "Uma tampa sobre duas pernas. Um animalzinho de 6 pernas coberto.",
+    "parts_en": [
+      "Lid",
+      "Fins"
+    ],
+    "meanings_en": [
+      "Six"
+    ],
+    "mnemonic_en": ""
+  },
+  "七": {
+    "parts": [
+      {
+        "char": "一",
+        "name": "ichi",
+        "meaning": "um (horizontal)"
+      },
+      {
+        "char": "乚",
+        "name": "magari",
+        "meaning": "anzol"
+      }
+    ],
+    "mnemonic": "Uma linha sendo cortada torta, como o número 7 virado de cabeça para baixo.",
+    "parts_en": [
+      "Seven"
+    ],
+    "meanings_en": [
+      "Seven"
+    ],
+    "mnemonic_en": "If you flip it upside-down and left-to-right it looks like a seven."
+  },
+  "八": {
+    "parts": [
+      {
+        "char": "八",
+        "name": "hachi",
+        "meaning": "oito, dividir"
+      }
+    ],
+    "mnemonic": "Duas linhas se separando (dividindo), indicando os oito pontos cardeais.",
+    "parts_en": [
+      "Fins"
+    ],
+    "meanings_en": [
+      "Eight"
+    ],
+    "mnemonic_en": ""
+  },
+  "九": {
+    "parts": [
+      {
+        "char": "丿",
+        "name": "no",
+        "meaning": "linha curva (esquerda)"
+      },
+      {
+        "char": "乙",
+        "name": "otsu",
+        "meaning": "gancho em formato de Z"
+      }
+    ],
+    "mnemonic": "Alguém fazendo flexões e suando em bica para conseguir chegar no 9.",
+    "parts_en": [
+      "Nine"
+    ],
+    "meanings_en": [
+      "Nine"
+    ],
+    "mnemonic_en": ""
+  },
+  "十": {
+    "parts": [
+      {
+        "char": "十",
+        "name": "juu",
+        "meaning": "dez, cruz"
+      }
+    ],
+    "mnemonic": "Uma cruz completa contendo as 4 direções e o centro: junta-se formando dez.",
+    "parts_en": [
+      "Cross"
+    ],
+    "meanings_en": [
+      "Ten"
+    ],
+    "mnemonic_en": "A pictograph of a cross, which signifies the number ten. You know, like the ten commandments?"
+  },
+  "百": {
+    "parts": [
+      {
+        "char": "一",
+        "name": "ichi",
+        "meaning": "um"
+      },
+      {
+        "char": "白",
+        "name": "shiro",
+        "meaning": "branco"
+      }
+    ],
+    "mnemonic": "O número um cem vezes torna um papel completamente branco.",
+    "parts_en": [
+      "Leaf",
+      "Sun"
+    ],
+    "meanings_en": [
+      "Hundred"
+    ],
+    "mnemonic_en": ""
+  },
+  "千": {
+    "parts": [
+      {
+        "char": "丿",
+        "name": "no",
+        "meaning": "curva"
+      },
+      {
+        "char": "十",
+        "name": "juu",
+        "meaning": "dez"
+      }
+    ],
+    "mnemonic": "Um traço extra no dez para o transformar no mil.",
+    "parts_en": [
+      "Thousand"
+    ],
+    "meanings_en": [
+      "Thousand"
+    ],
+    "mnemonic_en": "An extra stroke on the top, and a ten becomes a thousand! Why? Well, three strokes, three zeroes!"
+  },
+  "万": {
+    "parts": [
+      {
+        "char": "一",
+        "name": "ichi",
+        "meaning": "um"
+      },
+      {
+        "char": "勹",
+        "name": "tsutsumi-gamae",
+        "meaning": "embrulho, pacote"
+      },
+      {
+        "char": "丿",
+        "name": "no",
+        "meaning": "traço curto"
+      }
+    ],
+    "mnemonic": "No Japão rural antigo, você usava uma foice parecida para colher dez mil plantas.",
+    "parts_en": [
+      "Leaf",
+      "Sword"
+    ],
+    "meanings_en": [
+      "Ten Thousand"
+    ],
+    "mnemonic_en": "It's only ten thousand yen for a clothes hanger which you can attach to the ceiling by a rope!"
+  },
+  "円": {
+    "parts": [
+      {
+        "char": "冂",
+        "name": "keigamae",
+        "meaning": "caixa de cabeça pra baixo / contorno"
+      },
+      {
+        "char": "土",
+        "name": "tsuchi/dois",
+        "meaning": "na forma antiga formavam círculos"
+      }
+    ],
+    "mnemonic": "Visualmente parece uma vitrine de loja com produtos à venda... em Ienes!",
+    "parts_en": [
+      "Lid",
+      "Head"
+    ],
+    "meanings_en": [
+      "Yen",
+      "^Round",
+      "^Circle"
+    ],
+    "mnemonic_en": "A circular one yen coin. This character looks like one of those bank teller windows where you can obtain such coins, with the upper two rectangles being the glass windows through which you can see the teller, and the lower part being where you put your hand through to take the money.\nInternationally we use the \"¥\" sign to denote the Japanese yen, however domestically the Japanese actually use this kanji as the sign for their currency."
+  },
+  "年": {
+    "parts": [
+      {
+        "char": "丿",
+        "name": "no",
+        "meaning": "traço curto"
+      },
+      {
+        "char": "二",
+        "name": "ni",
+        "meaning": "dois"
+      },
+      {
+        "char": "丨",
+        "name": "tate-bou",
+        "meaning": "tronco / pilar"
+      }
+    ],
+    "mnemonic": "Uma pessoa carregando a colheita nas costas após um ano inteiro de espera.",
+    "parts_en": [
+      "Gun",
+      "Cow"
+    ],
+    "meanings_en": [
+      "Year"
+    ],
+    "mnemonic_en": "Spending almost a year making an elaborate fake cow head — now that's basically a whole year wasted. What are you going to use that fake cow head for anyway, huh?"
+  },
+  "月": {
+    "parts": [
+      {
+        "char": "月",
+        "name": "tsuki",
+        "meaning": "lua, carne"
+      }
+    ],
+    "mnemonic": "O desenho de uma lua crescente e com algumas nuvens na frente dela.",
+    "parts_en": [
+      "Moon"
+    ],
+    "meanings_en": [
+      "Moon",
+      "^Month"
+    ],
+    "mnemonic_en": "A pictograph of a moon, whose full cycle takes approximately a month.\nIn the ancient times this character looked more like a crescent moon, but over time it morphed into being drawn like this."
+  },
+  "日": {
+    "parts": [
+      {
+        "char": "日",
+        "name": "hi",
+        "meaning": "sol, dia"
+      }
+    ],
+    "mnemonic": "O formato quadrado de um sol (antigamente redondo) com uma mancha solar no meio.",
+    "parts_en": [
+      "Sun"
+    ],
+    "meanings_en": [
+      "Sun",
+      "^Day"
+    ],
+    "mnemonic_en": "A pictograph of a sun, which makes a day.\nIn the ancient times this character was once written as a circle with a dot inside, but over time it became rectangular and the dot in the middle morphed into a line."
+  },
+  "時": {
+    "parts": [
+      {
+        "char": "日",
+        "name": "hi",
+        "meaning": "sol, dia"
+      },
+      {
+        "char": "寺",
+        "name": "tera",
+        "meaning": "templo budista"
+      }
+    ],
+    "mnemonic": "Antigamente as pessoas mediam o tempo e a hora através do sol no templo.",
+    "parts_en": [
+      "Sun",
+      "Temple"
+    ],
+    "meanings_en": [
+      "Time",
+      "^O'clock",
+      "^Hour"
+    ],
+    "mnemonic_en": "Imagine a Buddhist temple, late in the day, with the sun already almost setting in the west. The monks at the temple are busy meditating, with the sun's gentle warmth caressing their faces. They've been doing that for several hours already, but to them it's only been a short while since they started. Yes, the flow of time at a Buddhist temple is very different from anywhere else in the world."
+  },
+  "分": {
+    "parts": [
+      {
+        "char": "八",
+        "name": "hachi",
+        "meaning": "dividir"
+      },
+      {
+        "char": "刀",
+        "name": "katana",
+        "meaning": "espada, faca"
+      }
+    ],
+    "mnemonic": "Usar uma faca para dividir algo ao meio, cortando a hora em minutos.",
+    "parts_en": [
+      "Fins",
+      "Sword"
+    ],
+    "meanings_en": [
+      "Part",
+      "^Minute",
+      "^Separate",
+      "^Understand"
+    ],
+    "mnemonic_en": "Even if you have short legs you can still probably hold a katana low between your legs and use it to chop stuff up into parts."
+  },
+  "上": {
+    "parts": [
+      {
+        "char": "一",
+        "name": "ichi",
+        "meaning": "chão, linha de base"
+      },
+      {
+        "char": "卜",
+        "name": "boku",
+        "meaning": "marcador em cima"
+      }
+    ],
+    "mnemonic": "A linha longa é o chão, e o tracinho está indicando tudo que fica para cima.",
+    "parts_en": [
+      "Toe",
+      "Ground"
+    ],
+    "meanings_en": [
+      "Above",
+      "^Up",
+      "^Over"
+    ],
+    "mnemonic_en": "A pictograph of a magical divining rod hovering above the ground.\nDo not confuse it with 下, which also features a magical levitating divining rod, however that one is crooked, so it's incorrectly hovering right below the ceiling instead of doing it properly above the ground like this one is."
+  },
+  "下": {
+    "parts": [
+      {
+        "char": "一",
+        "name": "ichi",
+        "meaning": "teto, chão elevado"
+      },
+      {
+        "char": "卜",
+        "name": "boku (virado)",
+        "meaning": "marcador embaixo"
+      }
+    ],
+    "mnemonic": "Base e algo pendurado para baixo, simbolizando \"abaixo\" ou \"embaixo\".",
+    "parts_en": [
+      "Ground",
+      "Toe"
+    ],
+    "meanings_en": [
+      "Below",
+      "^Down",
+      "^Under",
+      "^Beneath"
+    ],
+    "mnemonic_en": "A pictograph of a crooked divining rod hovering in the air right below the ceiling.\nDo not confuse it with 上, which also features a magical levitating divining rod, however that one is not crooked, so it's properly hovering above the ground instead of right below the ceiling like this one is."
+  },
+  "中": {
+    "parts": [
+      {
+        "char": "口",
+        "name": "kuchi",
+        "meaning": "boca, buraco"
+      },
+      {
+        "char": "丨",
+        "name": "tate-bou",
+        "meaning": "flecha / vara"
+      }
+    ],
+    "mnemonic": "Uma flecha atingindo perfeitamente o meio do alvo.",
+    "parts_en": [
+      "Middle"
+    ],
+    "meanings_en": [
+      "Middle",
+      "^In",
+      "^Inside",
+      "^Center"
+    ],
+    "mnemonic_en": "A pictograph of a stick jammed in someone's mouth. Maybe a prehistoric dentist keeping his patient's mouth open...?"
+  },
+  "大": {
+    "parts": [
+      {
+        "char": "大",
+        "name": "dai",
+        "meaning": "grande, pessoa"
+      }
+    ],
+    "mnemonic": "Uma pessoa abrindo os braços e as pernas para parecer o mais grande possível.",
+    "parts_en": [
+      "Big"
+    ],
+    "meanings_en": [
+      "Big",
+      "^Large"
+    ],
+    "mnemonic_en": "A pictograph of a person with their hands stretched out. Why is he doing that? Who knows. He's really large, so it's not like you can do anything about him; he'll beat you up anyway."
+  },
+  "小": {
+    "parts": [
+      {
+        "char": "亅",
+        "name": "hane-bou",
+        "meaning": "anzol, graveto principal"
+      },
+      {
+        "char": "八",
+        "name": "hachi",
+        "meaning": "dividir / fragmentos"
+      }
+    ],
+    "mnemonic": "Três pequenos pedaços ou farelos de algo que se estilhaçou.",
+    "parts_en": [
+      "Small"
+    ],
+    "meanings_en": [
+      "Small",
+      "^Little"
+    ],
+    "mnemonic_en": "We see here a pair of short legs and a fishing hook between them. Yes, that must be a pretty small fisherman if his fishing hook is longer than his legs!"
+  },
+  "山": {
+    "parts": [
+      {
+        "char": "山",
+        "name": "yama",
+        "meaning": "montanha"
+      }
+    ],
+    "mnemonic": "Desenho de três picos de montanhas colados um ao outro (o do meio é maior).",
+    "parts_en": [
+      "Mountain"
+    ],
+    "meanings_en": [
+      "Mountain"
+    ],
+    "mnemonic_en": "A pictograph of a mountain."
+  },
+  "川": {
+    "parts": [
+      {
+        "char": "川",
+        "name": "kawa",
+        "meaning": "rio"
+      }
+    ],
+    "mnemonic": "A água de um rio descendo pela correnteza, contornando a terra dos dois lados.",
+    "parts_en": [
+      "River"
+    ],
+    "meanings_en": [
+      "River"
+    ],
+    "mnemonic_en": "A pictograph of a bird's eye view of a river."
+  },
+  "海": {
+    "parts": [
+      {
+        "char": "氵",
+        "name": "sanzui",
+        "meaning": "água"
+      },
+      {
+        "char": "毎",
+        "name": "mai",
+        "meaning": "todo, cada"
+      }
+    ],
+    "mnemonic": "Toda água abundante e vasta do mundo forma o grande mar.",
+    "parts_en": [
+      "Tsunami",
+      "Gun",
+      "Window"
+    ],
+    "meanings_en": [
+      "Sea",
+      "^Ocean"
+    ],
+    "mnemonic_en": "Eventually every drop of water ends up in the sea."
+  },
+  "空": {
+    "parts": [
+      {
+        "char": "穴",
+        "name": "ana",
+        "meaning": "buraco, caverna"
+      },
+      {
+        "char": "工",
+        "name": "kou",
+        "meaning": "trabalho, régua"
+      }
+    ],
+    "mnemonic": "Olhar de dentro do buraco da caverna, sendo possível ver somente o céu (vazio).",
+    "parts_en": [
+      "Roof",
+      "Legs",
+      "Construction"
+    ],
+    "meanings_en": [
+      "Sky"
+    ],
+    "mnemonic_en": "If you make a hole during construction it will be filled with empty air."
+  },
+  "火": {
+    "parts": [
+      {
+        "char": "火",
+        "name": "hi",
+        "meaning": "fogo"
+      }
+    ],
+    "mnemonic": "As chamas subindo por um amontoado de gravetos pegando fogo de uma fogueira.",
+    "parts_en": [
+      "Fire"
+    ],
+    "meanings_en": [
+      "Fire"
+    ],
+    "mnemonic_en": "A pictograph of a person on fire."
+  },
+  "水": {
+    "parts": [
+      {
+        "char": "水",
+        "name": "mizu",
+        "meaning": "água"
+      }
+    ],
+    "mnemonic": "Gotas de água se espatifando e respingando ao bater em uma superfície da água central.",
+    "parts_en": [
+      "Water"
+    ],
+    "meanings_en": [
+      "Water"
+    ],
+    "mnemonic_en": "A pictograph of a bird's eye view of water in a river and two of its banks on each side."
+  },
+  "木": {
+    "parts": [
+      {
+        "char": "木",
+        "name": "moku",
+        "meaning": "árvore, madeira"
+      }
+    ],
+    "mnemonic": "O tronco de uma árvore com seus galhos se estendendo para baixo.",
+    "parts_en": [
+      "Tree"
+    ],
+    "meanings_en": [
+      "Tree",
+      "^Wood"
+    ],
+    "mnemonic_en": "A pictograph of a tree, any kind of a tree."
+  },
+  "金": {
+    "parts": [
+      {
+        "char": "𠆢",
+        "name": "yane",
+        "meaning": "teto, telhado"
+      },
+      {
+        "char": "王",
+        "name": "ou",
+        "meaning": "rei"
+      },
+      {
+        "char": "八",
+        "name": "hachi",
+        "meaning": "oito (como pedaços de ouro)"
+      }
+    ],
+    "mnemonic": "O rei guardando seus pedaços preciosos de ouro debaixo do teto do palácio.",
+    "parts_en": [
+      "Gold"
+    ],
+    "meanings_en": [
+      "Gold"
+    ],
+    "mnemonic_en": "Money and gold is known to make people corrupt. Even if it's not obvious, even if someone doesn't have a pair of horns growing out of their head and instead they're hiding those horns in their pants, you can still tell their whole existence is corrupt."
+  },
+  "土": {
+    "parts": [
+      {
+        "char": "十",
+        "name": "juu",
+        "meaning": "cruz, prego"
+      },
+      {
+        "char": "一",
+        "name": "ichi",
+        "meaning": "chão"
+      }
+    ],
+    "mnemonic": "Uma cruz fincada no chão marcando a terra.",
+    "parts_en": [
+      "Dirt"
+    ],
+    "meanings_en": [
+      "Dirt",
+      "^Soil",
+      "^Earth",
+      "^Ground"
+    ],
+    "mnemonic_en": "A pictograph of a cross planted into the earth. The lower stroke is longer since it signifies the ground, or the horizon, which infinitely stretches in every direction.\nDo not confuse with 士 where the upper stroke is longer."
+  },
+  "人": {
+    "parts": [
+      {
+        "char": "人",
+        "name": "hito",
+        "meaning": "pessoa"
+      }
+    ],
+    "mnemonic": "O perfil de uma pessoa em pé com as duas pernas abertas caminhando.",
+    "parts_en": [
+      "Person"
+    ],
+    "meanings_en": [
+      "Person"
+    ],
+    "mnemonic_en": "A pictograph of a headless, armless person."
+  },
+  "口": {
+    "parts": [
+      {
+        "char": "口",
+        "name": "kuchi",
+        "meaning": "boca, buraco"
+      }
+    ],
+    "mnemonic": "O formato escancarado de uma boca quadrada aberta.",
+    "parts_en": [
+      "Mouth"
+    ],
+    "meanings_en": [
+      "Mouth"
+    ],
+    "mnemonic_en": "A pictograph of an open mouth."
+  },
+  "手": {
+    "parts": [
+      {
+        "char": "手",
+        "name": "te",
+        "meaning": "mão"
+      }
+    ],
+    "mnemonic": "As linhas da palma de uma mão e o formato dos pulsos.",
+    "parts_en": [
+      "Hand"
+    ],
+    "meanings_en": [
+      "Hand"
+    ],
+    "mnemonic_en": "A human hand is truly a magnificent body part; it's definitely useful for at least a thousand and one different things!"
+  },
+  "目": {
+    "parts": [
+      {
+        "char": "目",
+        "name": "me",
+        "meaning": "olho"
+      }
+    ],
+    "mnemonic": "O contorno de um olho virado de lado, com a íris quadrada no centro.",
+    "parts_en": [
+      "Eye"
+    ],
+    "meanings_en": [
+      "Eye"
+    ],
+    "mnemonic_en": "A stylized pictograph of an eye. The two lines in the middle is the iris."
+  },
+  "耳": {
+    "parts": [
+      {
+        "char": "耳",
+        "name": "mimi",
+        "meaning": "orelha"
+      }
+    ],
+    "mnemonic": "As várias dobras cartilaginosas que formam o pavilhão auricular de uma orelha.",
+    "parts_en": [
+      "Ear"
+    ],
+    "meanings_en": [
+      "Ear"
+    ],
+    "mnemonic_en": "A pictograph of a rectangular ear."
+  },
+  "心": {
+    "parts": [
+      {
+        "char": "心",
+        "name": "kokoro",
+        "meaning": "coração"
+      }
+    ],
+    "mnemonic": "Os quatro traços representam as veias e vasos pulsando do formato de um coração.",
+    "parts_en": [
+      "Heart"
+    ],
+    "meanings_en": [
+      "Heart"
+    ],
+    "mnemonic_en": "A pictograph of a heart."
+  },
+  "気": {
+    "parts": [
+      {
+        "char": "气",
+        "name": "kigamae",
+        "meaning": "vapor, ar"
+      },
+      {
+        "char": "メ",
+        "name": "me",
+        "meaning": "espada, energia"
+      }
+    ],
+    "mnemonic": "A energia invisível que flui no ar e alimenta as ações de força interior.",
+    "parts_en": [
+      "Energy",
+      "Treasure"
+    ],
+    "meanings_en": [
+      "Energy",
+      "^Spirit"
+    ],
+    "mnemonic_en": "If you inhale a lot of nasty vapors you'll collapse to the floor, your eyes will turn into crosses like in a cartoon (X_X) and you'll lose your current state of mind."
+  },
+  "男": {
+    "parts": [
+      {
+        "char": "田",
+        "name": "ta",
+        "meaning": "campo de arroz"
+      },
+      {
+        "char": "力",
+        "name": "chikara",
+        "meaning": "força"
+      }
+    ],
+    "mnemonic": "Trabalhar usando a força física nos campos de arroz era papel do homem na antiguidade.",
+    "parts_en": [
+      "Rice Paddy",
+      "Power"
+    ],
+    "meanings_en": [
+      "Man"
+    ],
+    "mnemonic_en": "A man is someone who has the power to work in a rice field."
+  },
+  "女": {
+    "parts": [
+      {
+        "char": "女",
+        "name": "onna",
+        "meaning": "mulher"
+      }
+    ],
+    "mnemonic": "O formato curvo e gracioso das vestes de uma mulher ajoelhada tradicionalmente.",
+    "parts_en": [
+      "Woman"
+    ],
+    "meanings_en": [
+      "Woman"
+    ],
+    "mnemonic_en": "This kanji can be decomposed into three strokes:\n\n\"く\" (\"ku\" in hiragana),\n\"ノ\" (\"no\" in katakana),\n\"一\" (\"ichi\" in kanji),\n\nwhich gives us くノ一 (\"kunoichi\") — a female ninja."
+  },
+  "子": {
+    "parts": [
+      {
+        "char": "子",
+        "name": "ko",
+        "meaning": "criança"
+      }
+    ],
+    "mnemonic": "Uma criança embrulhadinha e com os braços abertos querendo colo.",
+    "parts_en": [
+      "Child"
+    ],
+    "meanings_en": [
+      "Child",
+      "^Kid"
+    ],
+    "mnemonic_en": "A pictograph of a child. He's wearing a bright red Mario cap, and he has his arms outstretched to give you a hug. So cute!"
+  },
+  "本": {
+    "parts": [
+      {
+        "char": "木",
+        "name": "moku",
+        "meaning": "árvore"
+      },
+      {
+        "char": "一",
+        "name": "ichi",
+        "meaning": "um (linha horizontal na base)"
+      }
+    ],
+    "mnemonic": "Marcando a base de uma árvore, temos a raiz. Livros (hon) são a raiz ou origem do conhecimento.",
+    "parts_en": [
+      "Book"
+    ],
+    "meanings_en": [
+      "Book",
+      "^Origin",
+      "^Real",
+      "^Main"
+    ],
+    "mnemonic_en": "A pictograph of a tree with an extra stroke at the bottom to show where it's supposed to be cut. Because you first need to cut at least one tree to make a book!"
+  },
+  "語": {
+    "parts": [
+      {
+        "char": "言",
+        "name": "gonben",
+        "meaning": "dizer, palavras"
+      },
+      {
+        "char": "五",
+        "name": "go",
+        "meaning": "cinco"
+      },
+      {
+        "char": "口",
+        "name": "kuchi",
+        "meaning": "boca"
+      }
+    ],
+    "mnemonic": "Palavras ditas da boca, com cinco sentidos. Falar muitas palavras se torna um idioma.",
+    "parts_en": [
+      "Say",
+      "Five",
+      "Mouth"
+    ],
+    "meanings_en": [
+      "Language"
+    ],
+    "mnemonic_en": "Five mouths are saying something to each other in a language I can't understand. Russian spies perhaps...?"
+  },
+  "国": {
+    "parts": [
+      {
+        "char": "囗",
+        "name": "kuni-gamae",
+        "meaning": "fronteira, caixa"
+      },
+      {
+        "char": "玉",
+        "name": "tama",
+        "meaning": "joia, gema"
+      }
+    ],
+    "mnemonic": "Uma terra valiosa como joia, protegida por grandes muralhas e fronteiras: um país.",
+    "parts_en": [
+      "Mouth",
+      "King",
+      "Drop"
+    ],
+    "meanings_en": [
+      "Country"
+    ],
+    "mnemonic_en": "The country of Japan's flag looks like a red ball inside of a white rectangular box."
+  },
+  "学": {
+    "parts": [
+      {
+        "char": "⺍",
+        "name": "tsuu",
+        "meaning": "pequeno, estudar (topo)"
+      },
+      {
+        "char": "冖",
+        "name": "wakanmuri",
+        "meaning": "coroa, cobertura"
+      },
+      {
+        "char": "子",
+        "name": "ko",
+        "meaning": "criança"
+      }
+    ],
+    "mnemonic": "Crianças debaixo de um grande teto com ferramentas na cabeça absorvendo conhecimento: a escola.",
+    "parts_en": [
+      "Viking",
+      "Child"
+    ],
+    "meanings_en": [
+      "Study",
+      "^Learn",
+      "^Learning"
+    ],
+    "mnemonic_en": "What do you do when your child just won't behave and absolutely refuses to study? You lock him up in a derelict hut deep in the forest, and force him to study under a roof full of tiny hairs which are — on a closer look — millions of tiny, hairy, disgusting caterpillars.\nAnd since the hut's roof is so old and dilapidated it can collapse at any time. The threat of all of those creepy caterpillars falling on your child's head should really motivate him to study. The faster he studies the faster he'll be able to leave the hut!"
+  },
+  "生": {
+    "parts": [
+      {
+        "char": "生",
+        "name": "sei",
+        "meaning": "nascer, dar vida"
+      }
+    ],
+    "mnemonic": "Um pequeno broto crescendo forte do chão, o início de uma nova vida.",
+    "parts_en": [
+      "Life"
+    ],
+    "meanings_en": [
+      "Life"
+    ],
+    "mnemonic_en": "That decapitated cow head you have over there will eventually return to the earth, be slowly absorbed, and will be transformed into nutrients that will nurture new life. Ah, the cycle of life."
+  },
+  "花": {
+    "parts": [
+      {
+        "char": "艹",
+        "name": "kusa-kanmuri",
+        "meaning": "planta, grama (topo)"
+      },
+      {
+        "char": "化",
+        "name": "ka",
+        "meaning": "mudança, transformar"
+      }
+    ],
+    "mnemonic": "O momento mágico em que uma simples planta muda (transforma) em uma linda flor.",
+    "parts_en": [
+      "Flowers",
+      "Leader",
+      "Spoon"
+    ],
+    "meanings_en": [
+      "Flower"
+    ],
+    "mnemonic_en": "These blades of glass will someday transform into a beautiful flower."
+  },
+  "車": {
+    "parts": [
+      {
+        "char": "車",
+        "name": "kuruma",
+        "meaning": "carro, veículo"
+      }
+    ],
+    "mnemonic": "Se você olhar de cima, vê as duas rodas laterais e o chassi no centro de uma carroça.",
+    "parts_en": [
+      "Car"
+    ],
+    "meanings_en": [
+      "Car"
+    ],
+    "mnemonic_en": "A pictograph of a vehicle, show from a bird's-eye view. You have the front wheels at the top, the back wheels at the bottom, and the middle is where you put stuff in, be it people or goods."
+  },
+  "友": {
+    "parts": [
+      {
+        "char": "ナ",
+        "name": "hidari",
+        "meaning": "mão esquerda"
+      },
+      {
+        "char": "又",
+        "name": "mata",
+        "meaning": "mão direita / novamente"
+      }
+    ],
+    "mnemonic": "Duas mãos se entrelaçando em apoio mútuo, o símbolo de um bom amigo.",
+    "parts_en": [
+      "Narwhal",
+      "Stool"
+    ],
+    "meanings_en": [
+      "Friend"
+    ],
+    "mnemonic_en": "If someone's once again by your side when your in trouble for the millionth time, you know you have a true friend."
+  },
+  "先": {
+    "parts": [
+      {
+        "char": "土",
+        "name": "tsuchi",
+        "meaning": "terra (variante)"
+      },
+      {
+        "char": "儿",
+        "name": "ninnyo",
+        "meaning": "pernas humanas (andando)"
+      }
+    ],
+    "mnemonic": "Alguém que usou suas pernas para andar e chegar à terra *antes* de você.",
+    "parts_en": [
+      "Slide",
+      "Dirt",
+      "Legs"
+    ],
+    "meanings_en": [
+      "Previous",
+      "^Ahead",
+      "^Past",
+      "^Former"
+    ],
+    "mnemonic_en": "It's a cow with human legs! Wow! I've never seen such a creature before!"
+  },
+  "休": {
+    "parts": [
+      {
+        "char": "亻",
+        "name": "ninben",
+        "meaning": "pessoa"
+      },
+      {
+        "char": "木",
+        "name": "moku",
+        "meaning": "árvore"
+      }
+    ],
+    "mnemonic": "Uma pessoa encostada ao lado de uma árvore tirando um merecido descanso.",
+    "parts_en": [
+      "Leader",
+      "Tree"
+    ],
+    "meanings_en": [
+      "Rest"
+    ],
+    "mnemonic_en": "A really thin person is not going to be very strong physically, so when covering long distances he'll have to rest quite frequenty. And what's the best place to rest when you're out in the nature? Well, it's by a nearby tree! Not only it shields you from the bad weather, but you can also lean on it to recover strength."
+  },
+  "外": {
+    "parts": [
+      {
+        "char": "夕",
+        "name": "yuu",
+        "meaning": "tarde, entardecer"
+      },
+      {
+        "char": "卜",
+        "name": "boku",
+        "meaning": "varinha mágica / previsão"
+      }
+    ],
+    "mnemonic": "Na antiguidade, usar a varinha de adivinhação fora de casa só de tarde para não espantar a magia.",
+    "parts_en": [
+      "Evening",
+      "Toe"
+    ],
+    "meanings_en": [
+      "Outside"
+    ],
+    "mnemonic_en": "When you want to test out a new sword it's best to grab a stick, stick it into the ground, and slash it with your new sword during the evening while it's still bright outside."
+  },
+  "午": {
+    "parts": [
+      {
+        "char": "午",
+        "name": "go",
+        "meaning": "meio-dia, cavalo do zodíaco"
+      }
+    ],
+    "mnemonic": "Parece o número 10 (十) com algo deitado no topo bloqueando o caminho: o ponteiro batendo no topo, meio-dia.",
+    "parts_en": [
+      "Slide",
+      "Dry"
+    ],
+    "meanings_en": [
+      "Noon"
+    ],
+    "mnemonic_en": "It's a pictograph of a cow, but it's really close to the fence, with its head reaching over the fence. It's looking an you and saying \"noon, noon\". Huh, it looks like this cow doesn't moo like every other cow, and it apparently also knows when it's noon..."
+  },
+  "校": {
+    "parts": [
+      {
+        "char": "木",
+        "name": "kihen",
+        "meaning": "árvore, madeira"
+      },
+      {
+        "char": "交",
+        "name": "majiru",
+        "meaning": "misturar, cruzar"
+      }
+    ],
+    "mnemonic": "No Japão rural, edifícios feitos de madeira onde caminhos de crianças se cruzam: a escola.",
+    "parts_en": [
+      "Tree",
+      "Lid",
+      "Father"
+    ],
+    "meanings_en": [
+      "School"
+    ],
+    "mnemonic_en": "A school is not only a place where you learn; it's also a place where you mingle with your classmates around a tree in the courtyard during the breaks."
+  },
+  "名": {
+    "parts": [
+      {
+        "char": "夕",
+        "name": "yuu",
+        "meaning": "anoitecer, tarde"
+      },
+      {
+        "char": "口",
+        "name": "kuchi",
+        "meaning": "boca"
+      }
+    ],
+    "mnemonic": "Quando anoitece e você não consegue enxergar o rosto, usa a boca para chamar o nome.",
+    "parts_en": [
+      "Evening",
+      "Mouth"
+    ],
+    "meanings_en": [
+      "Name",
+      "^Famous"
+    ],
+    "mnemonic_en": "When you're having a date this evening with a girl you've anonymously met online it'd be the best to open your mouth and tell her your name before the sun sets and you'll go to your apartment to do the deed. Otherwise it'll be really awkward the next day when you wake up next to each other, in the same bed, and not know the other's name."
+  },
+  "間": {
+    "parts": [
+      {
+        "char": "門",
+        "name": "mon",
+        "meaning": "portões duplos"
+      },
+      {
+        "char": "日",
+        "name": "hi",
+        "meaning": "sol"
+      }
+    ],
+    "mnemonic": "Os raios do sol passando exatamente entre o espaço vazio no meio dos dois portões.",
+    "parts_en": [
+      "Gate",
+      "Sun"
+    ],
+    "meanings_en": [
+      "Interval",
+      "^Interval Of Time",
+      "^Time Interval"
+    ],
+    "mnemonic_en": "There is only a limited interval of time during which the sun can be seen through the gate."
+  },
+  "長": {
+    "parts": [
+      {
+        "char": "長",
+        "name": "chou",
+        "meaning": "longo, chefe"
+      }
+    ],
+    "mnemonic": "O perfil de um chefe idoso de cabelos longos varrendo o chão com uma bengala.",
+    "parts_en": [
+      "Long"
+    ],
+    "meanings_en": [
+      "Long",
+      "^Leader"
+    ],
+    "mnemonic_en": "A hair comb with really long legs (also called \"teeth\" — you know, the part which you actually use to brush your hair with?) is a fashion accessory that's not going to be seen often. It may be long, but it certainly isn't practical!"
+  },
+  "母": {
+    "parts": [
+      {
+        "char": "母",
+        "name": "haha",
+        "meaning": "mãe"
+      }
+    ],
+    "mnemonic": "A imagem de uma mulher com dois pontinhos seios largos amamentando, o maior símbolo de nutrição materna.",
+    "parts_en": [
+      "Sun",
+      "Drop"
+    ],
+    "meanings_en": [
+      "Mother",
+      "^Mom",
+      "^Mum"
+    ],
+    "mnemonic_en": "A pictograph of woman's breasts with nipples, turned on its side."
+  },
+  "父": {
+    "parts": [
+      {
+        "char": "父",
+        "name": "chichi",
+        "meaning": "pai"
+      }
+    ],
+    "mnemonic": "Duas mãos firmes segurando dois eixos ou varas cruzadas, um símbolo arcaico de autoridade e disciplina paterna.",
+    "parts_en": [
+      "Father"
+    ],
+    "meanings_en": [
+      "Father",
+      "^Dad"
+    ],
+    "mnemonic_en": "Traditionally when it's time to punish a child it's usually the father who doles out the punishment. And how to better punish a child than to have him sit his short legs on bare folding chair legs? Folding chairs usually have a piece of cloth on the top on which you can sit, but if you remove that and only leave the metal legs... ouch!"
+  },
+  "白": {
+    "parts": [
+      {
+        "char": "日",
+        "name": "hi",
+        "meaning": "sol"
+      },
+      {
+        "char": "丿",
+        "name": "no",
+        "meaning": "raio"
+      }
+    ],
+    "mnemonic": "Um pequeno raio de sol escapando pelo topo, simbolizando a luz branca e brilhante do sol.",
+    "parts_en": [
+      "White"
+    ],
+    "meanings_en": [
+      "White"
+    ],
+    "mnemonic_en": "We are very fortunate that the Sun is approximately 150 million kilometres apart from us. If you'd take only a single drop of the Sun, and put it here on Earth, it'd be so bright you'd see nothing but white."
+  },
+  "雨": {
+    "parts": [
+      {
+        "char": "雨",
+        "name": "ame",
+        "meaning": "chuva"
+      }
+    ],
+    "mnemonic": "Gotas caindo do céu, representadas pelos quatro pontos e presas dentro da janela que é a nuvem.",
+    "parts_en": [
+      "Rain"
+    ],
+    "meanings_en": [
+      "Rain"
+    ],
+    "mnemonic_en": "A pictograph of a window through which you can see the rain."
+  },
+  "高": {
+    "parts": [
+      {
+        "char": "亠",
+        "name": "nabebuta",
+        "meaning": "tampa (teto)"
+      },
+      {
+        "char": "口",
+        "name": "kuchi",
+        "meaning": "boca, janela"
+      },
+      {
+        "char": "冂",
+        "name": "keigamae",
+        "meaning": "portão, estrutura externa"
+      }
+    ],
+    "mnemonic": "Um prédio muito alto com um telhado em cima e portões e janelas no meio da estrutura.",
+    "parts_en": [
+      "Lid",
+      "Mouth",
+      "Mustache"
+    ],
+    "meanings_en": [
+      "Tall",
+      "^Expensive",
+      "^High"
+    ],
+    "mnemonic_en": "That is a really high two-story building. We have the mouth on the bottom being the entrance, the upside-down-box being the first floor, another mouth being the second floor widow, and a lid at the top being its roof."
+  },
+  "天": {
+    "parts": [
+      {
+        "char": "大",
+        "name": "dai",
+        "meaning": "grande"
+      },
+      {
+        "char": "一",
+        "name": "ichi",
+        "meaning": "um (o mais alto)"
+      }
+    ],
+    "mnemonic": "Acima de um homem grande existe apenas uma única coisa mais majestosa: o próprio céu.",
+    "parts_en": [
+      "Heaven"
+    ],
+    "meanings_en": [
+      "Heaven"
+    ],
+    "mnemonic_en": "A pictograph of a large man with outstretched arms, and one line above his head which represents the heaven, which is a plane of existence one level higher that the one the man's currently in.\nDo not confuse it with 夭, which looks similar and whose first stroke is written in right-to-left and is slightly curved."
+  },
+  "食": {
+    "parts": [
+      {
+        "char": "𠆢",
+        "name": "yane",
+        "meaning": "teto, telhado"
+      },
+      {
+        "char": "良",
+        "name": "yoi",
+        "meaning": "bom"
+      }
+    ],
+    "mnemonic": "Reunir pessoas sob o mesmo teto para compartilhar algo bom para a saúde do corpo: a comida.",
+    "parts_en": [
+      "Eat"
+    ],
+    "meanings_en": [
+      "Eat",
+      "^Meal"
+    ],
+    "mnemonic_en": "A good person will eat everything that their momma puts on their plate."
+  },
+  "足": {
+    "parts": [
+      {
+        "char": "口",
+        "name": "kuchi",
+        "meaning": "boca, perna aberta (antigo)"
+      },
+      {
+        "char": "止",
+        "name": "tomeru",
+        "meaning": "parar, pisar"
+      }
+    ],
+    "mnemonic": "A metade superior do corpo e a parte inferior focada no pé que pisa no chão.",
+    "parts_en": [
+      "Foot"
+    ],
+    "meanings_en": [
+      "Foot",
+      "^Leg",
+      "^Sufficient"
+    ],
+    "mnemonic_en": "Gross! Do not put your mouth in your running shoes! That's where your foot goes, right?!"
+  },
+  "体": {
+    "parts": [
+      {
+        "char": "亻",
+        "name": "ninben",
+        "meaning": "pessoa"
+      },
+      {
+        "char": "本",
+        "name": "hon",
+        "meaning": "origem, principal"
+      }
+    ],
+    "mnemonic": "A parte principal (origem) e fundamental de uma pessoa é o seu próprio corpo físico.",
+    "parts_en": [
+      "Leader",
+      "Book"
+    ],
+    "meanings_en": [
+      "Body"
+    ],
+    "mnemonic_en": "A thin person is a weakling who needs to read books on how to get their body fat and strong again.\nImagine you're weakling loser who doesn't go out too much, has no friends and never had any interest in sports or fitness, but suddenly you want to get fit so that the girl you fell in love with likes you back. What do you do? Obviously you need to read a few fitness books on how to build up your body and get that sexy six-pack!"
+  },
+  "入": {
+    "parts": [
+      {
+        "char": "入",
+        "name": "iru",
+        "meaning": "entrar"
+      }
+    ],
+    "mnemonic": "Parece o kanji de pessoa 人, mas a perna direita está entrando e empurrando a esquerda da frente.",
+    "parts_en": [
+      "Enter"
+    ],
+    "meanings_en": [
+      "Enter"
+    ],
+    "mnemonic_en": "A pictograph of a person with one hand over his head pointing to the entrance on the left. Over there, enter over there!"
+  },
+  "出": {
+    "parts": [
+      {
+        "char": "山",
+        "name": "yama",
+        "meaning": "montanha"
+      },
+      {
+        "char": "山",
+        "name": "yama",
+        "meaning": "montanha"
+      }
+    ],
+    "mnemonic": "Uma montanha em cima de outra montanha representa um broto rompendo a terra e saindo para fora.",
+    "parts_en": [
+      "Mountain"
+    ],
+    "meanings_en": [
+      "Exit"
+    ],
+    "mnemonic_en": "You see two mountains stacked on top of each other that stand in your way. Uh... is that the exit...? Why is getting out of here so hard?!"
+  },
+  "来": {
+    "parts": [
+      {
+        "char": "木",
+        "name": "moku",
+        "meaning": "árvore, madeira"
+      },
+      {
+        "char": "丷",
+        "name": "hachi",
+        "meaning": "trigo (no topo antigo), direção externa"
+      }
+    ],
+    "mnemonic": "A forma antiga parecia uma espiga de trigo, que \"veio\" de longe para alimentar as pessoas.",
+    "parts_en": [
+      "Ground",
+      "Rice"
+    ],
+    "meanings_en": [
+      "Come",
+      "^Next"
+    ],
+    "mnemonic_en": "One serving of rice, coming up!"
+  },
+  "見": {
+    "parts": [
+      {
+        "char": "目",
+        "name": "me",
+        "meaning": "olho"
+      },
+      {
+        "char": "儿",
+        "name": "ninnyo",
+        "meaning": "pernas"
+      }
+    ],
+    "mnemonic": "Um olho enorme em cima de pernas humanas andando por aí para tentar ver tudo ao redor.",
+    "parts_en": [
+      "See"
+    ],
+    "meanings_en": [
+      "See"
+    ],
+    "mnemonic_en": "A walking eye with legs attached; surely its main purpose is to see."
+  },
+  "行": {
+    "parts": [
+      {
+        "char": "彳",
+        "name": "gyouninben",
+        "meaning": "passos"
+      },
+      {
+        "char": "亍",
+        "name": "teku",
+        "meaning": "passos adiante"
+      }
+    ],
+    "mnemonic": "O desenho de um grande cruzamento por onde milhares de pessoas andam para \"ir\" a todos os lugares.",
+    "parts_en": [
+      "Go"
+    ],
+    "meanings_en": [
+      "Go"
+    ],
+    "mnemonic_en": "Every journey starts the same: first you take a single small step and stop standing still, and then you go!"
+  },
+  "聞": {
+    "parts": [
+      {
+        "char": "門",
+        "name": "mon",
+        "meaning": "portões"
+      },
+      {
+        "char": "耳",
+        "name": "mimi",
+        "meaning": "orelha"
+      }
+    ],
+    "mnemonic": "Você encostando a sua orelha perfeitamente no vão do portão principal para ouvir a conversa dos seus vizinhos.",
+    "parts_en": [
+      "Gate",
+      "Ear"
+    ],
+    "meanings_en": [
+      "Hear"
+    ],
+    "mnemonic_en": "Stick your ear out of the gate and you'll hear everything that goes on outside."
+  },
+  "読": {
+    "parts": [
+      {
+        "char": "言",
+        "name": "gonben",
+        "meaning": "palavras, dizer"
+      },
+      {
+        "char": "売",
+        "name": "uru",
+        "meaning": "vender"
+      }
+    ],
+    "mnemonic": "Um vendedor falando e lendo as palavras do seu folheto em voz alta para atrair clientes.",
+    "parts_en": [
+      "Say",
+      "Sell"
+    ],
+    "meanings_en": [
+      "Read"
+    ],
+    "mnemonic_en": "Every good salesman that tries to sell you something will say whatever they can to get you to buy their product, but don't be fooled! You need to read the fine-print! There's always a catch."
+  },
+  "書": {
+    "parts": [
+      {
+        "char": "聿",
+        "name": "fude",
+        "meaning": "pincel"
+      },
+      {
+        "char": "曰",
+        "name": "etsu",
+        "meaning": "dizer"
+      }
+    ],
+    "mnemonic": "Usar um pincel para registrar no papel aquilo que alguém disse em voz alta.",
+    "parts_en": [
+      "Brush",
+      "Sun"
+    ],
+    "meanings_en": [
+      "Write",
+      "^Writing"
+    ],
+    "mnemonic_en": "In the old days if you wanted to write something you'd use your brush and some ink on a piece of parchment, and then lay it out in the sun to dry."
+  },
+  "話": {
+    "parts": [
+      {
+        "char": "言",
+        "name": "gonben",
+        "meaning": "palavras"
+      },
+      {
+        "char": "舌",
+        "name": "shita",
+        "meaning": "língua"
+      }
+    ],
+    "mnemonic": "Basta apenas usar as palavras junto com o movimento da língua que surge a conversa.",
+    "parts_en": [
+      "Say",
+      "Tongue"
+    ],
+    "meanings_en": [
+      "Talk",
+      "^Speak"
+    ],
+    "mnemonic_en": "You can say many things without speaking 一 with your hands, your body language, or through your actions, but to speak, ah, yes, you need to actually use your tongue to say the things you want to say."
+  },
+  "会": {
+    "parts": [
+      {
+        "char": "人",
+        "name": "yane (pessoa)",
+        "meaning": "pessoas juntas, telhado"
+      },
+      {
+        "char": "云",
+        "name": "iu",
+        "meaning": "nuvem / dizer"
+      }
+    ],
+    "mnemonic": "Várias pessoas sob o mesmo teto conversando e discutindo ideias em uma reunião.",
+    "parts_en": [
+      "Meet"
+    ],
+    "meanings_en": [
+      "Meet"
+    ],
+    "mnemonic_en": "In a meeting one person often has to quote other people to get their point across."
+  },
+  "社": {
+    "parts": [
+      {
+        "char": "礻",
+        "name": "shimesuhen",
+        "meaning": "altar, espíritos, indicar"
+      },
+      {
+        "char": "土",
+        "name": "tsuchi",
+        "meaning": "terra, chão"
+      }
+    ],
+    "mnemonic": "Um altar colocado na terra abençoada, representando primeiro um templo e depois a \"companhia\" ou empresa que se reúne.",
+    "parts_en": [
+      "Spirit",
+      "Dirt"
+    ],
+    "meanings_en": [
+      "Company"
+    ],
+    "mnemonic_en": "When you join a Japanese company it's like joining a cult. You'll have to worship the earth on which your boss walks on, and treat the meeting room table like a sacred altar, or else you'll get violently bullied and ostracized."
+  },
+  "電": {
+    "parts": [
+      {
+        "char": "雨",
+        "name": "amekanmuri",
+        "meaning": "chuva"
+      },
+      {
+        "char": "申",
+        "name": "maosu",
+        "meaning": "dizer / estender (antigamente relâmpago)"
+      }
+    ],
+    "mnemonic": "O relâmpago (energia) brilhando rapidamente durante uma forte tempestade com chuva.",
+    "parts_en": [
+      "Rain",
+      "Rice Paddy",
+      "Umbrella"
+    ],
+    "meanings_en": [
+      "Electricity"
+    ],
+    "mnemonic_en": "An umbrella can protect you from the sun and from the rain, but it's not very effective against an electrical storm. If you get struck by a lightning it's over for you."
+  },
+  "話す": {
+    "parts": [
+      {
+        "char": "言",
+        "name": "gonben",
+        "meaning": "palavras"
+      },
+      {
+        "char": "舌",
+        "name": "shita",
+        "meaning": "língua"
+      }
+    ],
+    "mnemonic": "Usar as palavras junto com o movimento da língua para falar ou conversar.",
+    "parts_en": [
+      "Say",
+      "Tongue"
+    ],
+    "meanings_en": [
+      "Talk",
+      "^Speak"
+    ],
+    "mnemonic_en": "You can say many things without speaking 一 with your hands, your body language, or through your actions, but to speak, ah, yes, you need to actually use your tongue to say the things you want to say."
+  },
+  "食べる": {
+    "parts": [
+      {
+        "char": "𠆢",
+        "name": "yane",
+        "meaning": "teto, pessoa"
+      },
+      {
+        "char": "良",
+        "name": "yoi",
+        "meaning": "bom"
+      }
+    ],
+    "mnemonic": "Reunir as pessoas debaixo de um teto para consumir algo bom (comida).",
+    "parts_en": [
+      "Eat"
+    ],
+    "meanings_en": [
+      "Eat",
+      "^Meal"
+    ],
+    "mnemonic_en": "A good person will eat everything that their momma puts on their plate."
+  },
+  "飲む": {
+    "parts": [
+      {
+        "char": "食",
+        "name": "shokuhen",
+        "meaning": "comida, comer"
+      },
+      {
+        "char": "欠",
+        "name": "akubi",
+        "meaning": "abrir a boca, falta"
+      }
+    ],
+    "mnemonic": "Abrir amplamente a boca para ingerir um alimento líquido, bebendo.",
+    "parts_en": [
+      "Eat",
+      "Lack"
+    ],
+    "meanings_en": [
+      "Drink"
+    ],
+    "mnemonic_en": ""
+  },
+  "見る": {
+    "parts": [
+      {
+        "char": "目",
+        "name": "me",
+        "meaning": "olho"
+      },
+      {
+        "char": "儿",
+        "name": "ninnyo",
+        "meaning": "pernas"
+      }
+    ],
+    "mnemonic": "Um olho com pernas indo ativamente a diversos lugares com o propósito de observar e ver tudo.",
+    "parts_en": [
+      "See"
+    ],
+    "meanings_en": [
+      "See"
+    ],
+    "mnemonic_en": "A walking eye with legs attached; surely its main purpose is to see."
+  },
+  "来る": {
+    "parts": [
+      {
+        "char": "木",
+        "name": "moku",
+        "meaning": "árvore, madeira"
+      },
+      {
+        "char": "丷",
+        "name": "hachi",
+        "meaning": "trigo (no topo antigo), direção externa"
+      }
+    ],
+    "mnemonic": "Uma planta que se assemelha a uma espiga de trigo que veio de longe.",
+    "parts_en": [
+      "Ground",
+      "Rice"
+    ],
+    "meanings_en": [
+      "Come",
+      "^Next"
+    ],
+    "mnemonic_en": "One serving of rice, coming up!"
+  },
+  "行く": {
+    "parts": [
+      {
+        "char": "彳",
+        "name": "gyouninben",
+        "meaning": "passos"
+      },
+      {
+        "char": "亍",
+        "name": "teku",
+        "meaning": "passos adiante"
+      }
+    ],
+    "mnemonic": "Passos esquerdo e direito caminhando firmes por uma encruzilhada para ir a algum lugar.",
+    "parts_en": [
+      "Go"
+    ],
+    "meanings_en": [
+      "Go"
+    ],
+    "mnemonic_en": "Every journey starts the same: first you take a single small step and stop standing still, and then you go!"
+  },
+  "帰る": {
+    "parts": [
+      {
+        "char": "刂",
+        "name": "ritto",
+        "meaning": "faca, facção"
+      },
+      {
+        "char": "ヨ",
+        "name": "yo",
+        "meaning": "vassoura / voltar"
+      },
+      {
+        "char": "冖",
+        "name": "wakanmuri",
+        "meaning": "cobertura"
+      }
+    ],
+    "mnemonic": "Afastar ativamente os obstáculos para arrumar as malas e retornar em segurança para casa sob seu próprio teto.",
+    "parts_en": [
+      "Knife",
+      "Wolverine",
+      "Forehead",
+      "Towel"
+    ],
+    "meanings_en": [
+      "Return",
+      "^Return Home"
+    ],
+    "mnemonic_en": "When you return home after a long vacation you'll have to grab a broom and clean up the whole place. And since you're returning from a vacation in Japan you'd use the katakana to spell \"return\" as リターン with an リ."
+  },
+  "入る": {
+    "parts": [
+      {
+        "char": "入",
+        "name": "iru",
+        "meaning": "entrar"
+      }
+    ],
+    "mnemonic": "A imagem de uma ponta de lança ou pessoa forçando a entrada, empurrando algo.",
+    "parts_en": [
+      "Enter"
+    ],
+    "meanings_en": [
+      "Enter"
+    ],
+    "mnemonic_en": "A pictograph of a person with one hand over his head pointing to the entrance on the left. Over there, enter over there!"
+  },
+  "出る": {
+    "parts": [
+      {
+        "char": "山",
+        "name": "yama",
+        "meaning": "montanha"
+      },
+      {
+        "char": "山",
+        "name": "yama",
+        "meaning": "montanha"
+      }
+    ],
+    "mnemonic": "O formato de uma montanha encavalada sobre a outra simulando plantas saindo do chão para cima.",
+    "parts_en": [
+      "Mountain"
+    ],
+    "meanings_en": [
+      "Exit"
+    ],
+    "mnemonic_en": "You see two mountains stacked on top of each other that stand in your way. Uh... is that the exit...? Why is getting out of here so hard?!"
+  },
+  "読む": {
+    "parts": [
+      {
+        "char": "言",
+        "name": "gonben",
+        "meaning": "palavras, dizer"
+      },
+      {
+        "char": "売",
+        "name": "uru",
+        "meaning": "vender"
+      }
+    ],
+    "mnemonic": "Palavras sendo faladas como se um vendedor as anunciasse, simulando a leitura em voz alta.",
+    "parts_en": [
+      "Say",
+      "Sell"
+    ],
+    "meanings_en": [
+      "Read"
+    ],
+    "mnemonic_en": "Every good salesman that tries to sell you something will say whatever they can to get you to buy their product, but don't be fooled! You need to read the fine-print! There's always a catch."
+  },
+  "書く": {
+    "parts": [
+      {
+        "char": "聿",
+        "name": "fude",
+        "meaning": "pincel"
+      },
+      {
+        "char": "曰",
+        "name": "etsu",
+        "meaning": "dizer"
+      }
+    ],
+    "mnemonic": "Alguém firmemente segurando um pincel e registrando o que foi dito.",
+    "parts_en": [
+      "Brush",
+      "Sun"
+    ],
+    "meanings_en": [
+      "Write",
+      "^Writing"
+    ],
+    "mnemonic_en": "In the old days if you wanted to write something you'd use your brush and some ink on a piece of parchment, and then lay it out in the sun to dry."
+  },
+  "聞く": {
+    "parts": [
+      {
+        "char": "門",
+        "name": "mon",
+        "meaning": "portões"
+      },
+      {
+        "char": "耳",
+        "name": "mimi",
+        "meaning": "orelha"
+      }
+    ],
+    "mnemonic": "Uma orelha perfeitamente pressionada no buraco do portão prestando atenção com vontade de ouvir algo ou até perguntar.",
+    "parts_en": [
+      "Gate",
+      "Ear"
+    ],
+    "meanings_en": [
+      "Hear"
+    ],
+    "mnemonic_en": "Stick your ear out of the gate and you'll hear everything that goes on outside."
+  },
+  "言う": {
+    "parts": [
+      {
+        "char": "口",
+        "name": "kuchi",
+        "meaning": "boca"
+      },
+      {
+        "char": "一",
+        "name": "ichi",
+        "meaning": "uma (linha de som)"
+      }
+    ],
+    "mnemonic": "O desenho de uma boca com ondas sonoras ou palavras escapando por cima ao dizer algo.",
+    "parts_en": [
+      "Say"
+    ],
+    "meanings_en": [
+      "Say"
+    ],
+    "mnemonic_en": "A cryptic pictograph of a face trying to say something.\nWe have a mouth at the bottom, then we have two short lines signifying a nose (this person has a really long nose, hence two lines), then one long line for the eyes (this person has an eye visor just like RoboCop), and then the final line at the top to represent the forehead."
+  },
+  "買う": {
+    "parts": [
+      {
+        "char": "罒",
+        "name": "amigashira",
+        "meaning": "rede"
+      },
+      {
+        "char": "貝",
+        "name": "kai",
+        "meaning": "concha, dinheiro"
+      }
+    ],
+    "mnemonic": "Lançar uma grande rede para reunir e obter objetos usando conchas (dinheiro da antiguidade) como forma de comprar.",
+    "parts_en": [
+      "Net",
+      "Shellfish"
+    ],
+    "meanings_en": [
+      "Buy"
+    ],
+    "mnemonic_en": "The fisherman's small net is full of live shellfish! Will you buy some?"
+  },
+  "休む": {
+    "parts": [
+      {
+        "char": "亻",
+        "name": "ninben",
+        "meaning": "pessoa"
+      },
+      {
+        "char": "木",
+        "name": "moku",
+        "meaning": "árvore"
+      }
+    ],
+    "mnemonic": "A imagem pacífica de uma pessoa que decidiu encostar no tronco de uma árvore para descansar.",
+    "parts_en": [
+      "Leader",
+      "Tree"
+    ],
+    "meanings_en": [
+      "Rest"
+    ],
+    "mnemonic_en": "A really thin person is not going to be very strong physically, so when covering long distances he'll have to rest quite frequenty. And what's the best place to rest when you're out in the nature? Well, it's by a nearby tree! Not only it shields you from the bad weather, but you can also lean on it to recover strength."
+  },
+  "立つ": {
+    "parts": [
+      {
+        "char": "立",
+        "name": "tatsu",
+        "meaning": "pôr-se de pé"
+      }
+    ],
+    "mnemonic": "O retrato de uma pessoa em pé com os dois braços caídos ao longo do corpo no chão.",
+    "parts_en": [
+      "Stand"
+    ],
+    "meanings_en": [
+      "Stand"
+    ],
+    "mnemonic_en": "A pictograph of a lid which is standing up placed on a pair of horns protruding from the ground. Wait, what?"
+  },
+  "新しい": {
+    "parts": [
+      {
+        "char": "立",
+        "name": "tatsu",
+        "meaning": "em pé / pimenta"
+      },
+      {
+        "char": "木",
+        "name": "ki",
+        "meaning": "árvore"
+      },
+      {
+        "char": "斤",
+        "name": "ono",
+        "meaning": "machado"
+      }
+    ],
+    "mnemonic": "Usar um machado afiado em uma grande árvore em pé para produzir madeira limpa e totalmente nova.",
+    "parts_en": [
+      "Stand",
+      "Tree",
+      "Axe"
+    ],
+    "meanings_en": [
+      "New"
+    ],
+    "mnemonic_en": "A new axe is going to be sharp. So sharp that it might not leave any tree standing up."
+  },
+  "古い": {
+    "parts": [
+      {
+        "char": "十",
+        "name": "juu",
+        "meaning": "dez"
+      },
+      {
+        "char": "口",
+        "name": "kuchi",
+        "meaning": "boca, gerações"
+      }
+    ],
+    "mnemonic": "Aquilo que foi repassado através da boca ao longo de mais de dez gerações é naturalmente velho e antigo.",
+    "parts_en": [
+      "Old"
+    ],
+    "meanings_en": [
+      "Old"
+    ],
+    "mnemonic_en": "A pictograph of an old gravestone."
+  },
+  "多い": {
+    "parts": [
+      {
+        "char": "夕",
+        "name": "yuu",
+        "meaning": "tarde, entardecer"
+      },
+      {
+        "char": "夕",
+        "name": "yuu",
+        "meaning": "tarde, entardecer"
+      }
+    ],
+    "mnemonic": "Empilhar incontáveis crepúsculos um em cima do outro, indicando que o tempo e a quantidade são muitos.",
+    "parts_en": [
+      "Evening"
+    ],
+    "meanings_en": [
+      "Many",
+      "^Much",
+      "^Lots Of"
+    ],
+    "mnemonic_en": "You will live to see many evenings."
+  },
+  "少ない": {
+    "parts": [
+      {
+        "char": "小",
+        "name": "shou",
+        "meaning": "pequeno"
+      },
+      {
+        "char": "丿",
+        "name": "no",
+        "meaning": "marcação, divisão"
+      }
+    ],
+    "mnemonic": "Tentar dividir ou cortar o que já é bem pequeno o torna extremamente pouco.",
+    "parts_en": [
+      "Small",
+      "Slide"
+    ],
+    "meanings_en": [
+      "Few",
+      "^A Little"
+    ],
+    "mnemonic_en": "If you take something that is already small and slash at it a few times to break it into chunks, well, at the end you're going to end up only with a few pieces. If you'd had something bigger you could have broken it up into more chunks, but alas."
+  },
+  "早い": {
+    "parts": [
+      {
+        "char": "日",
+        "name": "hi",
+        "meaning": "sol"
+      },
+      {
+        "char": "十",
+        "name": "juu",
+        "meaning": "cem, agulha, talo"
+      }
+    ],
+    "mnemonic": "O grande sol da manhã subindo acima dos talos do campo muito cedo.",
+    "parts_en": [
+      "Sun",
+      "Cross"
+    ],
+    "meanings_en": [
+      "Early",
+      "^Fast",
+      "^Quick"
+    ],
+    "mnemonic_en": "The sun rises early in the morning, waaay before ten o'clock."
+  },
+  "遅い": {
+    "parts": [
+      {
+        "char": "辶",
+        "name": "shinnyou",
+        "meaning": "caminho, movimento"
+      },
+      {
+        "char": "犀",
+        "name": "sai",
+        "meaning": "rinoceronte / gado lento"
+      }
+    ],
+    "mnemonic": "Fazer uma viagem caminhando sobre algo muito rústico e devagar, como se fosse atrás de gado, o que faz tudo ficar tarde e atrasado.",
+    "parts_en": [
+      "Scooter",
+      "Flag",
+      "Sheep"
+    ],
+    "meanings_en": [
+      "Slow"
+    ],
+    "mnemonic_en": ""
+  },
+  "近い": {
+    "parts": [
+      {
+        "char": "辶",
+        "name": "shinnyou",
+        "meaning": "caminho"
+      },
+      {
+        "char": "斤",
+        "name": "ono",
+        "meaning": "machado"
+      }
+    ],
+    "mnemonic": "Pelo caminho, você precisou cortar uma distância tão curta que precisou de apenas uma machadada para ficar perto.",
+    "parts_en": [
+      "Scooter",
+      "Axe"
+    ],
+    "meanings_en": [
+      "Near",
+      "^Close"
+    ],
+    "mnemonic_en": "If you see a bloody axe left on the road in the middle of the night then the killer is probably near."
+  },
+  "遠い": {
+    "parts": [
+      {
+        "char": "辶",
+        "name": "shinnyou",
+        "meaning": "caminho"
+      },
+      {
+        "char": "袁",
+        "name": "en",
+        "meaning": "longa vestimenta fluida"
+      }
+    ],
+    "mnemonic": "Alguém com longas roupas fluidas que vão arrastando e se alongando cada vez mais no caminho rumo a um lugar distante.",
+    "parts_en": [
+      "Scooter",
+      "Zombie"
+    ],
+    "meanings_en": [
+      "Far"
+    ],
+    "mnemonic_en": "A thin person with their mouth agape holding a divining rod in their hand. He's on the road, looking far and wide for hidden treasure buried under the earth."
+  },
+  "右": {
+    "parts": [
+      {
+        "char": "𠂇",
+        "name": "te",
+        "meaning": "mão direita"
+      },
+      {
+        "char": "口",
+        "name": "kuchi",
+        "meaning": "boca"
+      }
+    ],
+    "mnemonic": "A mão dominante direita conduzindo o alimento até a boca.",
+    "parts_en": [
+      "Narwhal",
+      "Mouth"
+    ],
+    "meanings_en": [
+      "Right"
+    ],
+    "mnemonic_en": ""
+  },
+  "左": {
+    "parts": [
+      {
+        "char": "𠂇",
+        "name": "te",
+        "meaning": "mão esquerda"
+      },
+      {
+        "char": "工",
+        "name": "kou",
+        "meaning": "ferramenta, ofício"
+      }
+    ],
+    "mnemonic": "A mão esquerda apoiando e conduzindo a ferramenta durante o trabalho.",
+    "parts_en": [
+      "Narwhal",
+      "Construction"
+    ],
+    "meanings_en": [
+      "Left"
+    ],
+    "mnemonic_en": ""
+  },
+  "北": {
+    "parts": [
+      {
+        "char": "匕",
+        "name": "hi",
+        "meaning": "pessoa (virada)"
+      },
+      {
+        "char": "匕",
+        "name": "hi",
+        "meaning": "pessoa"
+      }
+    ],
+    "mnemonic": "Duas pessoas sentadas uma de costas para a outra no norte frio, evitando o vento que congela.",
+    "parts_en": [
+      "Fingers",
+      "Spoon"
+    ],
+    "meanings_en": [
+      "North"
+    ],
+    "mnemonic_en": "A pictograph of a bird's eye view of a road leading north."
+  },
+  "南": {
+    "parts": [
+      {
+        "char": "十",
+        "name": "juu",
+        "meaning": "dez, agulha"
+      },
+      {
+        "char": "冂",
+        "name": "keigamae",
+        "meaning": "fronteira"
+      },
+      {
+        "char": "¥",
+        "name": "en",
+        "meaning": "moeda (interior variante de ovelha)"
+      }
+    ],
+    "mnemonic": "A agulha da bússola apontando dentro da cerca para o sul quente e ensolarado.",
+    "parts_en": [
+      "Cross",
+      "Head",
+      "Horns",
+      "Dry"
+    ],
+    "meanings_en": [
+      "South"
+    ],
+    "mnemonic_en": ""
+  },
+  "東": {
+    "parts": [
+      {
+        "char": "木",
+        "name": "ki",
+        "meaning": "árvore"
+      },
+      {
+        "char": "日",
+        "name": "hi",
+        "meaning": "sol"
+      }
+    ],
+    "mnemonic": "O sol nascendo por trás de uma árvore indica o amanhecer no leste.",
+    "parts_en": [
+      "Tree",
+      "Sun"
+    ],
+    "meanings_en": [
+      "East"
+    ],
+    "mnemonic_en": "A pictograph of a rising sun behind a tree, representing east."
+  },
+  "西": {
+    "parts": [
+      {
+        "char": "襾",
+        "name": "nishi",
+        "meaning": "ninho, cobrir"
+      },
+      {
+        "char": "八",
+        "name": "hachi",
+        "meaning": "dividir / pernas"
+      }
+    ],
+    "mnemonic": "Os pássaros voltando aos seus ninhos empoleirados quando o sol se põe no oeste.",
+    "parts_en": [
+      "West"
+    ],
+    "meanings_en": [
+      "West"
+    ],
+    "mnemonic_en": ""
+  },
+  "前": {
+    "parts": [
+      {
+        "char": "丷",
+        "name": "hachi",
+        "meaning": "chifres"
+      },
+      {
+        "char": "一",
+        "name": "ichi",
+        "meaning": "linha"
+      },
+      {
+        "char": "月",
+        "name": "tsuki",
+        "meaning": "lua / corpo"
+      },
+      {
+        "char": "刂",
+        "name": "ritto",
+        "meaning": "faca"
+      }
+    ],
+    "mnemonic": "Preparar a faca (espada) em *frente* ao corpo antes de avançar para a batalha.",
+    "parts_en": [
+      "Horns",
+      "Ground",
+      "Moon",
+      "Knife"
+    ],
+    "meanings_en": [
+      "Front",
+      "^Before"
+    ],
+    "mnemonic_en": "If you're going to cut off someone's leg as a punishment in a gruesome ritual then you might as well do that in front of a creepy pair of antlers on a wall, right?"
+  },
+  "後ろ": {
+    "parts": [
+      {
+        "char": "彳",
+        "name": "gyouninben",
+        "meaning": "passos"
+      },
+      {
+        "char": "幺",
+        "name": "itogashira",
+        "meaning": "fio, pequeno"
+      },
+      {
+        "char": "夂",
+        "name": "nomofuyu",
+        "meaning": "andar devagar"
+      }
+    ],
+    "mnemonic": "Andar com passos pequenos e devagar faz você ficar muito atrás dos outros.",
+    "parts_en": [
+      "Loiter",
+      "Poop",
+      "Winter"
+    ],
+    "meanings_en": [
+      "Behind",
+      "^After",
+      "^Back",
+      "^Rear"
+    ],
+    "mnemonic_en": "It's going to be a late winter this year. The only winter clothes you have cannot be even called clothes anymore; they are so tattered that they are literally falling apart. Quickly, grab your thread spool and start sewing! There's no time to stand still! It's going to be too late after it gets too cold and you'll freeze to death due to lack of winter clothes!"
+  },
+  "今": {
+    "parts": [
+      {
+        "char": "𠆢",
+        "name": "yane",
+        "meaning": "reunir, teto"
+      },
+      {
+        "char": "一",
+        "name": "ichi",
+        "meaning": "um"
+      },
+      {
+        "char": "フ",
+        "name": "fu",
+        "meaning": "agora (curva)"
+      }
+    ],
+    "mnemonic": "Reunir todas as coisas aqui e neste exato momento presente: o \"agora\".",
+    "parts_en": [
+      "Now"
+    ],
+    "meanings_en": [
+      "Now"
+    ],
+    "mnemonic_en": "You hear an evil laughter from below. Fufufu. Crap! It's getting closer and closer! But where should you go? You're trapped here and you can only go down. There is one way — now is the time to go up on the sloped roof and escape!"
+  },
+  "毎": {
+    "parts": [
+      {
+        "char": "𠂉",
+        "name": "kanmuri",
+        "meaning": "pessoa (mãe deitada)"
+      },
+      {
+        "char": "母",
+        "name": "haha",
+        "meaning": "mãe"
+      }
+    ],
+    "mnemonic": "A mãe cuidadosa sempre fazendo a mesma coisa de forma dedicada todo, *cada* dia.",
+    "parts_en": [
+      "Gun",
+      "Window"
+    ],
+    "meanings_en": [
+      "Every"
+    ],
+    "mnemonic_en": "My mother dresses up every Halloween as a cow, she even wears a cow head."
+  },
+  "週": {
+    "parts": [
+      {
+        "char": "辶",
+        "name": "shinnyou",
+        "meaning": "caminho"
+      },
+      {
+        "char": "周",
+        "name": "shuu",
+        "meaning": "dar a volta, ciclo"
+      }
+    ],
+    "mnemonic": "O sol caminhando e dando a volta completa de 7 dias descreve uma semana.",
+    "parts_en": [
+      "Scooter",
+      "Circumference"
+    ],
+    "meanings_en": [
+      "Week"
+    ],
+    "mnemonic_en": ""
+  },
+  "朝": {
+    "parts": [
+      {
+        "char": "十",
+        "name": "juu",
+        "meaning": "grama (antigamente)"
+      },
+      {
+        "char": "日",
+        "name": "hi",
+        "meaning": "sol"
+      },
+      {
+        "char": "月",
+        "name": "tsuki",
+        "meaning": "lua"
+      }
+    ],
+    "mnemonic": "Aquele momento raro de manhã em que o sol já se levantou na grama, mas a lua ainda está no céu.",
+    "parts_en": [
+      "Cross",
+      "Sun",
+      "Moon"
+    ],
+    "meanings_en": [
+      "Morning"
+    ],
+    "mnemonic_en": "When I woke up this morning I saw the moon. I guess I woke up really early, so I went back to sleep and... crap! It's ten o'clock already! I overslept!"
+  },
+  "夜": {
+    "parts": [
+      {
+        "char": "亠",
+        "name": "nabebuta",
+        "meaning": "cabeça, noite"
+      },
+      {
+        "char": "亻",
+        "name": "ninben",
+        "meaning": "pessoa"
+      },
+      {
+        "char": "夕",
+        "name": "yuu",
+        "meaning": "entardecer"
+      },
+      {
+        "char": "乀",
+        "name": "migi",
+        "meaning": "perna longa"
+      }
+    ],
+    "mnemonic": "Uma pessoa estendendo totalmente sua perna para relaxar logo após o anoitecer.",
+    "parts_en": [
+      "Lid",
+      "Leader",
+      "Winter",
+      "Drop"
+    ],
+    "meanings_en": [
+      "Night",
+      "^Evening"
+    ],
+    "mnemonic_en": "At night we put a lid on the troubles of the day and rest. Picture the thin person wrapped up snugly in the cozy late winter blankets like a tiny droplet."
+  },
+  "半": {
+    "parts": [
+      {
+        "char": "丷",
+        "name": "hachi",
+        "meaning": "dividir"
+      },
+      {
+        "char": "二",
+        "name": "ni",
+        "meaning": "dois"
+      },
+      {
+        "char": "丨",
+        "name": "tate-bou",
+        "meaning": "linha de corte"
+      }
+    ],
+    "mnemonic": "Uma grande faca cortando as duas linhas perfeitamente pelo meio (metade).",
+    "parts_en": [
+      "Triceratops",
+      "Dry"
+    ],
+    "meanings_en": [
+      "Half"
+    ],
+    "mnemonic_en": "A pictograph of a part of a fence that will be destroyed. There are three boards to smash, the first one is already in half and there are still two more to go"
+  },
+  "何": {
+    "parts": [
+      {
+        "char": "亻",
+        "name": "ninben",
+        "meaning": "pessoa"
+      },
+      {
+        "char": "可",
+        "name": "ka",
+        "meaning": "possível, o quê, aprovar"
+      }
+    ],
+    "mnemonic": "Uma pessoa carregando uma caixa e você pergunta \"O que é possível ser isso nas mãos dele?\".",
+    "parts_en": [
+      "Leader",
+      "Lip Ring"
+    ],
+    "meanings_en": [
+      "What"
+    ],
+    "mnemonic_en": "Imagine a really thin person lifting up a car. What?! Even such a thin person can do that?! It's a real thing actually, it's called hysterical strength."
+  },
+  "名前": {
+    "parts": [
+      {
+        "char": "名",
+        "name": "na",
+        "meaning": "nome"
+      },
+      {
+        "char": "前",
+        "name": "mae",
+        "meaning": "antes, frente"
+      }
+    ],
+    "mnemonic": "No Japão, o \"nome\" que você escreve e chama é falado sempre *antes* (a frente) de qualquer título.",
+    "parts_en": [
+      "Evening",
+      "Mouth"
+    ],
+    "meanings_en": [
+      "Name",
+      "^Famous"
+    ],
+    "mnemonic_en": "When you're having a date this evening with a girl you've anonymously met online it'd be the best to open your mouth and tell her your name before the sun sets and you'll go to your apartment to do the deed. Otherwise it'll be really awkward the next day when you wake up next to each other, in the same bed, and not know the other's name."
+  },
+  "友達": {
+    "parts": [
+      {
+        "char": "友",
+        "name": "tomo",
+        "meaning": "amigo"
+      },
+      {
+        "char": "達",
+        "name": "tachi",
+        "meaning": "plural, alcançar"
+      }
+    ],
+    "mnemonic": "Diversos amigos caminhando juntos lado a lado para alcançar seus sonhos (plural de amigos).",
+    "parts_en": [
+      "Narwhal",
+      "Stool"
+    ],
+    "meanings_en": [
+      "Friend"
+    ],
+    "mnemonic_en": "If someone's once again by your side when your in trouble for the millionth time, you know you have a true friend."
+  },
+  "安全": {
+    "parts": [
+      {
+        "char": "安",
+        "name": "an",
+        "meaning": "paz, calmo"
+      },
+      {
+        "char": "全",
+        "name": "zen",
+        "meaning": "completo, todo"
+      }
+    ],
+    "mnemonic": "Uma mulher debaixo do teto protegida traz \"paz\" e o rei debaixo do teto é \"total\", a união é \"segurança\".",
+    "parts_en": [
+      "Roof",
+      "Woman"
+    ],
+    "meanings_en": [
+      "Relax",
+      "^Cheap"
+    ],
+    "mnemonic_en": "If you have a nice house with a roof with a chimney, and a woman living there who's waiting for you to come home from work, who loves you and keeps you warm at night, well, that brings a certain piece of mind when you think about it, doesn't it?"
+  },
+  "高校": {
+    "parts": [
+      {
+        "char": "高",
+        "name": "kou",
+        "meaning": "alto"
+      },
+      {
+        "char": "校",
+        "name": "kou",
+        "meaning": "escola"
+      }
+    ],
+    "mnemonic": "A escola de nível mais alto onde os adolescentes estudam para a faculdade.",
+    "parts_en": [
+      "Lid",
+      "Mouth",
+      "Mustache"
+    ],
+    "meanings_en": [
+      "Tall",
+      "^Expensive",
+      "^High"
+    ],
+    "mnemonic_en": "That is a really high two-story building. We have the mouth on the bottom being the entrance, the upside-down-box being the first floor, another mouth being the second floor widow, and a lid at the top being its roof."
+  },
+  "図書館": {
+    "parts": [
+      {
+        "char": "図",
+        "name": "to",
+        "meaning": "diagrama, mapa"
+      },
+      {
+        "char": "書",
+        "name": "sho",
+        "meaning": "escrever"
+      },
+      {
+        "char": "館",
+        "name": "kan",
+        "meaning": "salão, prédio"
+      }
+    ],
+    "mnemonic": "O grande edifício (salão) feito especialmente para armazenar diagramas e escritos.",
+    "parts_en": [
+      "Mouth",
+      "Treasure",
+      "Ice"
+    ],
+    "meanings_en": [
+      "Diagram"
+    ],
+    "mnemonic_en": "A pictograph of a diagram which shows you place where the treasure is hidden, with a cross marking the spot where it is buried, and two drops of ink showing the directions to go."
+  },
+  "勉強": {
+    "parts": [
+      {
+        "char": "勉",
+        "name": "ben",
+        "meaning": "esforço, trabalho duro"
+      },
+      {
+        "char": "強",
+        "name": "kyou",
+        "meaning": "forte"
+      }
+    ],
+    "mnemonic": "Somente se esforçando muito e usando força de vontade você consegue \"estudar\" com consistência.",
+    "parts_en": [
+      "Excuse",
+      "Power"
+    ],
+    "meanings_en": [
+      "Exertion"
+    ],
+    "mnemonic_en": "Those that have power are exempt from needing to try hard."
+  },
+  "仕事": {
+    "parts": [
+      {
+        "char": "仕",
+        "name": "shi",
+        "meaning": "servir, fazer"
+      },
+      {
+        "char": "事",
+        "name": "goto",
+        "meaning": "coisa, assunto, tarefa"
+      }
+    ],
+    "mnemonic": "Servir a sociedade fazendo tarefas e prestando serviços configura um \"trabalho\".",
+    "parts_en": [
+      "Leader",
+      "Samurai"
+    ],
+    "meanings_en": [
+      "Doing",
+      "^Do"
+    ],
+    "mnemonic_en": "A professional is a person who serves his clients or his boss for money. Even if he's a thin weakling, as a proper professional he will do his job!"
+  },
+  "電車": {
+    "parts": [
+      {
+        "char": "電",
+        "name": "den",
+        "meaning": "eletricidade"
+      },
+      {
+        "char": "車",
+        "name": "sha",
+        "meaning": "veículo"
+      }
+    ],
+    "mnemonic": "O veículo comprido e com muitos vagões movido a eletricidade (trem).",
+    "parts_en": [
+      "Rain",
+      "Rice Paddy",
+      "Umbrella"
+    ],
+    "meanings_en": [
+      "Electricity"
+    ],
+    "mnemonic_en": "An umbrella can protect you from the sun and from the rain, but it's not very effective against an electrical storm. If you get struck by a lightning it's over for you."
+  },
+  "病院": {
+    "parts": [
+      {
+        "char": "病",
+        "name": "byou",
+        "meaning": "doente"
+      },
+      {
+        "char": "院",
+        "name": "in",
+        "meaning": "instituição, pátio"
+      }
+    ],
+    "mnemonic": "A grande instituição oficial de saúde desenhada para acolher as pessoas doentes.",
+    "parts_en": [
+      "Sick",
+      "Dynamite"
+    ],
+    "meanings_en": [
+      "Sick",
+      "^Sickness",
+      "^Ill",
+      "^Illness"
+    ],
+    "mnemonic_en": ""
+  },
+  "思う": {
+    "parts": [
+      {
+        "char": "田",
+        "name": "ta",
+        "meaning": "campo móvel / cérebro"
+      },
+      {
+        "char": "心",
+        "name": "kokoro",
+        "meaning": "coração"
+      }
+    ],
+    "mnemonic": "Os antigos japoneses acreditavam que processar algo no cérebro e no coração representava \"pensar\".",
+    "parts_en": [
+      "Rice Paddy",
+      "Heart"
+    ],
+    "meanings_en": [
+      "Think",
+      "^Thought"
+    ],
+    "mnemonic_en": "If you really think that something is true then even a whole rice field worth of evidence might not be enough to change your heart. People are really stubborn, you know?"
+  },
+  "知る": {
+    "parts": [
+      {
+        "char": "矢",
+        "name": "ya",
+        "meaning": "flecha"
+      },
+      {
+        "char": "口",
+        "name": "kuchi",
+        "meaning": "boca"
+      }
+    ],
+    "mnemonic": "O conhecimento dispara de forma rápida e certeira como uma flecha saindo da boca de quem ensina.",
+    "parts_en": [
+      "Arrow",
+      "Mouth"
+    ],
+    "meanings_en": [
+      "Know"
+    ],
+    "mnemonic_en": "If you know an answer to something then that information will fly from your mouth like an arrow."
+  },
+  "作る": {
+    "parts": [
+      {
+        "char": "亻",
+        "name": "ninben",
+        "meaning": "pessoa"
+      },
+      {
+        "char": "乍",
+        "name": "nagara",
+        "meaning": "fazer enquanto, serrote"
+      }
+    ],
+    "mnemonic": "Uma pessoa serrando e batendo coisas simultaneamente para construir ou \"fazer\" um objeto.",
+    "parts_en": [
+      "Leader",
+      "Key"
+    ],
+    "meanings_en": [
+      "Make"
+    ],
+    "mnemonic_en": "While you're a really thin person, weak and feeble, you can still make things. Sure, you might not be able to do carpentry, or anything else that requires significant strength, but you can still make paper planes or something like that."
+  },
+  "教える": {
+    "parts": [
+      {
+        "char": "孝",
+        "name": "kou",
+        "meaning": "piedade filial, aprender"
+      },
+      {
+        "char": "攵",
+        "name": "bokuzukuri",
+        "meaning": "bater levemente, instruir"
+      }
+    ],
+    "mnemonic": "Um instrutor dando tapinhas encorajadores nas costas de um pequeno aluno aprendendo.",
+    "parts_en": [
+      "Teacher",
+      "Winter"
+    ],
+    "meanings_en": [
+      "Teach"
+    ],
+    "mnemonic_en": "\"Fullfill your duty to your parents by sitting on this damn folding chair, and just let me teach you!\" said the teacher to a rowdy kid in his class.\nIn Asian cultures it's very important that you fulfill your duty to your parents. And when you're a kid you do that by paying attention at school and getting good grades."
+  },
+  "開ける": {
+    "parts": [
+      {
+        "char": "門",
+        "name": "mon",
+        "meaning": "portão"
+      },
+      {
+        "char": "干",
+        "name": "kan",
+        "meaning": "puxar, secar, escudo"
+      }
+    ],
+    "mnemonic": "Pegar o ferrolho ou as duas abas espessas do portão puxando para deixá-lo \"aberto\".",
+    "parts_en": [
+      "Gate",
+      "Lantern"
+    ],
+    "meanings_en": [
+      "Open"
+    ],
+    "mnemonic_en": "When you peek through the gate you can see a beautiful oriental lantern inside. The lantern is a little bit too bright so you can't see anything else; for that you'd need to open the gate and go inside."
+  },
+  "閉める": {
+    "parts": [
+      {
+        "char": "門",
+        "name": "mon",
+        "meaning": "portão"
+      },
+      {
+        "char": "才",
+        "name": "sai",
+        "meaning": "tranca de madeira"
+      }
+    ],
+    "mnemonic": "Pegar uma grande peça de madeira em formato de pino e atravessar no portão para deixá-lo \"fechado\".",
+    "parts_en": [
+      "Gate",
+      "Genius"
+    ],
+    "meanings_en": [
+      "Closed",
+      "^Close",
+      "^Closure"
+    ],
+    "mnemonic_en": "The gate is only open for talented people, so for you it might as well be considered closed."
+  },
+  "待つ": {
+    "parts": [
+      {
+        "char": "彳",
+        "name": "gyouninben",
+        "meaning": "passos, caminho"
+      },
+      {
+        "char": "寺",
+        "name": "tera",
+        "meaning": "templo"
+      }
+    ],
+    "mnemonic": "Parar os passos na entrada de um templo sagrado para \"esperar\" pacientemente o monge.",
+    "parts_en": [
+      "Loiter",
+      "Temple"
+    ],
+    "meanings_en": [
+      "Wait"
+    ],
+    "mnemonic_en": "If you need a good place to wait then a Buddhist temple is going to be the perfect place to go to and stand still for a while among all of the meditating Buddhist monks."
+  },
+  "持つ": {
+    "parts": [
+      {
+        "char": "扌",
+        "name": "tehen",
+        "meaning": "mão"
+      },
+      {
+        "char": "寺",
+        "name": "tera",
+        "meaning": "templo"
+      }
+    ],
+    "mnemonic": "Os monges tinham a mão sobre todos os relógios (marcadores de tempo), \"tendo\" ou segurando coisas preciosas.",
+    "parts_en": [
+      "Fingers",
+      "Temple"
+    ],
+    "meanings_en": [
+      "Hold"
+    ],
+    "mnemonic_en": "Some of the monks at a certain Buddhist temple in Japan are so dedicated to their training that they absolutely refuse to use their right hand. Instead they exclusively use their left hand to do whatever task is necessary, until they have reached enlightenment."
+  },
+  "使う": {
+    "parts": [
+      {
+        "char": "亻",
+        "name": "ninben",
+        "meaning": "pessoa"
+      },
+      {
+        "char": "吏",
+        "name": "ri",
+        "meaning": "oficial, mensageiro"
+      }
+    ],
+    "mnemonic": "O ato de uma pessoa despachar um oficial para \"usar\" os serviços da prefeitura.",
+    "parts_en": [
+      "Leader",
+      "Ground",
+      "History"
+    ],
+    "meanings_en": [
+      "Use"
+    ],
+    "mnemonic_en": ""
+  },
+  "送る": {
+    "parts": [
+      {
+        "char": "辶",
+        "name": "shinnyou",
+        "meaning": "caminho"
+      },
+      {
+        "char": "关",
+        "name": "sou",
+        "meaning": "rir, tocha (variante)"
+      }
+    ],
+    "mnemonic": "Para \"enviar\" a mensagem ou o mensageiro pelo caminho, eles seguram uma grande tocha.",
+    "parts_en": [
+      "Scooter",
+      "Horns",
+      "Heaven"
+    ],
+    "meanings_en": [
+      "Send"
+    ],
+    "mnemonic_en": ""
+  },
+  "着く": {
+    "parts": [
+      {
+        "char": "羊",
+        "name": "hitsuji",
+        "meaning": "ovelha"
+      },
+      {
+        "char": "目",
+        "name": "me",
+        "meaning": "olho"
+      }
+    ],
+    "mnemonic": "O pastor vestindo lã de ovelha (roupas) e usando os olhos para ver se a ovelha \"chega\" ao pasto.",
+    "parts_en": [
+      "Horns",
+      "King",
+      "Slide",
+      "Eye"
+    ],
+    "meanings_en": [
+      "Wear",
+      "^Arrive"
+    ],
+    "mnemonic_en": "Why do people wear protective equipment? So that they eye doesn't get slashed by a force of nature they're working with, say, a wild animal like a bear or an explosive chemical reaction. Better be safe than sorry!\n(This kanji is usually used to mean \"wear\" from the shoulders down, so it excludes various form of facewear and eye protection, however you can imagine a full-body kevlar-reinforced body suit that would also cover your face.)"
+  },
+  "走る": {
+    "parts": [
+      {
+        "char": "土",
+        "name": "tsuchi",
+        "meaning": "terra, chão"
+      },
+      {
+        "char": "疋",
+        "name": "hiki",
+        "meaning": "pé em ação"
+      }
+    ],
+    "mnemonic": "A imagem de uma pessoa avançando com o pé no chão aterrorizada (como se estivesse pisando), correndo.",
+    "parts_en": [
+      "Run"
+    ],
+    "meanings_en": [
+      "Run"
+    ],
+    "mnemonic_en": "Running barefoot is a dangerous business. You can get splinters in your foot from stepping on the rocks and bare earth. So be sure to wear your running shoes before you go for a run!"
+  },
+  "売る": {
+    "parts": [
+      {
+        "char": "士",
+        "name": "shi",
+        "meaning": "guerreiro, intelectual"
+      },
+      {
+        "char": "冖",
+        "name": "wakanmuri",
+        "meaning": "teto"
+      },
+      {
+        "char": "儿",
+        "name": "ninnyo",
+        "meaning": "pernas"
+      }
+    ],
+    "mnemonic": "Aquele guerreiro sob o teto da tenda mostrando suas coisas aos passantes (pernas) para \"vender\".",
+    "parts_en": [
+      "Samurai",
+      "Forehead",
+      "Legs"
+    ],
+    "meanings_en": [
+      "Sell"
+    ],
+    "mnemonic_en": "A professional is someone who goes out and sells his services to those who'd rather rest their legs underneath their cozy roof instead of doing the work themselves."
+  },
+  "借りる": {
+    "parts": [
+      {
+        "char": "亻",
+        "name": "ninben",
+        "meaning": "pessoa"
+      },
+      {
+        "char": "昔",
+        "name": "mukashi",
+        "meaning": "antiguidade, tempo longo"
+      }
+    ],
+    "mnemonic": "Uma pessoa que pediu algo emprestado por um bom e longo tempo desde as eras antigas.",
+    "parts_en": [
+      "Leader",
+      "Long Ago"
+    ],
+    "meanings_en": [
+      "Borrow"
+    ],
+    "mnemonic_en": ""
+  },
+  "切る": {
+    "parts": [
+      {
+        "char": "七",
+        "name": "shichi",
+        "meaning": "sete (modificado p/ corte)"
+      },
+      {
+        "char": "刀",
+        "name": "katana",
+        "meaning": "espada, faca"
+      }
+    ],
+    "mnemonic": "Sete poderosos e rápidos golpes seguidos feitos usando uma faca afiada para \"cortar\" algo.",
+    "parts_en": [
+      "Seven",
+      "Sword"
+    ],
+    "meanings_en": [
+      "Cut"
+    ],
+    "mnemonic_en": "The katana is the best weapon to cut through seven things at once. Sharp!"
+  },
+  "広い": {
+    "parts": [
+      {
+        "char": "广",
+        "name": "madare",
+        "meaning": "salão espaçoso, caverna"
+      },
+      {
+        "char": "ム",
+        "name": "mu",
+        "meaning": "privado / cotovelo"
+      }
+    ],
+    "mnemonic": "Um salão gigante onde você pode esticar os dois cotovelos completamente porque é mito *espaçoso*.",
+    "parts_en": [
+      "Canopy",
+      "Private"
+    ],
+    "meanings_en": [
+      "Wide"
+    ],
+    "mnemonic_en": ""
+  },
+  "強い": {
+    "parts": [
+      {
+        "char": "弓",
+        "name": "yumi",
+        "meaning": "arco"
+      },
+      {
+        "char": "ム",
+        "name": "mu",
+        "meaning": "cotovelo, dobrar"
+      },
+      {
+        "char": "虫",
+        "name": "mushi",
+        "meaning": "inseto (antigo cavalo)"
+      }
+    ],
+    "mnemonic": "Um arco flexível puxado pelo cotovelo do guerreiro com uma destreza de inseto é extremamente \"forte\".",
+    "parts_en": [
+      "Bow",
+      "Private",
+      "Insect"
+    ],
+    "meanings_en": [
+      "Strong",
+      "^Strength"
+    ],
+    "mnemonic_en": "A mutated insect with an arm of a bodybuilder instead of its head... Yes, this horryfing creature is probably going to be strong enough to pull on a bow."
+  },
+  "弱い": {
+    "parts": [
+      {
+        "char": "弓",
+        "name": "yumi",
+        "meaning": "arco"
+      },
+      {
+        "char": "彡",
+        "name": "san-zukuri",
+        "meaning": "pelos / asas pequenas"
+      }
+    ],
+    "mnemonic": "Dois (repetidos) arcos extremamente minúsculos e flexíveis igual penas que atiram sem impacto, muito fracos.",
+    "parts_en": [
+      "Bow",
+      "Ice"
+    ],
+    "meanings_en": [
+      "Weak"
+    ],
+    "mnemonic_en": ""
+  },
+  "正しい": {
+    "parts": [
+      {
+        "char": "一",
+        "name": "ichi",
+        "meaning": "um (linha de chegada)"
+      },
+      {
+        "char": "止",
+        "name": "tomeru",
+        "meaning": "parar, pisada"
+      }
+    ],
+    "mnemonic": "Pisar perfeitamente na linha reta da moral, da verdade, a conduta correta na sociedade.",
+    "parts_en": [
+      "Ground",
+      "Stop"
+    ],
+    "meanings_en": [
+      "Correct"
+    ],
+    "mnemonic_en": "You stop once you get one correct answer."
+  },
+  "家": {
+    "parts": [
+      {
+        "char": "宀",
+        "name": "ukanmuri",
+        "meaning": "teto"
+      },
+      {
+        "char": "豕",
+        "name": "inoko",
+        "meaning": "porco"
+      }
+    ],
+    "mnemonic": "Antigamente, você tinha que morar sob um teto tendo um porco criado na cozinha para manter a \"casa\" e o lar.",
+    "parts_en": [
+      "Roof",
+      "Pig"
+    ],
+    "meanings_en": [
+      "House",
+      "^Home"
+    ],
+    "mnemonic_en": "A nice house with a roof with a chimney is not a place to keep a wild pig."
+  },
+  "地": {
+    "parts": [
+      {
+        "char": "土",
+        "name": "tsuchi",
+        "meaning": "terra"
+      },
+      {
+        "char": "也",
+        "name": "ya",
+        "meaning": "escorpião / espalhar"
+      }
+    ],
+    "mnemonic": "A imagem da terra se espalhando horizontalmente e verticalmente como uma cordilheira até onde a vista alcança (solo/lugar).",
+    "parts_en": [
+      "Dirt",
+      "Alligator"
+    ],
+    "meanings_en": [
+      "Earth",
+      "^Ground"
+    ],
+    "mnemonic_en": "To be in the earth is to be under ground."
+  },
+  "工": {
+    "parts": [
+      {
+        "char": "工",
+        "name": "kou",
+        "meaning": "pilar de sustentação, trabalho"
+      }
+    ],
+    "mnemonic": "Um pilar erguido no chão para sustentar o teto. Símbolo do construtor e engenheiro de obras.",
+    "parts_en": [
+      "Construction"
+    ],
+    "meanings_en": [
+      "Construction",
+      "^Industry"
+    ],
+    "mnemonic_en": "A pictograph of a steel I-beam used during construction."
+  },
+  "自": {
+    "parts": [
+      {
+        "char": "自",
+        "name": "ji",
+        "meaning": "nariz, o próprio"
+      }
+    ],
+    "mnemonic": "Um close do nariz em uma face. No Japão como no oriente, apontar pro nariz significa \"Eu próprio\".",
+    "parts_en": [
+      "Self"
+    ],
+    "meanings_en": [
+      "Self"
+    ],
+    "mnemonic_en": "When your eye burns and itches it's time to self-medicate and put a drop of eyedrops in you eye."
+  },
+  "世": {
+    "parts": [
+      {
+        "char": "世",
+        "name": "se",
+        "meaning": "mundo, geração"
+      }
+    ],
+    "mnemonic": "A junção e ramificação de 3 cruzes (trinta) indicando um período normal de trinta anos para repassar as coisas ao globo: uma geração.",
+    "parts_en": [
+      "World"
+    ],
+    "meanings_en": [
+      "World",
+      "^Generation"
+    ],
+    "mnemonic_en": "At the start of the twentieth century we had two huge world wars which claimed a lot of lives. You can still see how the world was back then by looking at the pictures from that era, pictures that sit now in a picture frame."
+  },
+  "運": {
+    "parts": [
+      {
+        "char": "辶",
+        "name": "shinnyou",
+        "meaning": "caminho"
+      },
+      {
+        "char": "軍",
+        "name": "gun",
+        "meaning": "exército / carruagem com teto (車+冖)"
+      }
+    ],
+    "mnemonic": "Movimentar imensos exércitos caminhando do oriente para cá \"transportando\" coisas. Requer muita sorte militar.",
+    "parts_en": [
+      "Scooter",
+      "Forehead",
+      "Car"
+    ],
+    "meanings_en": [
+      "Carry",
+      "^Luck"
+    ],
+    "mnemonic_en": "An army on the road carrying weapons and supplies."
+  },
+  "転": {
+    "parts": [
+      {
+        "char": "車",
+        "name": "kuruma",
+        "meaning": "carro, veículo"
+      },
+      {
+        "char": "云",
+        "name": "iu",
+        "meaning": "nuvem (rodopiando)"
+      }
+    ],
+    "mnemonic": "Um carro no qual a roda está rodopiando tão ferozmente que parece rodar, rolar e girar igual uma nuvem solta e transferir o veículo.",
+    "parts_en": [
+      "Car",
+      "Cloud"
+    ],
+    "meanings_en": [
+      "Revolve"
+    ],
+    "mnemonic_en": "To quote my favorite vehicle related poem, the wheels on the bus go round and round... in other words they roll around."
+  },
+  "色": {
+    "parts": [
+      {
+        "char": "ク",
+        "name": "ku",
+        "meaning": "vínculo, segurar (topo)"
+      },
+      {
+        "char": "巴",
+        "name": "tomoe",
+        "meaning": "cauda chata / corpo humano"
+      }
+    ],
+    "mnemonic": "Historicamente o blush e a maquiagem para colorir o corpo era aplicado pelas pessoas. A fisionomia de rosto colorido, a cor.",
+    "parts_en": [
+      "Color"
+    ],
+    "meanings_en": [
+      "Color"
+    ],
+    "mnemonic_en": "You want to color your hook? Just dip it into that that liquid over there which looks like a swirly pattern. That's paint. Lots of paints mixed together. That's why it's swirly."
+  },
+  "同": {
+    "parts": [
+      {
+        "char": "冂",
+        "name": "keigamae",
+        "meaning": "contorno externo / tampa"
+      },
+      {
+        "char": "一",
+        "name": "ichi",
+        "meaning": "um"
+      },
+      {
+        "char": "口",
+        "name": "kuchi",
+        "meaning": "boca"
+      }
+    ],
+    "mnemonic": "Toda a caixa tendo \"uma mesma boca\", uma mesma regra e um mesmo compasso para estar harmonioso (igual).",
+    "parts_en": [
+      "Mustache",
+      "Ground"
+    ],
+    "meanings_en": [
+      "Same"
+    ],
+    "mnemonic_en": "When it's under an upside-down box one mouth is going to feel the same as any other.\nThere is a certain traditional wedding game in Eastern Europe where a blindfolded groom gropes the legs of women in search for his wife; he wins if he can find his wife by touch alone. Imagine a similar game, but instead of blindfolding the groom we put all of the women in cardboard boxes, and then he just reaches with his hands underneath the box and gropes their mouths instlead of legs. Would you be able to tell one person from another just by touching their mouth?"
+  },
+  "場": {
+    "parts": [
+      {
+        "char": "土",
+        "name": "tsuchi",
+        "meaning": "terra"
+      },
+      {
+        "char": "昜",
+        "name": "you",
+        "meaning": "sol brilhante, local amplo"
+      }
+    ],
+    "mnemonic": "A imagem de uma grande terra ou praça onde os fortes raios de sol brilham (como um estádio): um local.",
+    "parts_en": [
+      "Dirt",
+      "Easy"
+    ],
+    "meanings_en": [
+      "Location",
+      "^Place"
+    ],
+    "mnemonic_en": "If you want to know the precise location of a floating clump of earth (an asteroid) you need to look at the light of the sun that is reflected off of it."
+  },
+  "所": {
+    "parts": [
+      {
+        "char": "戸",
+        "name": "ko",
+        "meaning": "porta, aba"
+      },
+      {
+        "char": "斤",
+        "name": "ono",
+        "meaning": "machado"
+      }
+    ],
+    "mnemonic": "O \"local\" específico na casa (perto da porta) onde fica protegido ou erguido o pesado machado.",
+    "parts_en": [
+      "Door",
+      "Axe"
+    ],
+    "meanings_en": [
+      "Place"
+    ],
+    "mnemonic_en": "\"We need to get into that place! Quickly — grab that axe and just smash the door with it!\""
+  },
+  "死": {
+    "parts": [
+      {
+        "char": "歹",
+        "name": "gatsuhen",
+        "meaning": "ossos pélvicos, morte"
+      },
+      {
+        "char": "匕",
+        "name": "hi",
+        "meaning": "pessoa ajoelhada, cauda"
+      }
+    ],
+    "mnemonic": "O lamentável instante onde restam apenas restos mortais (ossos) ao lado de uma pessoa prostrada no chão, indicando a morte.",
+    "parts_en": [
+      "Yakuza",
+      "Spoon"
+    ],
+    "meanings_en": [
+      "Death"
+    ],
+    "mnemonic_en": "Long after your death the only thing left of you will be your bone remains. And maybe your spoon, if it was made out of metal."
+  },
+  "通": {
+    "parts": [
+      {
+        "char": "辶",
+        "name": "shinnyou",
+        "meaning": "caminho"
+      },
+      {
+        "char": "甬",
+        "name": "you",
+        "meaning": "tubo, caminho cilíndrico"
+      }
+    ],
+    "mnemonic": "Passar por caminhos e vias expressas (como que fluindo por um grande túnel e tubo sem bloqueios), ir pelo trajeto.",
+    "parts_en": [
+      "Scooter",
+      "Mama",
+      "Task"
+    ],
+    "meanings_en": [
+      "Pass Through"
+    ],
+    "mnemonic_en": "You're on the road and you see this huge, rusty old bell, ringing. \"Look — they're ringing the bell because they're closing the gates! Let's go! Quickly! We need to pass through before the bell stops ringing and they shut the gates!\""
+  },
+  "考える": {
+    "parts": [
+      {
+        "char": "老",
+        "name": "oi",
+        "meaning": "velho (topo modificado)"
+      },
+      {
+        "char": "丂",
+        "name": "kou",
+        "meaning": "bengala, ar superior"
+      }
+    ],
+    "mnemonic": "Um mestre ancião velho inclinado e amparado em sua bengala focando toda a sua experiência do ambiente em uma profunda reflexão e reflexão em pensamento.",
+    "parts_en": [
+      "Coffin",
+      "Beggar"
+    ],
+    "meanings_en": [
+      "Think",
+      "^Consider"
+    ],
+    "mnemonic_en": "If you think about being put in an old grave, being under all of that earth with no way out and eventually not being able to breathe due to running out of air... that's a terrifying thought, isn't it?\nThis kanji depicts this situation in a pictographic way — at the top we have the grave itself, and underneath is you, unable to breath."
+  },
+  "届ける": {
+    "parts": [
+      {
+        "char": "尸",
+        "name": "shikabane",
+        "meaning": "telhado envergado"
+      },
+      {
+        "char": "由",
+        "name": "yuu",
+        "meaning": "brotar, chegar na ponta"
+      }
+    ],
+    "mnemonic": "Chegar na varanda, sob uma abóbada com os documentos. Deixar despontar a sua chegada, uma encomenda ou pedido (notificando).",
+    "parts_en": [
+      "Flag",
+      "Reason"
+    ],
+    "meanings_en": [
+      "Deliver"
+    ],
+    "mnemonic_en": ""
+  },
+  "明るい": {
+    "parts": [
+      {
+        "char": "日",
+        "name": "hi",
+        "meaning": "sol"
+      },
+      {
+        "char": "月",
+        "name": "tsuki",
+        "meaning": "lua"
+      }
+    ],
+    "mnemonic": "A luz do sol somada com a luz da lua representa o máximo do \"brilho\" e claridade possível da natureza.",
+    "parts_en": [
+      "Sun",
+      "Moon"
+    ],
+    "meanings_en": [
+      "Bright"
+    ],
+    "mnemonic_en": "With the moon and the sun shining at the same time it will surely be bright in here."
+  },
+  "悪い": {
+    "parts": [
+      {
+        "char": "亜",
+        "name": "a",
+        "meaning": "subalterno, deformação, corcunda"
+      },
+      {
+        "char": "心",
+        "name": "kokoro",
+        "meaning": "coração"
+      }
+    ],
+    "mnemonic": "Ter um coração esmagado, torto ou oprimido, cheio de deformação, é a raiz de alguém ruim, mal.",
+    "parts_en": [
+      "Asia",
+      "Heart"
+    ],
+    "meanings_en": [
+      "Bad",
+      "^Evil"
+    ],
+    "mnemonic_en": "The heart of Asia is apparently in Afghanistan, where a lot of bad things are happening. War. Poverty. Terrorism. Corruption."
+  },
+  "意味": {
+    "parts": [
+      {
+        "char": "音",
+        "name": "oto",
+        "meaning": "som"
+      },
+      {
+        "char": "心",
+        "name": "kokoro",
+        "meaning": "coração, ideia"
+      },
+      {
+        "char": "口",
+        "name": "kuchi",
+        "meaning": "boca"
+      },
+      {
+        "char": "未",
+        "name": "mi",
+        "meaning": "ainda não"
+      }
+    ],
+    "mnemonic": "O \"som\" do \"coração\" é o significado da ideia (Ideia). Uma \"boca\" que \"ainda não\" terminou o galho experimentando algo (Sabor) determina o Sentido.",
+    "parts_en": [
+      "Sound",
+      "Heart"
+    ],
+    "meanings_en": [
+      "Idea"
+    ],
+    "mnemonic_en": "When you come up with a great idea you get so excited that your heart starts beating so fast and so hard that you can hear the sound of your own heartbeat."
+  },
+  "運動": {
+    "parts": [
+      {
+        "char": "辶",
+        "name": "shinnyou",
+        "meaning": "caminho"
+      },
+      {
+        "char": "軍",
+        "name": "gun",
+        "meaning": "exército / carruagem com teto (車+冖)"
+      },
+      {
+        "char": "重",
+        "name": "omoi",
+        "meaning": "pesado (carro+aldeia)"
+      },
+      {
+        "char": "力",
+        "name": "chikara",
+        "meaning": "força"
+      }
+    ],
+    "mnemonic": "Transportar exércitos pelo caminho (Mover) usando a grande força para aguentar as cargas pesadas (Ação).",
+    "parts_en": [
+      "Scooter",
+      "Forehead",
+      "Car"
+    ],
+    "meanings_en": [
+      "Carry",
+      "^Luck"
+    ],
+    "mnemonic_en": "An army on the road carrying weapons and supplies."
+  },
+  "音楽": {
+    "parts": [
+      {
+        "char": "立",
+        "name": "tatsu",
+        "meaning": "ficar em pé"
+      },
+      {
+        "char": "日",
+        "name": "hi",
+        "meaning": "sol / bater ponto"
+      },
+      {
+        "char": "白",
+        "name": "shiro",
+        "meaning": "branco"
+      },
+      {
+        "char": "木",
+        "name": "ki",
+        "meaning": "árvore (prancha de madeira musical)"
+      }
+    ],
+    "mnemonic": "Levantar para proclamar (som). E tocar as pedras de jade batendo na placa de carvalho branco para trazer a alegria (música).",
+    "parts_en": [
+      "Stand",
+      "Sun"
+    ],
+    "meanings_en": [
+      "Sound"
+    ],
+    "mnemonic_en": "Imagine physically standing on the surface a sun. I'd be so hot that the only sound you'd be making is a horrific scream. \"Aaaaaaaaaaaaah! IT BURNS!\""
+  },
+  "会話": {
+    "parts": [
+      {
+        "char": "人",
+        "name": "hito",
+        "meaning": "pessoa"
+      },
+      {
+        "char": "云",
+        "name": "iu",
+        "meaning": "nuvem / dizer"
+      },
+      {
+        "char": "言",
+        "name": "gonben",
+        "meaning": "dizer"
+      },
+      {
+        "char": "舌",
+        "name": "shita",
+        "meaning": "língua"
+      }
+    ],
+    "mnemonic": "Muitas pessoas sobre um mesmo teto conversando em \"Encontro\". A \"fala\" articulada pela \"Fala/Língua\" formando o Diálogo."
+  },
+  "関係": {
+    "parts": [
+      {
+        "char": "門",
+        "name": "mon",
+        "meaning": "portão duplo"
+      },
+      {
+        "char": "糸",
+        "name": "ito",
+        "meaning": "fio"
+      },
+      {
+        "char": "人",
+        "name": "hito",
+        "meaning": "pessoas (modificado / batendo)"
+      }
+    ],
+    "mnemonic": "Trancar o portão atando com dezenas de fios duplos para formar a conexão ou \"Relação\", conectando ambas as coisas e interligando os fios.",
+    "parts_en": [
+      "Gate",
+      "Horns",
+      "Heaven"
+    ],
+    "meanings_en": [
+      "Related",
+      "^Connected"
+    ],
+    "mnemonic_en": "It's a gate that is connected to both heaven and hell through a pair of demonic horns."
+  },
+  "教育": {
+    "parts": [
+      {
+        "char": "孝",
+        "name": "kou",
+        "meaning": "dever filial, obedecer velhos"
+      },
+      {
+        "char": "攵",
+        "name": "bokuzukuri",
+        "meaning": "bater levemente, instruir"
+      },
+      {
+        "char": "子",
+        "name": "ko",
+        "meaning": "filho (virado)"
+      },
+      {
+        "char": "月",
+        "name": "nikuzuki",
+        "meaning": "carne, corpo"
+      }
+    ],
+    "mnemonic": "O mais novo aprendendo através das instruções severas. E criar a \"carne/ventre\" o novo bebê gerando nutrição para \"Crescer\"."
+  },
+  "計画": {
+    "parts": [
+      {
+        "char": "言",
+        "name": "gonben",
+        "meaning": "dizer"
+      },
+      {
+        "char": "十",
+        "name": "ju",
+        "meaning": "dez (marcar o compasso)"
+      },
+      {
+        "char": "聿",
+        "name": "fude",
+        "meaning": "pincel"
+      },
+      {
+        "char": "田",
+        "name": "ta",
+        "meaning": "campo"
+      }
+    ],
+    "mnemonic": "Usar as palavras corretas para contar a precisão de um grande plano. Usar o pincel no campo para dividir o terreno e criar a \"demarcação\" (Planejar)."
+  },
+  "結論": {
+    "parts": [
+      {
+        "char": "糸",
+        "name": "ito",
+        "meaning": "fio, laço"
+      },
+      {
+        "char": "吉",
+        "name": "kichi",
+        "meaning": "boa sorte, excelente"
+      },
+      {
+        "char": "言",
+        "name": "gonben",
+        "meaning": "palavra, dizer"
+      },
+      {
+        "char": "侖",
+        "name": "rin",
+        "meaning": "rolos de bambu enrolados, lógica"
+      }
+    ],
+    "mnemonic": "Juntar os fios de uma excelente discussão (Conectar, amarrar). Somar a eloquência da fala que organiza lógica e documentos (Discutir)."
+  },
+  "工場": {
+    "parts": [
+      {
+        "char": "工",
+        "name": "kou",
+        "meaning": "ferramenta, ofício, régua"
+      },
+      {
+        "char": "土",
+        "name": "tsuchi",
+        "meaning": "terra"
+      },
+      {
+        "char": "昜",
+        "name": "you",
+        "meaning": "fazer subir, expansão sob o sol"
+      }
+    ],
+    "mnemonic": "O local do mestre de ofício (o fabricante). Somado a uma terra gigantesca ensolarada onde as barracas operam para a Fábrica."
+  },
+  "時間": {
+    "parts": [
+      {
+        "char": "日",
+        "name": "hi",
+        "meaning": "sol, dia"
+      },
+      {
+        "char": "寺",
+        "name": "tera",
+        "meaning": "templo"
+      },
+      {
+        "char": "門",
+        "name": "mon",
+        "meaning": "portão frontal"
+      }
+    ],
+    "mnemonic": "Verificar os raios de sol nas marcações solares budistas do templo (Tempo), usando a fresta dos potões (Duração/Intervalo)."
+  },
+  "事実": {
+    "parts": [
+      {
+        "char": "一",
+        "name": "ichi",
+        "meaning": "chão/suporte"
+      },
+      {
+        "char": "口",
+        "name": "kuchi",
+        "meaning": "boca c/ incenso"
+      },
+      {
+        "char": "ヨ",
+        "name": "yo",
+        "meaning": "mão (empunhando pincel)"
+      }
+    ],
+    "mnemonic": "Realizar ações documentadas em mãos. O \"Fato\" em \"Realidade\" e verdade, ou \"sincero\" o interior de uma fruta (O preenchido)."
+  },
+  "住所": {
+    "parts": [
+      {
+        "char": "亻",
+        "name": "ninben",
+        "meaning": "pessoa"
+      },
+      {
+        "char": "主",
+        "name": "nushi",
+        "meaning": "chefe, principal (lâmpada queima)"
+      },
+      {
+        "char": "戸",
+        "name": "to",
+        "meaning": "porta, aba"
+      },
+      {
+        "char": "斤",
+        "name": "ono",
+        "meaning": "machado, arma"
+      }
+    ],
+    "mnemonic": "O Mestre supremo descansando no seu \"Lugar de viver\". Em um ponto ou \"Local\" sob estrita vigilância de portões e armas. Endereço doméstico."
+  },
+  "生活": {
+    "parts": [
+      {
+        "char": "生",
+        "name": "sei",
+        "meaning": "viver"
+      },
+      {
+        "char": "氵",
+        "name": "sanzui",
+        "meaning": "água"
+      },
+      {
+        "char": "舌",
+        "name": "shita",
+        "meaning": "língua profunda"
+      }
+    ],
+    "mnemonic": "A força do nascer e de \"Viver\" combinada com as águas vigorosas que abastecem a raiz e correm velozes pelo corpo (Vital). Sobrevivência."
+  },
+  "世界": {
+    "parts": [
+      {
+        "char": "世",
+        "name": "sei",
+        "meaning": "o mundo, geração, era"
+      },
+      {
+        "char": "田",
+        "name": "ta",
+        "meaning": "campo"
+      },
+      {
+        "char": "介",
+        "name": "kai",
+        "meaning": "imprensado, intermediário"
+      }
+    ],
+    "mnemonic": "Por uma inteira Era e humanidade do globo terrestre. Todos os campos divididos que delimitam um Domínio, Reino ou Limite (O Mundo)."
+  },
+  "絶対": {
+    "parts": [
+      {
+        "char": "糸",
+        "name": "ito",
+        "meaning": "fio, linha"
+      },
+      {
+        "char": "色",
+        "name": "iro",
+        "meaning": "cor (espada de duas perigosas faces cortantes)"
+      },
+      {
+        "char": "対",
+        "name": "tai",
+        "meaning": "oposição / encarando de pé"
+      }
+    ],
+    "mnemonic": "Cortar os laços permanentemente em uma extremidade Absoluta. Permanecendo estático de ambos os lados encaramdo a decisão \"Oposta\"."
+  },
+  "先生": {
+    "parts": [
+      {
+        "char": "先",
+        "name": "sen",
+        "meaning": "anteriomente"
+      },
+      {
+        "char": "生",
+        "name": "sei",
+        "meaning": "nascer"
+      }
+    ],
+    "mnemonic": "Alguém que usou as pernas e rumou em sua jornada \"Previamente\", que já nasceu \"Antes\" de você, garantindo a posição de grande guia."
+  },
+  "大学": {
+    "parts": [
+      {
+        "char": "大",
+        "name": "dai",
+        "meaning": "grande"
+      },
+      {
+        "char": "学",
+        "name": "gaku",
+        "meaning": "estudo, aprendizagem"
+      }
+    ],
+    "mnemonic": "Homens adultos \"Grandiosos\", com as mentes abertas para buscar as coroas (telhados) da maior das erudições e \"Aprendizados\"."
+  },
+  "注意": {
+    "parts": [
+      {
+        "char": "氵",
+        "name": "sanzui",
+        "meaning": "água, fluir/derramar"
+      },
+      {
+        "char": "主",
+        "name": "nushi",
+        "meaning": "mestre, o próprio dono"
+      },
+      {
+        "char": "音",
+        "name": "oto",
+        "meaning": "som do coração, ideias"
+      },
+      {
+        "char": "心",
+        "name": "kokoro",
+        "meaning": "coração interior"
+      }
+    ],
+    "mnemonic": "Despejar (Derramar o fluxo) a totalidade exata das ideias mais importantes e focar todo o \"Significado/Vontade\" em uma só pessoa. O Alerta."
+  },
+  "電話": {
+    "parts": [
+      {
+        "char": "雨",
+        "name": "ame",
+        "meaning": "chuva, natureza dos deuses"
+      },
+      {
+        "char": "申",
+        "name": "mousu",
+        "meaning": "raio explodindo, falar"
+      },
+      {
+        "char": "言",
+        "name": "gonben",
+        "meaning": "dizer"
+      },
+      {
+        "char": "舌",
+        "name": "shita",
+        "meaning": "língua"
+      }
+    ],
+    "mnemonic": "A incrível força cortante celeste da (Eletricidade e Raio) que agora permite a rápida fonação e (Papo/Fala) a grandes distâncias."
+  },
+  "特急": {
+    "parts": [
+      {
+        "char": "牛",
+        "name": "ushi",
+        "meaning": "boi (sacrifício especial)"
+      },
+      {
+        "char": "寺",
+        "name": "tera",
+        "meaning": "templo oficial"
+      },
+      {
+        "char": "心",
+        "name": "kokoro",
+        "meaning": "coração correndo"
+      },
+      {
+        "char": "及",
+        "name": "kyuu",
+        "meaning": "agarrar apressadamente, perigo"
+      }
+    ],
+    "mnemonic": "Oferecer um boi sagrado em uma ocasião perfeitamente Especial (Destaque). Somado com o sentimento de perigo apertando e Forçando as ações com Urgência extrema."
+  },
+  "発表": {
+    "parts": [
+      {
+        "char": "癶",
+        "name": "hatsugashira",
+        "meaning": "pernas saltando e firmando (tiro longo)"
+      },
+      {
+        "char": "衣",
+        "name": "koromo",
+        "meaning": "roupas de origem, base"
+      },
+      {
+        "char": "表",
+        "name": "omote",
+        "meaning": "aparência externa, rosto para cima (vestes peludas do exterior)"
+      }
+    ],
+    "mnemonic": "Uma flecha sendo Lançada / Emitida livremente pelos céus e exibindo pela a Superfície todo o brilhantismo (O anúncio Exposto de alguém)."
+  },
+  "確認": {
+    "parts": [
+      {
+        "char": "石",
+        "name": "ishi",
+        "meaning": "pedra (peso duradouro)"
+      },
+      {
+        "char": "冖",
+        "name": "wa",
+        "meaning": "cabeça / chapéu alto cobrindo o pássaro firme (falcão)"
+      },
+      {
+        "char": "隹",
+        "name": "furutori",
+        "meaning": "passarinho da caça"
+      },
+      {
+        "char": "言",
+        "name": "gonben",
+        "meaning": "fala (da tolerância e aprovação)"
+      },
+      {
+        "char": "忍",
+        "name": "nin",
+        "meaning": "lâmina no coração escondida (suportar)"
+      }
+    ],
+    "mnemonic": "É tão Certo e Sólido quanto acertar com uma pedra um passarinho (Precisão garantida). \"Reconhecer\" algo através de palavras após suportar em tolerância contínua os testes. Garantir.",
+    "parts_en": [
+      "Stone",
+      "Forehead",
+      "Turkey"
+    ],
+    "meanings_en": [
+      "Certain"
+    ],
+    "mnemonic_en": "An old bird with its head stuck in a hole in the roof, so it cannot move. If you take the stone that's lying next to it and throw it at the bird you'll be certain to hit it."
+  },
+  "政治": {
+    "parts": [
+      {
+        "char": "正",
+        "name": "sei",
+        "meaning": "o certo / correção militar sob a capital"
+      },
+      {
+        "char": "攵",
+        "name": "bokuzukuri",
+        "meaning": "bater com o galho / reprimir por trás"
+      },
+      {
+        "char": "氵",
+        "name": "sanzui",
+        "meaning": "água, rio domado"
+      },
+      {
+        "char": "台",
+        "name": "dai",
+        "meaning": "plataforma da base grande e sólida"
+      }
+    ],
+    "mnemonic": "A autoridade militar punitiva usada violentamente e retificando os caminhos da moral 'Política'. O controle que regula, gerencia ou (Cura / Conserta) os grandes leitos d'água pacificados.",
+    "parts_en": [
+      "Correct",
+      "Winter"
+    ],
+    "meanings_en": [
+      "Politics",
+      "^Government"
+    ],
+    "mnemonic_en": ""
+  },
+  "文化": {
+    "parts": [
+      {
+        "char": "文",
+        "name": "bun",
+        "meaning": "linhas cruzadas dos ideogramas entalhados"
+      },
+      {
+        "char": "亻",
+        "name": "ninben",
+        "meaning": "pessoa reta em pé normal"
+      },
+      {
+        "char": "匕",
+        "name": "hi",
+        "meaning": "pessoa de ponta-cabeça e tombada/virada (metamorfose)"
+      }
+    ],
+    "mnemonic": "As intrincadas \"Letras\", a Arte antiga de gravar tatuagens, rituais ou textos e literatura. E transformar (Mudar magicamente / Disfarçar) a sociedade em magia civil de costume e sabedoria herdada.",
+    "parts_en": [
+      "Writing"
+    ],
+    "meanings_en": [
+      "Writing",
+      "^Sentence"
+    ],
+    "mnemonic_en": "You have homework to do. You need to write an essay — a bunch of sentences strung together into one coherent story. But you don't have anything to sit on... Your only folding chair broke, and you only have the folding chair legs... Hey, I know! Just put a lid on it and you should be able to sit down! Yeah, the handle of the lid might might be a little bit uncomfortable when you sit on it, but what else can do you?"
+  },
+  "自然": {
+    "parts": [
+      {
+        "char": "自",
+        "name": "ji",
+        "meaning": "nariz \"eu\", si mesmo inerente"
+      },
+      {
+        "char": "肉",
+        "name": "niku",
+        "meaning": "carne, carne do cão sacrificado assando"
+      },
+      {
+        "char": "犬",
+        "name": "inu",
+        "meaning": "cachorro da base da fogueira sagrada"
+      },
+      {
+        "char": "灬",
+        "name": "renga",
+        "meaning": "quatro chamas de labareda inferior"
+      }
+    ],
+    "mnemonic": "O princípio que Emana de Si Próprio (\"Mim mesmo\", \"Pessoal\", \"Auto\") da existência, que assim seja feito como fato sem dúvida. Assar inteiramente um porquinho cão em labaredas violentas. Estar e Ser De Fato e Verdadeiramente natural.",
+    "parts_en": [
+      "Self"
+    ],
+    "meanings_en": [
+      "Self"
+    ],
+    "mnemonic_en": "When your eye burns and itches it's time to self-medicate and put a drop of eyedrops in you eye."
+  },
+  "環境": {
+    "parts": [
+      {
+        "char": "王",
+        "name": "ou(tama)",
+        "meaning": "joia / pedra atada como penduricalho da reitoria e do juiz amarrada em cordas"
+      },
+      {
+        "char": "睘",
+        "name": "kan",
+        "meaning": "pessoa apavorada amordaçada e rodando (Circundante) - olho+gola da veste"
+      },
+      {
+        "char": "土",
+        "name": "tsuchi",
+        "meaning": "terra dos deuses que definimos com barreiras na antiguidade"
+      },
+      {
+        "char": "竟",
+        "name": "kyou",
+        "meaning": "o fim da batida final do dia, extremidade máxima limitante sonora na fronteira de rituais"
+      }
+    ],
+    "mnemonic": "As joias brilhantes dos juizes usadas de cinto pelos oficias reais vigiando os arredores (O anel e entorno). O local onde a terra se acaba marcando exatamente o limiar em que o sino musical humano toca na Fronteira/Circunstância (O escopo da situação).",
+    "parts_en": [
+      "King",
+      "Net",
+      "Zombie"
+    ],
+    "meanings_en": [
+      "Loop"
+    ],
+    "mnemonic_en": ""
+  },
+  "将来": {
+    "parts": [
+      {
+        "char": "将",
+        "name": "shou",
+        "meaning": "General com carne, punho e polegar focado e prancheta apontando ou preparando o avanço do abate"
+      },
+      {
+        "char": "来",
+        "name": "rai",
+        "meaning": "espigas de trigos vindo de muito longe abençoando a raiz para as lavouras antigas"
+      }
+    ],
+    "mnemonic": "O bravo general estrategista (\"Líder\") assumindo as tropas para de \"Acampar\" e guiá-las nas batalhas Prestes A Acontecer. Algo de colheitas gloriosas que \"Virão\" para nós se plantar-mos agora na humanidade vindoura no amanhã.",
+    "parts_en": [
+      "Commander"
+    ],
+    "meanings_en": [
+      "Commander"
+    ],
+    "mnemonic_en": ""
+  },
+  "説明": {
+    "parts": [
+      {
+        "char": "言",
+        "name": "gonben",
+        "meaning": "apelo, palavras, boca clamorosa de discurso"
+      },
+      {
+        "char": "兌",
+        "name": "da",
+        "meaning": "despir a pele/veludo. Despir a verdade com o sorriso irmão"
+      },
+      {
+        "char": "日",
+        "name": "hi",
+        "meaning": "o grande e radiante sol e chama celeste ilumina"
+      },
+      {
+        "char": "月",
+        "name": "tsuki",
+        "meaning": "a prata e noturna lua de luz clara pálida sem neblinas"
+      }
+    ],
+    "mnemonic": "Tirar uma \"Teoria\", pregações doutrinantes, as falas de discursos (\"Opiniões e Rumores\"). Trazer toda a \"Claridade\", a lucidez que afasta a ignorância e deixa transparente, brilhante e Inteligente para Expor a teoria final.",
+    "parts_en": [
+      "Say",
+      "Guard"
+    ],
+    "meanings_en": [
+      "Theory"
+    ],
+    "mnemonic_en": ""
+  },
+  "映画": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Sun",
+      "Center"
+    ],
+    "meanings_en": [
+      "Reflect",
+      "^Reflection"
+    ],
+    "mnemonic_en": ""
+  },
+  "感じ": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Slide",
+      "Drunkard",
+      "Creeper",
+      "Heart"
+    ],
+    "meanings_en": [
+      "Feeling"
+    ],
+    "mnemonic_en": "When you remember the dog you had as a kid that tragically died in a car accident your mouth opens and a painful groan comes out and you heart starts to ache in a sudden rush of feelings."
+  },
+  "急ぐ": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Prison",
+      "Wolverine",
+      "Heart"
+    ],
+    "meanings_en": [
+      "Hurry"
+    ],
+    "mnemonic_en": ""
+  },
+  "好き": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Woman",
+      "Child"
+    ],
+    "meanings_en": [
+      "Like"
+    ],
+    "mnemonic_en": "Every decent woman likes her child and will do anything to keep the little Timmy happy."
+  },
+  "心配": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Heart"
+    ],
+    "meanings_en": [
+      "Heart"
+    ],
+    "mnemonic_en": "A pictograph of a heart."
+  },
+  "始める": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Woman",
+      "Machine"
+    ],
+    "meanings_en": [
+      "Begin",
+      "^Start"
+    ],
+    "mnemonic_en": "The woman standing next to a pedestal at the race waves the flag, signalling when to begin."
+  },
+  "勝つ": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Moon",
+      "Gladiator",
+      "Power"
+    ],
+    "meanings_en": [
+      "Win"
+    ],
+    "mnemonic_en": "Imagine an evil husband calling forth an equally evil power from the underground next to a full moon at night... Yes, that demonic power is going to help him win in court and divorce his wife!"
+  },
+  "色々": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Color"
+    ],
+    "meanings_en": [
+      "Color"
+    ],
+    "mnemonic_en": "You want to color your hook? Just dip it into that that liquid over there which looks like a swirly pattern. That's paint. Lots of paints mixed together. That's why it's swirly."
+  },
+  "集める": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Turkey",
+      "Tree"
+    ],
+    "meanings_en": [
+      "Collect",
+      "^Gather"
+    ],
+    "mnemonic_en": "Sometimes old birds like to gather together on top of a tree and poop on anyone unfortunate enough to walk under that tree."
+  },
+  "重い": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Heavy"
+    ],
+    "meanings_en": [
+      "Heavy"
+    ],
+    "mnemonic_en": "Over a thousand folk call this their home village, it must be a heavy responsibility for the village chief to take care of it."
+  },
+  "春": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Spring",
+      "Sun"
+    ],
+    "meanings_en": [
+      "Spring"
+    ],
+    "mnemonic_en": "Spring is when three people can come together and enjoy the sun, especially when it's low on the horizon and dyes everything orange."
+  },
+  "転ぶ": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Car",
+      "Cloud"
+    ],
+    "meanings_en": [
+      "Revolve"
+    ],
+    "mnemonic_en": "To quote my favorite vehicle related poem, the wheels on the bus go round and round... in other words they roll around."
+  },
+  "通る": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Scooter",
+      "Mama",
+      "Task"
+    ],
+    "meanings_en": [
+      "Pass Through"
+    ],
+    "mnemonic_en": "You're on the road and you see this huge, rusty old bell, ringing. \"Look — they're ringing the bell because they're closing the gates! Let's go! Quickly! We need to pass through before the bell stops ringing and they shut the gates!\""
+  },
+  "特別": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Cow",
+      "Temple"
+    ],
+    "meanings_en": [
+      "Special"
+    ],
+    "mnemonic_en": "Only the most special cow is invited to the Buddhist temple."
+  },
+  "難しい": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Chinese",
+      "Turkey"
+    ],
+    "meanings_en": [
+      "Difficult"
+    ],
+    "mnemonic_en": "A husband with a big mouth is hiding in the grass from an old bird that he pissed off. You never want to piss off an old (hence very experienced) killer bird. It's really difficult to run away from such a killing machine, so the only thing you can do is to hide in the bushes and hope it doesn't find you."
+  },
+  "熱い": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Womb",
+      "Circle",
+      "Boil"
+    ],
+    "meanings_en": [
+      "Heat",
+      "^Fever"
+    ],
+    "mnemonic_en": "A circular pot made out of clay (which is why both the top and the bottom is made out of earth) with a pair of yummy chicken legs inside, and the whole thing is heated with fire from the bottom. Because you need a lot of heat to cook a chicken!"
+  },
+  "病気": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Sick",
+      "Dynamite"
+    ],
+    "meanings_en": [
+      "Sick",
+      "^Sickness",
+      "^Ill",
+      "^Illness"
+    ],
+    "mnemonic_en": ""
+  },
+  "服": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Moon",
+      "Stamp",
+      "Stool"
+    ],
+    "meanings_en": [
+      "Clothes",
+      "^Clothing"
+    ],
+    "mnemonic_en": ""
+  },
+  "物語": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Cow",
+      "Wing"
+    ],
+    "meanings_en": [
+      "Thing"
+    ],
+    "mnemonic_en": "In India you must not harm any cows nor treat them like things."
+  },
+  "有名": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Narwhal",
+      "Moon"
+    ],
+    "meanings_en": [
+      "Have"
+    ],
+    "mnemonic_en": ""
+  },
+  "理由": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "King",
+      "Village"
+    ],
+    "meanings_en": [
+      "Reason"
+    ],
+    "mnemonic_en": "A pictograph of a king living in his castle (on the left) which overlooks his home village (on the right).\nEvery day after he wakes up the first thing the king sees through the huge window in his chambers is that damn village. He was born there. He was raised there. He really misses that place and wants to go back. But he can't. The hard logic dictates that doing such a thing would be extremely dangerous. The moment he peeks his nose outside of the castle gates he'll get assasinated. He knows it. So the only thing he can do is to look through the window, and sigh."
+  },
+  "力": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Power"
+    ],
+    "meanings_en": [
+      "Power",
+      "^Strength"
+    ],
+    "mnemonic_en": "You need a lot of power to be able to slash through a clothes hanger."
+  },
+  "旅行": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Direction",
+      "Gun",
+      "Tofu"
+    ],
+    "meanings_en": [
+      "Trip",
+      "^Travel"
+    ],
+    "mnemonic_en": "A decapitated cow head lying on a chair with a splinter sticking out will point you the way you should travel."
+  },
+  "全部": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Hat",
+      "King"
+    ],
+    "meanings_en": [
+      "All",
+      "^Whole"
+    ],
+    "mnemonic_en": "There is no person of a higher status than a king in the whole world."
+  },
+  "努力": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Woman",
+      "Stool",
+      "Power"
+    ],
+    "meanings_en": [
+      "Toil"
+    ],
+    "mnemonic_en": ""
+  },
+  "親切": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Stand",
+      "Tree",
+      "See"
+    ],
+    "meanings_en": [
+      "Parent"
+    ],
+    "mnemonic_en": "A parent is standing on top of a tree to see what their kid is doing.\n(Imagine that their kid is a teenager, and he has his girlfriend over in his room, and the parent promised not to interrupt. So the parent had no other choice than to get on top of the tree outside of his son's bedroom and try to see what's going on in there from the outside.)"
+  },
+  "安心": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Roof",
+      "Woman"
+    ],
+    "meanings_en": [
+      "Relax",
+      "^Cheap"
+    ],
+    "mnemonic_en": "If you have a nice house with a roof with a chimney, and a woman living there who's waiting for you to come home from work, who loves you and keeps you warm at night, well, that brings a certain piece of mind when you think about it, doesn't it?"
+  },
+  "記念": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Say",
+      "Oneself"
+    ],
+    "meanings_en": [
+      "Write Down",
+      "^Record"
+    ],
+    "mnemonic_en": ""
+  },
+  "合う": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Suit"
+    ],
+    "meanings_en": [
+      "Suit",
+      "^Fit",
+      "^Join"
+    ],
+    "mnemonic_en": "Let's come together and open our mouths under a single sloped roof."
+  },
+  "都合": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Someone",
+      "Building"
+    ],
+    "meanings_en": [
+      "Metropolis"
+    ],
+    "mnemonic_en": "Every metropolis started as a small village to which someone suddenly decided to come and live in. Then another someone did it too. And another, and so on, until it stops being a small village, and becomes a metropolis."
+  },
+  "足りる": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Foot"
+    ],
+    "meanings_en": [
+      "Foot",
+      "^Leg",
+      "^Sufficient"
+    ],
+    "mnemonic_en": "Gross! Do not put your mouth in your running shoes! That's where your foot goes, right?!"
+  },
+  "消える": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Tsunami",
+      "Triceratops",
+      "Moon"
+    ],
+    "meanings_en": [
+      "Extinguish"
+    ],
+    "mnemonic_en": ""
+  },
+  "経験": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Thread",
+      "Tombstone"
+    ],
+    "meanings_en": [
+      "Passage of Time",
+      "^Pass Through",
+      "^Manage"
+    ],
+    "mnemonic_en": ""
+  },
+  "決める": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Tsunami",
+      "Person",
+      "Hook"
+    ],
+    "meanings_en": [
+      "Decide",
+      "^Decision"
+    ],
+    "mnemonic_en": "Oops, our submarine is taking in water. I know you've almost decided what to do, but it's not the time to be indecisive. You need to actually decide NOW, or we'll go down!"
+  },
+  "変わる": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Red",
+      "Winter"
+    ],
+    "meanings_en": [
+      "Change",
+      "^Strange"
+    ],
+    "mnemonic_en": "\"I can change! Please believe me!\" are the words that every serial killer says at their trial after being caught with a bloody knife on a late winter night."
+  },
+  "調べる": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Say",
+      "Circumference"
+    ],
+    "meanings_en": [
+      "Investigate",
+      "^Tone"
+    ],
+    "mnemonic_en": ""
+  },
+  "選ぶ": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Scooter",
+      "Oneself",
+      "Together"
+    ],
+    "meanings_en": [
+      "Choose"
+    ],
+    "mnemonic_en": "Two poisonous snakes are traveling together on a road. Uh... maybe let's select another way to go; I don't want to get bitten and die..."
+  },
+  "受ける": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Cleat",
+      "Forehead",
+      "Stool"
+    ],
+    "meanings_en": [
+      "Accept",
+      "^Receive"
+    ],
+    "mnemonic_en": ""
+  },
+  "残る": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Yakuza",
+      "Bar"
+    ],
+    "meanings_en": [
+      "Remainder"
+    ],
+    "mnemonic_en": "A pictograph of an ancient three-bladed dagger-axe and a bunch of bone remains which were left behind.\n(Imagine an archeological dig where those two things were found next to each other.)"
+  },
+  "払う": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Fingers",
+      "Private"
+    ],
+    "meanings_en": [
+      "Pay"
+    ],
+    "mnemonic_en": ""
+  },
+  "必要": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Heart",
+      "Slide"
+    ],
+    "meanings_en": [
+      "Certain"
+    ],
+    "mnemonic_en": "If your heart gets slashed you will certainly die."
+  },
+  "深い": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Tsunami",
+      "Pi",
+      "Tree"
+    ],
+    "meanings_en": [
+      "Deep"
+    ],
+    "mnemonic_en": ""
+  },
+  "若い": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Flowers",
+      "Right"
+    ],
+    "meanings_en": [
+      "Young"
+    ],
+    "mnemonic_en": ""
+  },
+  "危ない": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Prison",
+      "Cliff",
+      "Snake"
+    ],
+    "meanings_en": [
+      "Dangerous"
+    ],
+    "mnemonic_en": ""
+  },
+  "込む": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Scooter",
+      "Enter"
+    ],
+    "meanings_en": [
+      "Crowded"
+    ],
+    "mnemonic_en": "If everyone wants to enter the same road it will surely get crowded."
+  },
+  "比べる": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Compare"
+    ],
+    "meanings_en": [
+      "Compare"
+    ],
+    "mnemonic_en": "You look at the two spoons to compare them. The left one is a bit different but they are generally of the same type."
+  },
+  "続ける": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Thread",
+      "Sell"
+    ],
+    "meanings_en": [
+      "Continue"
+    ],
+    "mnemonic_en": "You must continue to sell lots of thread, as that's the only thing you have; if not you'll run out of money and starve."
+  },
+  "交通": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Lid",
+      "Father"
+    ],
+    "meanings_en": [
+      "Mix",
+      "^Mingle"
+    ],
+    "mnemonic_en": "When my father wants to mingle with his mistress he puts a lidon his head and tries to sneak away from home disguised like a garbage can. Mother never notices."
+  },
+  "経済": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Thread",
+      "Tombstone"
+    ],
+    "meanings_en": [
+      "Passage of Time",
+      "^Pass Through",
+      "^Manage"
+    ],
+    "mnemonic_en": ""
+  },
+  "技術": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Fingers",
+      "Branch"
+    ],
+    "meanings_en": [
+      "Skill"
+    ],
+    "mnemonic_en": ""
+  },
+  "相談": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Tree",
+      "Eye"
+    ],
+    "meanings_en": [
+      "Mutual"
+    ],
+    "mnemonic_en": "Do you know the famous quote by Nietzsche: \"When you gaze long into an abyss the abyss also gazes into you.\"? Yes? No? Well, it doesn't matter. The same thing applies here. If you (represented be an eye here) and a tree face towards each other then, well, you'll be looking at the tree, and the tree will be looking at you."
+  },
+  "準備": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Tsunami",
+      "Turkey",
+      "Cross"
+    ],
+    "meanings_en": [
+      "Standard"
+    ],
+    "mnemonic_en": ""
+  },
+  "約束": {
+    "parts": [],
+    "mnemonic": "",
+    "parts_en": [
+      "Thread",
+      "Pool"
+    ],
+    "meanings_en": [
+      "Promise"
+    ],
+    "mnemonic_en": "A blood oath made with a spoonful of blood will create an invisible and inseparable thread joining you two forever in a promise you won't be able to break."
   }
 };
